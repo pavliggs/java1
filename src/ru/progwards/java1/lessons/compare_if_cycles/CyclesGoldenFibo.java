@@ -3,10 +3,56 @@ package ru.progwards.java1.lessons.compare_if_cycles;
 public class CyclesGoldenFibo {
     public static boolean containsDigit(int number, int digit) {
         /*
-        чтобы узнать содержит ли десятичное представление числа number цифру digit - необходимо
-        сначала получить первую и вторую цифры числа number, а затем сравнить эти цифры с числом digit
+        чтобы узнать содержит ли number цифру digit - необходимо сначала получить все цифры числа number,
+        а их максимально может быть 10 (пример: 1234567890 - число number)
+        поэтому получаем все цифры числа number
         */
-        if (number % 10 == digit || number / 10 == digit)
+        int num1 = number / 1000000000;
+        int num2 = (number % 1000000000) / 100000000;
+        int num3 = ((number % 1000000000) % 100000000) / 10000000;
+        int num4 = (((number % 1000000000) % 100000000) % 10000000) / 1000000;
+        int num5 = ((((number % 1000000000) % 100000000) % 10000000) % 1000000) / 100000;
+        int num6 = (((((number % 1000000000) % 100000000) % 10000000) % 1000000) % 100000) / 10000;
+        int num7 = ((((((number % 1000000000) % 100000000) % 10000000) % 1000000) % 100000) % 10000) / 1000;
+        int num8 = (((((((number % 1000000000) % 100000000) % 10000000) % 1000000) % 100000) % 10000) % 1000) / 100;
+        int num9 = ((((((((number % 1000000000) % 100000000) % 10000000) % 1000000) % 100000) % 10000) % 1000) % 100) / 10;
+        int num10 = ((((((((number % 1000000000) % 100000000) % 10000000) % 1000000) % 100000) % 10000) % 1000) % 100) % 10;
+
+        /*
+        есть некая особенность - если число number состоит менее, чем из 10 цифр, то те цифры, которых нехватает становятся 0
+        и встают спереди числа и если мы цифре digit присвоим значение 0, то программа посчитает, что в числе number
+        присутствует 0, хотя его в числе может совсем и не быть
+        поэтому необходимо исключить такие комбинации при помощи нескольких условий
+        */
+        if (num1 == 0 && num2 == 0 && num3 == 0 && num4 == 0 && num5 == 0 && num6 == 0 && num7 == 0 && num8 == 0
+                && num9 == 0 && num10 != 0 && digit == 0)
+            return false;
+        else if (num1 == 0 && num2 == 0 && num3 == 0 && num4 == 0 && num5 == 0 && num6 == 0 && num7 == 0 && num8 == 0
+                && num9 != 0 && num10 != 0 && digit == 0)
+            return false;
+        else if (num1 == 0 && num2 == 0 && num3 == 0 && num4 == 0 && num5 == 0 && num6 == 0 && num7 == 0 && num8 != 0
+                && num9 != 0 && num10 != 0 && digit == 0)
+            return false;
+        else if (num1 == 0 && num2 == 0 && num3 == 0 && num4 == 0 && num5 == 0 && num6 == 0 && num7 != 0 && num8 != 0
+                && num9 != 0 && num10 != 0 && digit == 0)
+            return false;
+        else if (num1 == 0 && num2 == 0 && num3 == 0 && num4 == 0 && num5 == 0 && num6 != 0 && num7 != 0 && num8 != 0
+                && num9 != 0 && num10 != 0 && digit == 0)
+            return false;
+        else if (num1 == 0 && num2 == 0 && num3 == 0 && num4 == 0 && num5 != 0 && num6 != 0 && num7 != 0 && num8 != 0
+                && num9 != 0 && num10 != 0 && digit == 0)
+            return false;
+        else if (num1 == 0 && num2 == 0 && num3 == 0 && num4 != 0 && num5 != 0 && num6 != 0 && num7 != 0 && num8 != 0
+                && num9 != 0 && num10 != 0 && digit == 0)
+            return false;
+        else if (num1 == 0 && num2 == 0 && num3 != 0 && num4 != 0 && num5 != 0 && num6 != 0 && num7 != 0 && num8 != 0
+                && num9 != 0 && num10 != 0 && digit == 0)
+            return false;
+        else if (num1 == 0 && num2 != 0 && num3 != 0 && num4 != 0 && num5 != 0 && num6 != 0 && num7 != 0 && num8 != 0
+                && num9 != 0 && num10 != 0 && digit == 0)
+            return false;
+        else if (num1 == digit || num2 == digit || num3 == digit || num4 == digit || num5 == digit || num6 == digit || num7 == digit
+                || num8 == digit || num9 == digit || num10 == digit)
             return true;
         else
             return false;
@@ -46,7 +92,8 @@ public class CyclesGoldenFibo {
     }
 
     public static void main(String[] args) {
-        System.out.println(containsDigit(64, 6));
+        System.out.println(containsDigit(1, 0));
+
         //при помощи цикла выведем на консоль первые 15 чисел последовательности Фибоначчи
         for (int i = 1; i <= 15; i++) {
             System.out.print(fiboNumber(i) + " ");
