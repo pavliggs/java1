@@ -129,6 +129,5 @@ public class CyclesGoldenFibo {
                 }
             }
         }
-        System.out.println(6 % 11);
     }
 }
