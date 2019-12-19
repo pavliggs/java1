@@ -10,4 +10,9 @@ public class Figure {
     double area() {
         return 0d;
     }
+
+    @Override
+    public String toString() {
+        return "Абстрактная фигура";
+    }
 }

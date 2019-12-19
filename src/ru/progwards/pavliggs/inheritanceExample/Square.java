@@ -1,9 +1,12 @@
 package ru.progwards.pavliggs.inheritanceExample;
 
 public class Square extends Segment {
+    /*
+    необходимо при помощи super вызвать конструктор родителя ЯВНО
+    переменную "a" возьмем от родителя
+    */
     Square(double a) {
         super(a);
-        this.a = a;
     }
 
     @Override
@@ -14,5 +17,10 @@ public class Square extends Segment {
     @Override
     double area() {
         return a * a;
+    }
+
+    @Override
+    public String toString() {
+        return "Квадрат со стороной " + a;
     }
 }
