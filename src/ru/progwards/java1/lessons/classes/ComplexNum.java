@@ -22,7 +22,7 @@ public class ComplexNum {
 
     public ComplexNum sub(ComplexNum num) {
         a1 = a - num.a;
-        b1 = a - num.b;
+        b1 = b - num.b;
         return new ComplexNum(a1, b1);
     }
 
@@ -44,9 +44,9 @@ public class ComplexNum {
     }
 
     public static void main(String[] args) {
-        ComplexNum complexNum = new ComplexNum(1, 1);
+        ComplexNum complexNum = new ComplexNum(99, 98);
         System.out.println(complexNum.add(new ComplexNum(99, 99)));
-        System.out.println(complexNum.sub(new ComplexNum(1, 1)));
+        System.out.println(complexNum.sub(new ComplexNum(1, 2)));
         System.out.println(complexNum.mul(new ComplexNum(99, 99)));
         System.out.println(complexNum.div(new ComplexNum(100, 100)));
     }
