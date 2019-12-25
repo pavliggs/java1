@@ -3,8 +3,7 @@ package ru.progwards.java1.lessons.arrays;
 import java.util.Arrays;
 
 public class DIntArray {
-    private int[] originalArray = new int[5];
-//    private int[] originalArray = {1, 3, 5, 7, 9, 12, 145};
+    private int[] originalArray;
 
     public void add(int num) {
         int[] newArray = Arrays.copyOf(originalArray, originalArray.length + 1);
