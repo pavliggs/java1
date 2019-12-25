@@ -12,10 +12,10 @@ public class Eratosthenes {
     }
 
     private void sift() {
-        for (int i = 2; i <= this.sieve.length - 1; i++) {
-            for (int j = 2 * i; j <= this.sieve.length * 2 - 1; j += i) {
-                if (j % i == 0)
-                    System.out.println(i);
+        for (int i = 2; i < this.sieve.length; i++) {
+            for (int j = 2 * i; j < this.sieve.length; j += i) {
+                System.out.println(i);
+                System.out.println(j);
             }
         }
     }
