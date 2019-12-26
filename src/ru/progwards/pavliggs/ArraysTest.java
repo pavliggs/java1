@@ -76,5 +76,7 @@ public class ArraysTest {
 
         int[] array5 = {};
         System.out.println(arrayMax(array5));
+
+
     }
 }
