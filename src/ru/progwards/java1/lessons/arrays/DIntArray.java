@@ -6,7 +6,9 @@ public class DIntArray {
     private int[] originalArray;
 
     public void add(int num) {
-        int[] newArray = Arrays.copyOf(originalArray, originalArray.length + 1);
+        int[] newArray = new int[originalArray.length + 1];
+//        int[] newArray = Arrays.copyOf(originalArray, originalArray.length + 1);
+        newArray = Arrays.copyOf(originalArray, newArray.length);
         newArray[newArray.length - 1] = num;
         originalArray = newArray;
         System.out.println(Arrays.toString(originalArray));
@@ -48,7 +50,7 @@ public class DIntArray {
 
     public static void main(String[] args) {
         DIntArray dIntArray = new DIntArray();
-//        dIntArray.add(456);
+        dIntArray.add(456);
 //        dIntArray.atInsert(8, 799);
 //        dIntArray.atDelete(7);
         dIntArray.at(7);

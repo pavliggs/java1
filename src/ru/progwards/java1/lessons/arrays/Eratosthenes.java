@@ -14,8 +14,7 @@ public class Eratosthenes {
     private void sift() {
         for (int i = 2; i < this.sieve.length; i++) {
             for (int j = 2 * i; j < this.sieve.length; j += i) {
-                System.out.println(i);
-                System.out.println(j);
+                if (j = )
             }
         }
     }
