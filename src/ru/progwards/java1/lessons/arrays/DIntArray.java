@@ -3,9 +3,10 @@ package ru.progwards.java1.lessons.arrays;
 import java.util.Arrays;
 
 public class DIntArray {
-    private int[] originalArray = {1, 3, 5, 7, 9, 12, 15};
+    private int[] originalArray;
 
     public void add(int num) {
+//        originalArray = new int[10];
         int[] newArray = new int[originalArray.length + 1];
 //        int[] newArray = Arrays.copyOf(originalArray, originalArray.length + 1);
         newArray = Arrays.copyOf(originalArray, newArray.length);
@@ -53,6 +54,6 @@ public class DIntArray {
         dIntArray.add(456);
 //        dIntArray.atInsert(8, 799);
 //        dIntArray.atDelete(7);
-        dIntArray.at(7);
+        dIntArray.at(10);
     }
 }
