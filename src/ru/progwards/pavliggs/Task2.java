@@ -54,5 +54,8 @@ public class Task2 {
         addition(528, 387);
         multiplication(124, 87);
         multiplication(1528, 3);
+        int b = 0b10000111;
+        System.out.println(b);
+
     }
 }

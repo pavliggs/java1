@@ -62,17 +62,17 @@ public class CyclesGoldenFibo {
         //найдём при помощи встроенных циклов Золотые треугольники со сторонами из натуральных чисел не превышающих 100
         for (int a = 1; a <= 100; a++) {
             for (int b = 1; b <= 100; b++) {
-                for (int c = 1; c <= 100; c++) {
+//                for (int c = 1; c <= 100; c++) {
                     /*
                     подставляем комбинации чисел a, b, c в функции ниже и если вернётся true, то выведем эти комбинации,
                     которые и будут являтся сторонами Золотого треугольника
                     */
-                    if (TriangleInfo.isTriangle(a, b, c) && isGoldenTriangle(a, b, c)) {
+                    if (TriangleInfo.isTriangle(a, b, b) && isGoldenTriangle(a, b, b)) {
                         System.out.print("Сторона a = " + a + " ");
                         System.out.print("Сторона b = " + b + " ");
-                        System.out.print("Сторона c = " + c + " " + "\n");
+                        System.out.print("Сторона c = " + b + " " + "\n");
                     }
-                }
+//                }
             }
         }
     }
