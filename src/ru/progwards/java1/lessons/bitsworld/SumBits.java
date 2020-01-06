@@ -29,6 +29,6 @@ public class SumBits {
     }
 
     public static void main(String[] args) {
-        System.out.println(sumBits((byte)0b10000000));
+        System.out.println(sumBits((byte)0b11000011));
     }
 }
