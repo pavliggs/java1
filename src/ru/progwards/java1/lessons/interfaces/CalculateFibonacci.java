@@ -7,24 +7,25 @@ public class CalculateFibonacci {
         //присвоим переменным fibo1 и fibo2 значения первых двух чисел последовательности Фибоначчи
         int fibo1 = 1;
         int fibo2 = 1;
-        //цикл будем начинать с i = 2, т.к. значения первых двух чисел у нас уже имеются
-        for (int i = 2; i < n; i++) {
-            int fiboNext = fibo1 + fibo2;
-            //путём присваивания сдвигаем вперёд значения fibo1 и fibo2 в последовательности Фибоначчи
-            fibo1 = fibo2;
-            fibo2 = fiboNext;
-        }
-        if (n == lastFibo.n) {
-            return fibo2;
+
+        if (n == CalculateFibonacci.lastFibo.n) {
+            return CalculateFibonacci.lastFibo.fibo;
         } else {
-            lastFibo.n = n;
-            lastFibo.fibo = fibo2;
-            return lastFibo.fibo;
+            //цикл будем начинать с i = 2, т.к. значения первых двух чисел у нас уже имеются
+            for (int i = 2; i < n; i++) {
+                int fiboNext = fibo1 + fibo2;
+                //путём присваивания сдвигаем вперёд значения fibo1 и fibo2 в последовательности Фибоначчи
+                fibo1 = fibo2;
+                fibo2 = fiboNext;
+            }
+            CalculateFibonacci.lastFibo.n = n;
+            CalculateFibonacci.lastFibo.fibo = fibo2;
+            return CalculateFibonacci.lastFibo.fibo;
         }
     }
 
     public CacheInfo getLastFibo() {
-        return lastFibo;
+        return CalculateFibonacci.lastFibo;
     }
 
     public void clearLastFibo() {
@@ -50,11 +51,12 @@ public class CalculateFibonacci {
     public static void main(String[] args) {
 
         lastFibo = new CacheInfo(20, 90);
-        System.out.println(fiboNumber(19));
-        System.out.println(lastFibo.fibo);
-        System.out.println(new CalculateFibonacci().getLastFibo());
-        new CalculateFibonacci().clearLastFibo();
-        System.out.println(new CalculateFibonacci().getLastFibo());
+        System.out.println(fiboNumber(15));
+//
+//        System.out.println(lastFibo.fibo);
+//        System.out.println(new CalculateFibonacci().getLastFibo());
+//        new CalculateFibonacci().clearLastFibo();
+//        System.out.println(new CalculateFibonacci().getLastFibo());
 
     }
 }
