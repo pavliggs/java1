@@ -8,8 +8,11 @@ public class CalculateFibonacci {
         int fibo1 = 1;
         int fibo2 = 1;
 
-        if (n == CalculateFibonacci.lastFibo.n) {
-            return CalculateFibonacci.lastFibo.fibo;
+        //инициализируем объект lastFibo, если он равен null
+        if (lastFibo == null)
+            lastFibo = new CacheInfo();
+        if (n == lastFibo.n) {
+            return lastFibo.fibo;
         } else {
             //цикл будем начинать с i = 2, т.к. значения первых двух чисел у нас уже имеются
             for (int i = 2; i < n; i++) {
@@ -18,14 +21,14 @@ public class CalculateFibonacci {
                 fibo1 = fibo2;
                 fibo2 = fiboNext;
             }
-            CalculateFibonacci.lastFibo.n = n;
-            CalculateFibonacci.lastFibo.fibo = fibo2;
-            return CalculateFibonacci.lastFibo.fibo;
+            lastFibo.n = n;
+            lastFibo.fibo = fibo2;
+            return lastFibo.fibo;
         }
     }
 
     public CacheInfo getLastFibo() {
-        return CalculateFibonacci.lastFibo;
+        return lastFibo;
     }
 
     public void clearLastFibo() {
@@ -36,11 +39,6 @@ public class CalculateFibonacci {
         public int n;
         public int fibo;
 
-        CacheInfo(int n, int fibo) {
-            this.n = n;
-            this.fibo = fibo;
-        }
-
         @Override
         public String toString() {
             return "n = " + lastFibo.n + ", fibo = " + lastFibo.fibo;
@@ -49,14 +47,6 @@ public class CalculateFibonacci {
 
 
     public static void main(String[] args) {
-
-        lastFibo = new CacheInfo(20, 90);
         System.out.println(fiboNumber(15));
-//
-//        System.out.println(lastFibo.fibo);
-//        System.out.println(new CalculateFibonacci().getLastFibo());
-//        new CalculateFibonacci().clearLastFibo();
-//        System.out.println(new CalculateFibonacci().getLastFibo());
-
     }
 }
