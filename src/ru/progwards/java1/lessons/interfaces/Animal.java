@@ -43,7 +43,7 @@ public class Animal implements FoodCompare {
     }
 
     public double getFood1kgPrice() {
-        switch (FoodKind.HAY) {
+        switch (getFoodKind()) {
             case HAY:
                 return 20;
             case CORN:
@@ -88,8 +88,12 @@ public class Animal implements FoodCompare {
         Duck duck1 = new Duck(15);
         Duck duck2 = new Duck(19);
 
-        System.out.println(duck1.equals(cow2));
+        Animal animal = new Animal(1D);
+        System.out.println(animal.getFood1kgPrice());
+        System.out.println(hamster.getFood1kgPrice());
+        System.out.println(new Cow(1D).compareFoodPrice(new Duck(1D)));
 
+        System.out.println(duck1.equals(cow2));
         System.out.println(duck1.compareFoodPrice(duck2));
     }
 }
