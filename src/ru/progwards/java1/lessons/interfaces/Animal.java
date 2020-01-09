@@ -1,0 +1,95 @@
+package ru.progwards.java1.lessons.interfaces;
+
+public class Animal implements FoodCompare {
+    double weight;
+
+    enum AnimalKind {
+        ANIMAL,
+        COW,
+        HAMSTER,
+        DUCK,
+    }
+
+    enum FoodKind {
+        UNKNOWN,
+        HAY,
+        CORN,
+    }
+
+    public Animal(double weight) {
+        this.weight = weight;
+    }
+
+    public AnimalKind getKind() {
+        AnimalKind animal = AnimalKind.ANIMAL;
+        return animal;
+    }
+
+    public FoodKind getFoodKind() {
+        FoodKind unknown = FoodKind.UNKNOWN;
+        return unknown;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getFoodCoeff() {
+        return 0.02;
+    }
+
+    public double calculateFoodWeight() {
+        return getWeight() * getFoodCoeff();
+    }
+
+    public double getFood1kgPrice() {
+        switch (FoodKind.HAY) {
+            case HAY:
+                return 20;
+            case CORN:
+                return 50;
+            case UNKNOWN:
+                return 0;
+        }
+        return 0;
+    }
+
+    public double getFoodPrice() {
+        return calculateFoodWeight() * getFood1kgPrice();
+    }
+
+    @Override
+    public int compareFoodPrice(Animal animal) {
+        return Double.compare(getFoodPrice(), animal.getFoodPrice());
+    }
+
+    @Override
+    public boolean equals(Object anObject) {
+        if (this == anObject) return true;
+        if (anObject == null || getClass() != anObject.getClass())
+            return false;
+        Animal animal = (Animal) anObject;
+        return Double.compare(getWeight(), animal.getWeight()) == 0;
+    }
+
+    @Override
+    public String toString() {
+        return "I am " + getKind() + ", eat " +  getFoodKind();
+    }
+
+    public String toStringFull() {
+        return "I am " + getKind() + ", eat " +  getFoodKind() + " " + calculateFoodWeight();
+    }
+
+    public static void main(String[] args) {
+        Cow cow1 = new Cow(700);
+        Cow cow2 = new Cow(750);
+        Hamster hamster = new Hamster(700);
+        Duck duck1 = new Duck(15);
+        Duck duck2 = new Duck(19);
+
+        System.out.println(duck1.equals(cow2));
+
+        System.out.println(duck1.compareFoodPrice(duck2));
+    }
+}
