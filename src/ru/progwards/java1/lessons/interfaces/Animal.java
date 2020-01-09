@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.interfaces;
 
-public class Animal implements FoodCompare {
+public class Animal implements FoodCompare, CompareWeight {
     double weight;
 
     enum AnimalKind {
@@ -59,6 +59,17 @@ public class Animal implements FoodCompare {
     }
 
     @Override
+    public CompareResult compareWeight(CompareWeight smthHasWeigt) {
+        Animal animal = (Animal) smthHasWeigt;
+        if (getWeight() < animal.getWeight())
+            return CompareResult.LESS;
+        else if (getWeight() == animal.getWeight())
+            return CompareResult.EQUAL;
+        else
+            return CompareResult.GREATER;
+    }
+
+    @Override
     public int compareFoodPrice(Animal animal) {
         return Double.compare(getFoodPrice(), animal.getFoodPrice());
     }
@@ -85,15 +96,17 @@ public class Animal implements FoodCompare {
         Cow cow1 = new Cow(700);
         Cow cow2 = new Cow(750);
         Hamster hamster = new Hamster(700);
-        Duck duck1 = new Duck(15);
+        Duck duck1 = new Duck(700);
         Duck duck2 = new Duck(19);
 
-        Animal animal = new Animal(1D);
-        System.out.println(animal.getFood1kgPrice());
-        System.out.println(hamster.getFood1kgPrice());
-        System.out.println(new Cow(1D).compareFoodPrice(new Duck(1D)));
+//        Animal animal = new Animal(1D);
+//        System.out.println(animal.getFood1kgPrice());
+//        System.out.println(hamster.getFood1kgPrice());
+//        System.out.println(new Cow(1D).compareFoodPrice(new Duck(1D)));
+//
+//        System.out.println(duck1.equals(cow2));
+//        System.out.println(duck1.compareFoodPrice(duck2));
 
-        System.out.println(duck1.equals(cow2));
-        System.out.println(duck1.compareFoodPrice(duck2));
+        System.out.println(cow1.compareWeight(duck1));
     }
 }
