@@ -13,10 +13,10 @@ public class Food implements CompareWeight{
 
     @Override
     public CompareResult compareWeight(CompareWeight smthHasWeigt) {
-        Animal animal = (Animal) smthHasWeigt;
-        if (getWeight() < animal.getWeight())
+        Food food = (Food) smthHasWeigt;
+        if (getWeight() < food.getWeight())
             return CompareResult.LESS;
-        else if (getWeight() == animal.getWeight())
+        else if (getWeight() == food.getWeight())
             return CompareResult.EQUAL;
         else
             return CompareResult.GREATER;
