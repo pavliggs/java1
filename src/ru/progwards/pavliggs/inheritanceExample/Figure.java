@@ -1,6 +1,6 @@
 package ru.progwards.pavliggs.inheritanceExample;
 
-public abstract class Figure implements Comparable<Figure>, AreaComparable {
+public class Figure implements Comparable<Figure>, AreaComparable {
     //при использовании интерфейса на основании данного метода в классе следует писать @Override
     @Override
     public int compareTo(Figure o) {
