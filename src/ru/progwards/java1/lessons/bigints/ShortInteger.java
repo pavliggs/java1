@@ -8,7 +8,12 @@ public class ShortInteger extends AbsInteger {
     }
 
     @Override
+    public long getNum() {
+        return a;
+    }
+
+    @Override
     public String toString() {
-        return Integer.toString(a);
+        return Short.toString(a);
     }
 }

@@ -8,6 +8,11 @@ public class IntInteger extends AbsInteger {
     }
 
     @Override
+    public long getNum() {
+        return a;
+    }
+
+    @Override
     public String toString() {
         return Integer.toString(a);
     }
