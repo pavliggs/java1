@@ -11,11 +11,4 @@ public class IntInteger extends AbsInteger {
     public String toString() {
         return Integer.toString(a);
     }
-
-    public static void main(String[] args) {
-        IntInteger a = new IntInteger(100);
-        IntInteger b = new IntInteger(99);
-
-        System.out.println(a.a + b.a);
-    }
 }

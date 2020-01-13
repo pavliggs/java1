@@ -35,7 +35,7 @@ public class BigAlgebra {
         return fibo2;
     }
 
-//    public static void main(String[] args) {
-//        System.out.println(fastPow(new BigDecimal("3"), 9));
-//    }
+    public static void main(String[] args) {
+        System.out.println(fastPow(new BigDecimal("3"), 9));
+    }
 }
