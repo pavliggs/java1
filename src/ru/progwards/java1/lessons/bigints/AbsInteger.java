@@ -22,7 +22,5 @@ public class AbsInteger  {
         System.out.println(add(new ByteInteger((byte)3), new ByteInteger((byte)4)));
         System.out.println(add(new ShortInteger((short)-10255), new ShortInteger((short)-12698)));
         System.out.println(add(new IntInteger(0), new IntInteger(2147483647)));
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MIN_VALUE);
     }
 }
