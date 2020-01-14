@@ -44,12 +44,38 @@ public class ArrayInteger {
         return new BigInteger(str);
     }
 
+    boolean add(ArrayInteger num) {
+        String str1 = "";
+        String str2 = "";
+        for (int i = 0; i < count; i++) {
+            str1 += Integer.toString(digits[count - (i + 1)]);
+        }
+        for (int i = 0; i < num.count; i++) {
+            str2 += Integer.toString(num.digits[num.count - (i + 1)]);
+        }
+
+        int res = Integer.parseInt(str1) + Integer.parseInt(str2);
+        for (int i = 0; res > 0; i++) {
+            digits[i] = (byte)(res % 10);
+            res /= 10;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
-        ArrayInteger arr = new ArrayInteger(10);
-        BigInteger bigInteger = new BigInteger("12345689");
-        System.out.println(Arrays.toString(arr.digits));
-        arr.fromInt(bigInteger);
-        System.out.println(Arrays.toString(arr.digits));
-        System.out.println(arr.toInt());
+        ArrayInteger arr1 = new ArrayInteger(10);
+        ArrayInteger arr2 = new ArrayInteger(5);
+        BigInteger bigInteger1 = new BigInteger("12345689");
+        BigInteger bigInteger2 = new BigInteger("569");
+        System.out.println(Arrays.toString(arr1.digits));
+        System.out.println(Arrays.toString(arr2.digits));
+        arr1.fromInt(bigInteger1);
+        arr2.fromInt(bigInteger2);
+        System.out.println(Arrays.toString(arr1.digits));
+        System.out.println(Arrays.toString(arr2.digits));
+        System.out.println(arr1.toInt());
+        System.out.println(arr2.toInt());
+        arr1.add(arr2);
+        System.out.println(Arrays.toString(arr1.digits));
     }
 }
