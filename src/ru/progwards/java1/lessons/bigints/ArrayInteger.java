@@ -34,34 +34,22 @@ public class ArrayInteger {
 
     BigInteger toInt() {
         String str = "";
-        /*
-        * для преобразования элементов массива в число типа BigInteger будем использовать сложение строк
-        * каждое значение элемента массива будет преобразовываться в строку и складываться со следующим элементом массива
-        * */
+        //для преобразования элементов массива в число типа BigInteger будем использовать сложение строк
         for (int i = 0; i < count; i++) {
-            str = Integer.toString(digits[count - (i + 1)]) + str;
+            str = digits[count - (i + 1)] + str;
         }
         return new BigInteger(str);
     }
 
     boolean add(ArrayInteger num) {
-//        String str1 = "";
-//        String str2 = "";
-//        for (int i = 0; i < count; i++) {
-//            str1 += Integer.toString(digits[i]);
-//        }
-//        for (int i = 0; i < num.count; i++) {
-//            str2 += Integer.toString(num.digits[i]);
-//        }
-
         int res = toInt().intValue() + num.toInt().intValue();
-        for (int i = Integer.toString(res).length() - 1; res > 0; i--) {
-            digits[i] = (byte)(res % 10);
-            res /= 10;
-        }
         if (Integer.toString(res).length() > digits.length) {
             Arrays.fill(digits, (byte)0);
             return false;
+        }
+        for (int i = Integer.toString(res).length() - 1; res > 0; i--) {
+            digits[i] = (byte)(res % 10);
+            res /= 10;
         }
         return true;
     }
@@ -81,5 +69,6 @@ public class ArrayInteger {
         System.out.println(arr2.toInt());
         arr1.add(arr2);
         System.out.println(Arrays.toString(arr1.digits));
+        System.out.println(arr1.toInt());
     }
 }
