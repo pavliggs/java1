@@ -42,11 +42,15 @@ public class ArrayInteger {
     }
 
     boolean add(ArrayInteger num) {
+        //res - результат сложения двух чисел, лежащих в массивах
+        //числа получим при помощи метода toInt и приведения к типу int при помощи метода intValue
         int res = toInt().intValue() + num.toInt().intValue();
+        //если количество цифр в числе res больше, чем длина массива digits, то все значения массива будут равны 0
         if (Integer.toString(res).length() > digits.length) {
             Arrays.fill(digits, (byte)0);
             return false;
         }
+        //число res кладём в массив digits объекта, вызвавшего метод add
         for (int i = Integer.toString(res).length() - 1; res > 0; i--) {
             digits[i] = (byte)(res % 10);
             res /= 10;
