@@ -19,7 +19,7 @@ public class ArrayInteger {
         * пока результат выполнения метода value.compareTo(BigInteger.ZERO) будет равен 1, что и будет означать,
         * что value больше 0
         * */
-        for (int i = 0; value.compareTo(BigInteger.ZERO) == 1; i++) {
+        for (int i = value.toString().length() - 1; value.compareTo(BigInteger.ZERO) == 1; i--) {
             //операцией остаток от деления получаем последнюю цифру и присваиваем её нулевому элементу массива digits
             digits[i] = value.mod(BigInteger.TEN).byteValue();
             /*
@@ -39,22 +39,22 @@ public class ArrayInteger {
         * каждое значение элемента массива будет преобразовываться в строку и складываться со следующим элементом массива
         * */
         for (int i = 0; i < count; i++) {
-            str += Integer.toString(digits[count - (i + 1)]);
+            str = Integer.toString(digits[count - (i + 1)]) + str;
         }
         return new BigInteger(str);
     }
 
     boolean add(ArrayInteger num) {
-        String str1 = "";
-        String str2 = "";
-        for (int i = 0; i < count; i++) {
-            str1 += Integer.toString(digits[i]);
-        }
-        for (int i = 0; i < num.count; i++) {
-            str2 += Integer.toString(num.digits[i]);
-        }
+//        String str1 = "";
+//        String str2 = "";
+//        for (int i = 0; i < count; i++) {
+//            str1 += Integer.toString(digits[i]);
+//        }
+//        for (int i = 0; i < num.count; i++) {
+//            str2 += Integer.toString(num.digits[i]);
+//        }
 
-        int res = Integer.parseInt(str1) + Integer.parseInt(str2);
+        int res = toInt().intValue() + num.toInt().intValue();
         for (int i = Integer.toString(res).length() - 1; res > 0; i--) {
             digits[i] = (byte)(res % 10);
             res /= 10;
@@ -67,10 +67,10 @@ public class ArrayInteger {
     }
 
     public static void main(String[] args) {
-        ArrayInteger arr1 = new ArrayInteger(10);
+        ArrayInteger arr1 = new ArrayInteger(8);
         ArrayInteger arr2 = new ArrayInteger(5);
-        BigInteger bigInteger1 = new BigInteger("123");
-        BigInteger bigInteger2 = new BigInteger("123");
+        BigInteger bigInteger1 = new BigInteger("15623655");
+        BigInteger bigInteger2 = new BigInteger("70786");
         System.out.println(Arrays.toString(arr1.digits));
         System.out.println(Arrays.toString(arr2.digits));
         arr1.fromInt(bigInteger1);
