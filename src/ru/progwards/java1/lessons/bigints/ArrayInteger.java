@@ -48,16 +48,20 @@ public class ArrayInteger {
         String str1 = "";
         String str2 = "";
         for (int i = 0; i < count; i++) {
-            str1 += Integer.toString(digits[count - (i + 1)]);
+            str1 += Integer.toString(digits[i]);
         }
         for (int i = 0; i < num.count; i++) {
-            str2 += Integer.toString(num.digits[num.count - (i + 1)]);
+            str2 += Integer.toString(num.digits[i]);
         }
 
         int res = Integer.parseInt(str1) + Integer.parseInt(str2);
-        for (int i = 0; res > 0; i++) {
+        for (int i = Integer.toString(res).length() - 1; res > 0; i--) {
             digits[i] = (byte)(res % 10);
             res /= 10;
+        }
+        if (Integer.toString(res).length() > digits.length) {
+            Arrays.fill(digits, (byte)0);
+            return false;
         }
         return true;
     }
@@ -65,8 +69,8 @@ public class ArrayInteger {
     public static void main(String[] args) {
         ArrayInteger arr1 = new ArrayInteger(10);
         ArrayInteger arr2 = new ArrayInteger(5);
-        BigInteger bigInteger1 = new BigInteger("12345689");
-        BigInteger bigInteger2 = new BigInteger("569");
+        BigInteger bigInteger1 = new BigInteger("123");
+        BigInteger bigInteger2 = new BigInteger("123");
         System.out.println(Arrays.toString(arr1.digits));
         System.out.println(Arrays.toString(arr2.digits));
         arr1.fromInt(bigInteger1);
