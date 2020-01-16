@@ -7,19 +7,19 @@ public class BigAlgebra {
 
     static BigDecimal fastPow(BigDecimal num, int pow) {
         if (pow == 0)
-            return new BigDecimal("1");
+            return num;
         else {
-            int x = pow / 2;
-            //изначально присвоим переменной значение 1
-            BigDecimal res = new BigDecimal("1");
-            for (int i = 0; i < x; i++) {
-                //при каждой итерации переменную res умножаем на num в квадрате
-                res = res.multiply(num.multiply(num));
+            //воспользуемся алгоритмом «справа налево» из Википедии и реализуем его
+            BigDecimal res = BigDecimal.ONE;
+            //цикл будет работать пока pow > 0, а в конце цикла будем сдвигать pow вправо на 1
+            while (pow > 0) {
+                if ((pow & 1) == 1) {
+                    res = res.multiply(num);
+                }
+                num = num.multiply(num);
+                pow >>= 1;
             }
-            if (pow % 2 == 0)
-                return res;
-            else
-                return res.multiply(num);
+            return res;
         }
     }
 
@@ -36,6 +36,6 @@ public class BigAlgebra {
     }
 
     public static void main(String[] args) {
-        System.out.println(fastPow(new BigDecimal("3"), 9));
+        System.out.println(fastPow(new BigDecimal("21"), 13));
     }
 }

@@ -36,7 +36,7 @@ public class Binary {
     }
 
     public static void main(String[] args) {
-        Binary x = new Binary((byte)-127);
+        Binary x = new Binary((byte)-110);
         System.out.println(x);
     }
 }

@@ -13,7 +13,7 @@ public class ArrayInteger {
 
     void fromInt(BigInteger value) {
         /*
-        * чтобы положить value в массив необходимо получить все его элементы (цифры), которые затем будут являтся
+        * чтобы положить value в массив необходимо получить все его элементы (цифры), которые затем будут являться
         * значениями элементов в массиве
         * нужно создать цикл и итерации будут производиться пока value будет больше 0, то есть цикл будет выполняться
         * пока результат выполнения метода value.compareTo(BigInteger.ZERO) будет равен 1, что и будет означать,
@@ -42,37 +42,58 @@ public class ArrayInteger {
     }
 
     boolean add(ArrayInteger num) {
-        //res - результат сложения двух чисел, лежащих в массивах
-        //числа получим при помощи метода toInt и приведения к типу int при помощи метода intValue
-        int res = toInt().intValue() + num.toInt().intValue();
-        //если количество цифр в числе res больше, чем длина массива digits, то все значения массива будут равны 0
-        if (Integer.toString(res).length() > digits.length) {
+        /*
+        * чтобы сложить цифры массивов и записать из в массив вызвавший метод необходимо сначала определить
+        * меньший по количеству цифр BigInteger - по меньшему BigInteger будут считаться итерации цикла
+        * */
+
+        // вариант когда BigInteger1 > BigInteger2
+        if (count >= num.count) {
+            for (int i = 0; i < num.count; i++) {
+                byte res = (byte) (digits[count - (i + 1)] + num.digits[num.count - (i + 1)]);
+                if (res < 10)
+                    digits[count - (i + 1)] = res;
+                /*
+                * если сумма цифр превышает 9, то в элемент массива запишется вторая цифра результата ("13" - запишется "3"),
+                * а 1 перенесется на следующий элемент
+                * */
+                else {
+                    digits[count - (i + 1)] = (byte) (10 - ((10 - digits[count - (i + 1)]) + (10 - num.digits[num.count - (i + 1)])));
+                    digits[count - (i + 2)] += 1;
+                }
+            }
+        }
+        // вариант когда BigInteger1 < BigInteger2
+        else {
+            for (int i = 0; i < count; i++) {
+                byte res = (byte) (digits[count - (i + 1)] + num.digits[num.count - (i + 1)]);
+                if (res < 10)
+                    num.digits[num.count - (i + 1)] = res;
+                else {
+                    num.digits[num.count - (i + 1)] = (byte) (10 - ((10 - digits[count - (i + 1)]) + (10 - num.digits[num.count - (i + 1)])));
+                    num.digits[num.count - (i + 2)] += 1;
+                }
+            }
+            digits = Arrays.copyOf(num.digits, num.digits.length);
+        }
+        // если получившееся число больше, чем размер массива digits, то заполним массив 0
+        if (toInt().toString().length() > digits.length) {
             Arrays.fill(digits, (byte)0);
             return false;
-        }
-        //число res кладём в массив digits объекта, вызвавшего метод add
-        for (int i = Integer.toString(res).length() - 1; res > 0; i--) {
-            digits[i] = (byte)(res % 10);
-            res /= 10;
         }
         return true;
     }
 
     public static void main(String[] args) {
         ArrayInteger arr1 = new ArrayInteger(8);
-        ArrayInteger arr2 = new ArrayInteger(5);
-        BigInteger bigInteger1 = new BigInteger("15623655");
-        BigInteger bigInteger2 = new BigInteger("70786");
-        System.out.println(Arrays.toString(arr1.digits));
-        System.out.println(Arrays.toString(arr2.digits));
+        ArrayInteger arr2 = new ArrayInteger(8);
+        BigInteger bigInteger1 = new BigInteger("99999999");
+        BigInteger bigInteger2 = new BigInteger("1");
         arr1.fromInt(bigInteger1);
         arr2.fromInt(bigInteger2);
         System.out.println(Arrays.toString(arr1.digits));
         System.out.println(Arrays.toString(arr2.digits));
-        System.out.println(arr1.toInt());
-        System.out.println(arr2.toInt());
         arr1.add(arr2);
         System.out.println(Arrays.toString(arr1.digits));
-        System.out.println(arr1.toInt());
     }
 }
