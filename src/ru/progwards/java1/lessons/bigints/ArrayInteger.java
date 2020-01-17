@@ -50,7 +50,7 @@ public class ArrayInteger {
         // вариант когда BigInteger1 > BigInteger2
         if (count >= num.count) {
             for (int i = 0; i < num.count; i++) {
-                byte res = (byte) (digits[count - (i + 1)] + num.digits[num.count - (i + 1)]);
+                byte res = (byte)(digits[count - (i + 1)] + num.digits[num.count - (i + 1)]);
                 if (res < 10)
                     digits[count - (i + 1)] = res;
                 /*
@@ -58,37 +58,41 @@ public class ArrayInteger {
                 * а 1 перенесется на следующий элемент
                 * */
                 else {
-                    digits[count - (i + 1)] = (byte) (10 - ((10 - digits[count - (i + 1)]) + (10 - num.digits[num.count - (i + 1)])));
+                    digits[count - (i + 1)] = (byte)(res - 10);
                     digits[count - (i + 2)] += 1;
                 }
+            }
+            // если получившееся число больше, чем размер массива digits, то заполним массив 0
+            if (toInt().toString().length() > digits.length) {
+                Arrays.fill(digits, (byte)0);
+                return false;
             }
         }
         // вариант когда BigInteger1 < BigInteger2
         else {
             for (int i = 0; i < count; i++) {
-                byte res = (byte) (digits[count - (i + 1)] + num.digits[num.count - (i + 1)]);
+                byte res = (byte)(digits[count - (i + 1)] + num.digits[num.count - (i + 1)]);
                 if (res < 10)
                     num.digits[num.count - (i + 1)] = res;
                 else {
-                    num.digits[num.count - (i + 1)] = (byte) (10 - ((10 - digits[count - (i + 1)]) + (10 - num.digits[num.count - (i + 1)])));
+                    num.digits[num.count - (i + 1)] = (byte)(res - 10);
                     num.digits[num.count - (i + 2)] += 1;
                 }
             }
-            digits = Arrays.copyOf(num.digits, num.digits.length);
-        }
-        // если получившееся число больше, чем размер массива digits, то заполним массив 0
-        if (toInt().toString().length() > digits.length) {
-            Arrays.fill(digits, (byte)0);
-            return false;
+            if (num.toInt().toString().length() > digits.length) {
+                Arrays.fill(digits, (byte)0);
+                return false;
+            } else
+                digits = Arrays.copyOf(num.digits, num.digits.length);
         }
         return true;
     }
 
     public static void main(String[] args) {
-        ArrayInteger arr1 = new ArrayInteger(8);
-        ArrayInteger arr2 = new ArrayInteger(8);
-        BigInteger bigInteger1 = new BigInteger("99999999");
-        BigInteger bigInteger2 = new BigInteger("1");
+        ArrayInteger arr1 = new ArrayInteger(9);
+        ArrayInteger arr2 = new ArrayInteger(9);
+        BigInteger bigInteger1 = new BigInteger("1");
+        BigInteger bigInteger2 = new BigInteger("99999999");
         arr1.fromInt(bigInteger1);
         arr2.fromInt(bigInteger2);
         System.out.println(Arrays.toString(arr1.digits));
