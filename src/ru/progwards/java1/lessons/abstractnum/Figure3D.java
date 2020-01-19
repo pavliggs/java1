@@ -10,8 +10,4 @@ public class Figure3D {
     public Number volume() {
         return null;
     }
-
-    public Number newNumber(String strNum) {
-        return null;
-    }
 }
