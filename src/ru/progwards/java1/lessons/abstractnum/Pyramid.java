@@ -14,7 +14,7 @@ public class Pyramid extends Figure3D {
         * нужным способом
         * */
         if (segment.getClass() == IntNumber.class)
-            return segment.mul(segment.mul(segment).div(new IntNumber(3)));
+            return segment.mul(segment.mul(segment)).div(new IntNumber(3));
         else
             return segment.mul(segment.mul(segment)).div(new DoubleNumber(3));
     }

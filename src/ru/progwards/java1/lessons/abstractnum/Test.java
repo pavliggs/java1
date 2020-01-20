@@ -12,5 +12,6 @@ public class Test {
         System.out.println(fig4.volume());
         System.out.println(new DoubleNumber(3).newNumber("3.14"));
         System.out.println(new Pyramid(new DoubleNumber(80.09388573060035)).volume());
+        System.out.println(new Pyramid(new IntNumber(952)).volume());
     }
 }
