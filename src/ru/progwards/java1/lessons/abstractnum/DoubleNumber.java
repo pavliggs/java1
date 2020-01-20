@@ -19,7 +19,7 @@ public class DoubleNumber extends Number{
 
     @Override
     public Number newNumber(String strNum) {
-        return new DoubleNumber(Integer.parseInt(strNum));
+        return new DoubleNumber(Double.valueOf(strNum));
     }
 
     @Override

@@ -6,9 +6,11 @@ public class Test {
         Figure3D fig2 = new Pyramid(new IntNumber(3));
         Figure3D fig3 = new Pyramid(new DoubleNumber(3));
         Figure3D fig4 = new Cube(new DoubleNumber(3));
-        System.out.println(fig1.volume());
-        System.out.println(fig2.volume());
-        System.out.println(fig3.volume());
-        System.out.println(fig4.volume());
+//        System.out.println(fig1.volume());
+//        System.out.println(fig2.volume());
+//        System.out.println(fig3.volume());
+//        System.out.println(fig4.volume());
+        System.out.println(new DoubleNumber(3).newNumber("3.14"));
+        System.out.println(new Pyramid(new DoubleNumber(27.713451824778545)).volume());
     }
 }
