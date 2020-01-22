@@ -13,7 +13,7 @@ public class LineCount {
                 Scanner scanner = new Scanner(reader);
                 while (scanner.hasNextLine()) {
                     String strScanner = scanner.nextLine();
-                    //если сторока пустая, то увеличим i на 1
+                    //если строка пустая, то увеличим i на 1
                     if (strScanner.isEmpty())
                         i++;
                 }

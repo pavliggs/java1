@@ -11,7 +11,6 @@ public class Coder {
             try {
                 Scanner scanner = new Scanner(readFile);
                 char[] ch = scanner.nextLine().toCharArray();
-                char[] chOut = new char[ch.length];
                 for (int i = 0; i < ch.length; i++) {
                     char symbol = code[(int)ch[i]];
                     writeFile.write(symbol);
@@ -27,7 +26,11 @@ public class Coder {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        codeFile("file1.txt", "file3.txt", new char[65536], "logFileChar.txt");
+    public static void main(String[] args) {
+        try {
+            codeFile("file1.txt", "file3.txt", new char[65536], "logFileChar.txt");
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 }
