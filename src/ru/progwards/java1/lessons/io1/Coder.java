@@ -10,13 +10,16 @@ public class Coder {
             FileWriter writeFile = new FileWriter(outFileName);
             try {
                 Scanner scanner = new Scanner(readFile);
-                //приводим строку в файле inFileName к массиву из символов
-                char[] chArr = scanner.nextLine().toCharArray();
-                for (int i = 0; i < chArr.length; i++) {
-                    /*присваиваем переменной типа char значение элемента массива code с индексом равным целочисленному
-                    * представлению элемента массива chArr и записываем значение переменной в файл outFileName*/
-                    char symbol = code[(int)chArr[i]];
-                    writeFile.write(symbol);
+                while (scanner.hasNextLine()) {
+                    //приводим строку в файле inFileName к массиву из символов
+                    char[] chArr = scanner.nextLine().toCharArray();
+                    for (int i = 0; i < chArr.length; i++) {
+                        /*присваиваем переменной типа char значение элемента массива code с индексом равным целочисленному
+                         * представлению элемента массива chArr и записываем значение переменной в файл outFileName*/
+                        char symbol = code[(int)chArr[i]];
+                        writeFile.write(symbol);
+                    }
+                    writeFile.write('\n');
                 }
             } finally {
                 readFile.close();
