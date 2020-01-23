@@ -1,6 +1,7 @@
 package ru.progwards.java1.lessons.io1;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Coder {
@@ -10,6 +11,7 @@ public class Coder {
             FileWriter writeFile = new FileWriter(outFileName);
             try {
                 Scanner scanner = new Scanner(readFile);
+                //создадим цикл для того, чтобы можно было прочитать все строки в файле inFileName
                 while (scanner.hasNextLine()) {
                     //приводим строку в файле inFileName к массиву из символов
                     char[] chArr = scanner.nextLine().toCharArray();
@@ -19,7 +21,10 @@ public class Coder {
                         char symbol = code[(int)chArr[i]];
                         writeFile.write(symbol);
                     }
-                    writeFile.write('\n');
+                    /*чтобы в файл outFileName всё записывалось также построчно как и в файле inFileName в конце
+                    * каждой итерации цикла while будем переводить строку на следующую, кроме последней строки*/
+                    if (scanner.hasNextLine())
+                        writeFile.write('\n');
                 }
             } finally {
                 readFile.close();
@@ -37,6 +42,8 @@ public class Coder {
     }
 
     public static void main(String[] args) {
-        codeFile("file1.txt", "file3.txt", new char[65536], "logFileChar.txt");
+        char[] charArr = new char[65536];
+        Arrays.fill(charArr, 'H');
+        codeFile("file1.txt", "file3.txt", charArr, "logFileChar.txt");
     }
 }

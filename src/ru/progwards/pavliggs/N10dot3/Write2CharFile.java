@@ -16,6 +16,8 @@ public class Write2CharFile {
 //        fileWriter.write("\n");
 //        fileWriter.write("\n");
 //        fileWriter.write("\n");
+        fileWriter.write("Как мимолётное виденье\n");
+        fileWriter.write("Как гений чистой красоты!\n");
         fileWriter.close();
     }
 }
