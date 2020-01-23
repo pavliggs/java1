@@ -10,36 +10,26 @@ public class Coder {
             FileReader readFile = new FileReader(inFileName);
             FileWriter writeFile = new FileWriter(outFileName, true);
             try {
-//                Scanner scanner = new Scanner(readFile);
+                Scanner scanner = new Scanner(readFile);
                 //создадим цикл для того, чтобы можно было прочитать все строки в файле inFileName
-//                while (scanner.hasNextLine()) {
-//                    //приводим строку в файле inFileName к массиву из символов
-//                    char[] chArr = scanner.nextLine().toCharArray();
-//                    for (int i = 0; i < chArr.length; i++) {
-//                        /*присваиваем переменной типа char значение элемента массива code с индексом равным целочисленному
-//                         * представлению элемента массива chArr и записываем значение переменной в файл outFileName*/
-//                        char symbol = code[(int)chArr[i]];
-//                        writeFile.write(symbol);
-//                    }
-//                    /*чтобы в файл outFileName всё записывалось также построчно как и в файле inFileName в конце
-//                    * каждой итерации цикла while будем переводить строку на следующую, кроме последней строки*/
+                while (scanner.hasNextLine()) {
+                    //приводим строку в файле inFileName к массиву из символов
+                    char[] chArr = scanner.nextLine().toCharArray();
+                    for (int i = 0; i < chArr.length; i++) {
+                        /*присваиваем переменной типа char значение элемента массива code с индексом равным целочисленному
+                         * представлению элемента массива chArr и записываем значение переменной в файл outFileName*/
+                        char symbol = code[(int)chArr[i]];
+                        writeFile.write(symbol);
+                    }
+                    /*чтобы в файл outFileName всё записывалось также построчно как и в файле inFileName в конце
+                    * каждой итерации цикла while будем переводить строку на следующую, кроме последней строки*/
 //                    if (scanner.hasNextLine())
 //                        writeFile.write('\n');
-//                }
-//                int[] arr;
-//                while (readFile.ready()) {
-//                    for (int i = 0; i < arr.length; i++) {
-//                        arr[i] = readFile.read();
-//                        char symbol = code[arr[i]];
-//                        writeFile.write(symbol);
-//                    }
-//                }
-
-                while (readFile.ready()) {
-                    System.out.print(readFile.read());
-                    char symbol = code[readFile.read()];
-                    writeFile.write(symbol);
                 }
+
+//                while (scanner.hasNext()) {
+//                    System.out.print(scanner.next());
+//                }
 
             } finally {
                 readFile.close();
