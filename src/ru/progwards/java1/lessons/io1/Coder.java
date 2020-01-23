@@ -2,18 +2,20 @@ package ru.progwards.java1.lessons.io1;
 
 import java.io.*;
 import java.util.Scanner;
-import java.io.IOException;
 
 public class Coder {
-    public static void codeFile(String inFileName, String outFileName, char[] code, String logName) throws IOException {
+    public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
         try {
             FileReader readFile = new FileReader(inFileName);
             FileWriter writeFile = new FileWriter(outFileName);
             try {
                 Scanner scanner = new Scanner(readFile);
-                char[] ch = scanner.nextLine().toCharArray();
-                for (int i = 0; i < ch.length; i++) {
-                    char symbol = code[(int)ch[i]];
+                //приводим строку в файле inFileName к массиву из символов
+                char[] chArr = scanner.nextLine().toCharArray();
+                for (int i = 0; i < chArr.length; i++) {
+                    /*присваиваем переменной типа char значение элемента массива code с индексом равным целочисленному
+                    * представлению элемента массива chArr и записываем значение переменной в файл outFileName*/
+                    char symbol = code[(int)chArr[i]];
                     writeFile.write(symbol);
                 }
             } finally {
@@ -21,17 +23,17 @@ public class Coder {
                 writeFile.close();
             }
         } catch (IOException e) {
-            PrintStream out = new PrintStream(new FileOutputStream(logName));
-            System.setOut(out);
-            System.out.println(e.getMessage());
+            try {
+                PrintStream out = new PrintStream(new FileOutputStream(logName));
+                System.setOut(out);
+            } catch (IOException e1) {
+                System.out.println(e.getMessage());
+            }
+
         }
     }
 
-//    public static void main(String[] args) {
-//        try {
-//            codeFile("file1.txt", "file3.txt", new char[65536], "logFileChar.txt");
-//        } catch (IOException e) {
-//            System.out.println(e);
-//        }
-//    }
+    public static void main(String[] args) {
+        codeFile("file1.txt", "file3.txt", new char[65536], "logFileChar.txt");
+    }
 }

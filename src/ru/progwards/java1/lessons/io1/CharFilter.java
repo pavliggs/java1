@@ -24,7 +24,7 @@ public class CharFilter {
                        if (chArr[i] == chFilterArr[j])
                            break;
                        /*если итерация внутреннего цикла является последней, то присвоим эелементу типа char значение
-                       * элемента из массива входного файла и запишем этот элемент в выходной файл*/
+                       * элемента из массива chArr файла inFileName и запишем этот элемент в файл outFileName*/
                        if (j == chFilterArr.length - 1) {
                            char symbol = chArr[i];
                            writer.write(symbol);
@@ -41,6 +41,6 @@ public class CharFilter {
     }
 
     public static void main(String[] args) {
-        filterFile("file1312+.txt", "charFilter.txt", "ое");
+        filterFile("file1.txt", "charFilter.txt", "ое");
     }
 }
