@@ -2,6 +2,7 @@ package ru.progwards.java1.lessons.io1;
 
 import java.io.*;
 import java.util.Scanner;
+import java.io.IOException;
 
 public class Coder {
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) throws IOException {
