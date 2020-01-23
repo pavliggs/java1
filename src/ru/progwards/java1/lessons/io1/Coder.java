@@ -27,11 +27,11 @@ public class Coder {
         }
     }
 
-    public static void main(String[] args) {
-        try {
-            codeFile("file1.txt", "file3.txt", new char[65536], "logFileChar.txt");
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-    }
+//    public static void main(String[] args) {
+//        try {
+//            codeFile("file1.txt", "file3.txt", new char[65536], "logFileChar.txt");
+//        } catch (IOException e) {
+//            System.out.println(e);
+//        }
+//    }
 }
