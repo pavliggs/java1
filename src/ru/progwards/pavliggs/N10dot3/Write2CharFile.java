@@ -12,7 +12,7 @@ public class Write2CharFile {
 //        fileWriter.write("\n");
 //        fileWriter.write("\n");
 //        fileWriter.write("\n");
-        fileWriter.write("Передо мной явилась ТЫ\n");
+        fileWriter.write("Передо мной явилась ТЫS\n");
 //        fileWriter.write("\n");
 //        fileWriter.write("\n");
 //        fileWriter.write("\n");
