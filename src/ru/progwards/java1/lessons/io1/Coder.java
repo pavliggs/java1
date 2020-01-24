@@ -26,10 +26,9 @@ public class Coder {
 //                    if (scanner.hasNextLine())
 //                        writeFile.write('\n');
 //                }
-                while (readFile.ready()) {
+                while (readFile.read() != -1) {
                     writeFile.write(code[readFile.read()]);
                 }
-
             } finally {
                 readFile.close();
                 writeFile.close();
