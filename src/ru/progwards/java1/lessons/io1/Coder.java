@@ -2,7 +2,6 @@ package ru.progwards.java1.lessons.io1;
 
 import java.io.*;
 import java.util.Arrays;
-//import java.util.Scanner;
 
 public class Coder {
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
@@ -10,10 +9,14 @@ public class Coder {
             FileReader readFile = new FileReader(inFileName);
             FileWriter writeFile = new FileWriter(outFileName);
             try {
+                int count = 0;
                 //итерации будут производиться со смещением символа пока в файле есть символы
                 while (readFile.ready()) {
                     writeFile.write(code[readFile.read()]);
+                    //посчитаем количество итераций цикла
+                    count++;
                 }
+                System.out.println(count);
             } finally {
                 readFile.close();
                 writeFile.close();
