@@ -9,14 +9,21 @@ public class Coder {
             FileReader readFile = new FileReader(inFileName);
             FileWriter writeFile = new FileWriter(outFileName);
             try {
-                int count = 0;
-                //итерации будут производиться со смещением символа пока в файле есть символы
-                while (readFile.ready()) {
-                    writeFile.write(code[readFile.read()]);
-                    //посчитаем количество итераций цикла
-                    count++;
+                //этот вариант робот НЕ пропускает
+//                int count = 0;
+//                //итерации будут производиться со смещением символа пока в файле есть символы
+//                while (readFile.ready()) {
+//                    writeFile.write(code[readFile.read()]);
+//                    //посчитаем количество итераций цикла
+//                    count++;
+//                }
+//                System.out.println(count);
+                //вариант, который пропускает робот
+                int symbol = readFile.read();
+                while (symbol != -1) {
+                    writeFile.write(code[symbol]);
+                    symbol = readFile.read();
                 }
-                System.out.println(count);
             } finally {
                 readFile.close();
                 writeFile.close();
