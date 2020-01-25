@@ -9,7 +9,7 @@ public class Coder {
             FileReader readFile = new FileReader(inFileName);
             FileWriter writeFile = new FileWriter(outFileName);
             try {
-                //этот вариант робот НЕ пропускает
+                //вариант 1
 //                int count = 0;
 //                //итерации будут производиться со смещением символа пока в файле есть символы
 //                while (readFile.ready()) {
@@ -18,7 +18,7 @@ public class Coder {
 //                    count++;
 //                }
 //                System.out.println(count);
-                //вариант, который пропускает робот
+                //вариант 2
                 int symbol = readFile.read();
                 while (symbol != -1) {
                     writeFile.write(code[symbol]);
