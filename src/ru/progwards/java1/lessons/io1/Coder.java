@@ -28,12 +28,12 @@ public class Coder {
                 readFile.close();
                 writeFile.close();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             try {
                 PrintStream out = new PrintStream(new FileOutputStream(logName));
                 System.setOut(out);
                 System.out.println(e.getMessage());
-            } catch (IOException e1) {
+            } catch (Exception e1) {
                 System.out.println(e1);
             }
         }
@@ -42,6 +42,6 @@ public class Coder {
     public static void main(String[] args) {
         char[] charArr = new char[65536];
         Arrays.fill(charArr, 'H');
-        codeFile("file1.txt", "file3.txt", charArr, "logFileChar.txt");
+        codeFile("file1.tx", "file3.txt", charArr, "logFileChar.txt");
     }
 }
