@@ -1,11 +1,10 @@
 package ru.progwards.java1.lessons.io2;
 
-import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 public class Censor {
-    public static void censorFile(String inoutFileName, String[] obscene) throws Exception {
+    public static void censorFile(String inoutFileName, String[] obscene) {
         try(RandomAccessFile randomAccessFile = new RandomAccessFile(inoutFileName, "rw")) {
             String strFile = randomAccessFile.readLine();
             Scanner scanner = new Scanner(strFile);
@@ -22,7 +21,11 @@ public class Censor {
             }
             randomAccessFile.seek(0);
         } catch (Exception e) {
-            throw new CensorException(inoutFileName);
+            try {
+                throw new CensorException(inoutFileName);
+            } catch (CensorException e1) {
+                System.out.println(e1);
+            }
         }
     }
 
@@ -42,16 +45,23 @@ public class Censor {
         }
 
         @Override
+        public String getMessage() {
+            return super.getMessage();
+        }
+
+        @Override
         public String toString() {
             return fileName + ":" + getMessage();
         }
     }
 
     public static void main(String[] args) {
-        try {
-            censorFile("censor.txt", new String[]{"Java", "Oracle", "Sun", "Microsystems"});
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+//        try {
+//            censorFile("censor.txt", new String[]{"two", "count", "write", "storey", "day"});
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+
+        censorFile("censor.txt", new String[]{"two", "count", "write", "storey", "day"});
     }
 }
