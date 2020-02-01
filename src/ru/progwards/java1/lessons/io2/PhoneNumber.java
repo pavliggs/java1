@@ -22,7 +22,7 @@ public class PhoneNumber {
                 stringBuilder.insert(0, "+7");
                 //если цифр другое количество, то значит номер некорректный
             else {
-                throw new Exception("Некорректный номер");
+                throw new Exception();
             }
             //подводим наш объект под определенный формат для вывода, вставляя определённые символы в определенные позиции
             stringBuilder.insert(2, "(");
@@ -30,8 +30,7 @@ public class PhoneNumber {
             stringBuilder.insert(10, "-");
             return stringBuilder.toString();
         } catch (Exception e) {
-            System.out.println(e);
-            return "";
+            return "Некорректный номер";
         }
     }
 
