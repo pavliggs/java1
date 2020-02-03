@@ -15,10 +15,11 @@ public class Censor {
                 String word = scanner.next();
                 //в цикле перебираем и сравниваем word со значением элемента в массиве obscene
                 for (int i = 0; i < obscene.length; i++) {
-                    /*если слово содержит значение элемента, то ставим курсор на начало слова word, а затем
-                    * при помощи цикла заменяем символы в этом слове на символ '*'  */
+                    /*если слово содержит значение элемента, то находим в strFile значение элемента массива
+                    * и ставим курсор, а затем при помощи цикла заменяем символы на символ '*' (количество '*' равно
+                    * количеству символов в obscene[i]) */
                     if (word.contains(obscene[i])) {
-                        randomAccessFile.seek(strFile.indexOf(word));
+                        randomAccessFile.seek(strFile.indexOf(obscene[i]));
                         for (int j = 0; j < obscene[i].length(); j++) {
                             randomAccessFile.write(42);
                         }
@@ -47,7 +48,7 @@ public class Censor {
 
     public static void main(String[] args) {
         try {
-            censorFile("censor.txt", new String[]{"day", "storey", "write", "count", "two", "cards"});
+            censorFile("censor.txt", new String[]{"day", "storey", "write", "count", "two"});
         } catch (CensorException e) {
             System.out.println(e);
         }
