@@ -4,7 +4,7 @@ import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 public class Censor {
-    public static void censorFile(String inoutFileName, String[] obscene) {
+    public static void censorFile(String inoutFileName, String[] obscene) throws CensorException {
         try(RandomAccessFile randomAccessFile = new RandomAccessFile(inoutFileName, "rw")) {
             //прочитаем строку и запишем её в переменную
             String strFile = randomAccessFile.readLine();
@@ -26,11 +26,7 @@ public class Censor {
                 }
             }
         } catch (Exception e) {
-            try {
-                throw new CensorException(inoutFileName);
-            } catch (CensorException e1) {
-                System.out.println(e1);
-            }
+            throw new CensorException(inoutFileName, e.getMessage());
         }
     }
 
@@ -45,17 +41,24 @@ public class Censor {
 
     public static class CensorException extends Exception {
         String fileName;
-        public CensorException(String fileName) {
+        String message;
+
+        public CensorException(String fileName, String message) {
+            this.message = message;
             this.fileName = fileName;
         }
 
         @Override
         public String toString() {
-            return fileName + ":" + getMessage();
+            return fileName + ":" + message;
         }
     }
 
     public static void main(String[] args) {
-        censorFile("censor.txt", new String[]{"two", "count", "write", "storey", "day"});
+        try {
+            censorFile("censor.txt", new String[]{"Emily"});
+        } catch (CensorException e) {
+            System.out.println(e);
+        }
     }
 }
