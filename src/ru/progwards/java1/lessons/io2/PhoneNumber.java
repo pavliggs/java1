@@ -8,15 +8,18 @@ public class PhoneNumber {
             if (Character.isDigit(ch))
                 stringBuilder.append(ch);
         }
-        /*если цифр 11 и первая не равна 7, то заменяем её на 7 и спереди добавляем +
-         * а если первая уже является 7, то просто добавляем +*/
+        /* если цифр 11 и первая равна 7, то спереди добавляем +
+         * если первая равна 8, то заменяем её на 7 и спереди добавляем +
+         * если другая цифра, то бросаем RuntimeException */
         if (stringBuilder.length() == 11) {
-            if (stringBuilder.charAt(0) != '7') {
+            if (stringBuilder.charAt(0) == '7') {
+                stringBuilder.insert(0, "+");
+            } else if (stringBuilder.charAt(0) == '8') {
                 stringBuilder.setCharAt(0, '7');
                 stringBuilder.insert(0, "+");
             } else
-                stringBuilder.insert(0, "+");
-            //если цифр 10, то просто добавляем спереди +7
+                throw new RuntimeException();
+        //если цифр 10, то просто добавляем спереди +7
         } else if (stringBuilder.length() == 10)
             stringBuilder.insert(0, "+7");
         //если цифр другое количество, то значит номер некорректный (выбросим непроверяемое исключение)
@@ -31,6 +34,6 @@ public class PhoneNumber {
     }
 
     public static void main(String[] args) {
-        System.out.println(format("724639303590"));
+        System.out.println(format("5953939273"));
     }
 }
