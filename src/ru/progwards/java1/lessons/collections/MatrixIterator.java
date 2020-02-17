@@ -19,6 +19,8 @@ public class MatrixIterator<T> implements Iterator<T> {
     @Override
     public T next() {
         if (j < array[i].length) {
+            /* когда индекс j будет равен последнему элементу во внутреннем массиве, то обнуляем j,
+            * а i увеличиваем на 1*/
             if (j == array[i].length - 1) {
                 j = 0;
                 int x = i;

@@ -45,20 +45,28 @@ public class Finder {
     }
 
     public static String findSimilar(Collection<String> names) {
-        List<String> listRepeat = new ArrayList<>();
-        for (int i = 0; i < names.size(); i++) {
-            if (i + 1 < names.size()) {
-                if (((List<String>)names).get(i) == ((List<String>)names).get(i + 1)) {
-                    if (!listRepeat.contains(((List<String>)names).get(i))) {
-                        listRepeat.add(((List<String>)names).get(i));
-                        listRepeat.add(((List<String>)names).get(i+1));
-                    } else
-                        listRepeat.add(((List<String>)names).get(i));
+        int count = 1;
+        int maxCount = 1;
+        /* присвоим переменной ссылку на первый элемент коллекции, чтобы он выводился в случае,
+         если в коллекции всего 1 элемент */
+        String repeatedMax = ((List<String>)names).get(0);
+        for (int i = 1; i < names.size(); i++) {
+            // если элементы равны, то увеличиваем count на 1
+            if (((List<String>)names).get(i) == ((List<String>)names).get(i - 1)) {
+                count++;
+                /* если count больше maxCount, то присваиваем maxCount значение count
+                * и записываем в repeatedMax ссылку на текущий элемент*/
+                if (count > maxCount) {
+                    repeatedMax = ((List<String>)names).get(i);
+                    maxCount = count;
                 }
             }
+            // если повторяющиеся подряд элементы закончились, то присваиваем count начальное значение (1)
+            if (((List<String>)names).get(i) != ((List<String>)names).get(i - 1)) {
+                count = 1;
+            }
         }
-        System.out.println(listRepeat);
-        return " ";
+        return repeatedMax + ":" + maxCount;
     }
 
     public static void main(String[] args) {
@@ -93,12 +101,20 @@ public class Finder {
         list3.add("Кирилл");
         list3.add("Кирилл");
         list3.add("Кирилл");
-        list3.add("3");
-        list3.add("ds");
-        list3.add("5");
+        list3.add("Татьяна");
+        list3.add("Ольга");
+        list3.add("Ирина");
         list3.add("Мария");
         list3.add("Мария");
         list3.add("Мария");
+        list3.add("Борис");
+        list3.add("Феликс");
+        list3.add("Феликс");
+        list3.add("Феликс");
+        list3.add("Феликс");
+        list3.add("Феликс");
+        list3.add("Феликс");
+
         System.out.println(findSimilar(list3));
     }
 }
