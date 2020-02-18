@@ -29,9 +29,16 @@ public class ArrayIterator<T> implements Iterator<T> {
     public static void main(String[] args) {
         ArrayIterator<Integer> arr = new ArrayIterator<>(new Integer[]{1, 1, 1, 3, 5});
 
-        while (arr.hasNext()) {
-            Integer intObj = arr.next();
-            System.out.println(intObj);
-        }
+//        while (arr.hasNext()) {
+//            Integer intObj = arr.next();
+//            System.out.println(intObj);
+//        }
+
+        System.out.println(arr.next());
+        System.out.println(arr.next());
+        System.out.println(arr.next());
+        System.out.println(arr.next());
+        System.out.println(arr.next());
+        System.out.println(arr.next());
     }
 }

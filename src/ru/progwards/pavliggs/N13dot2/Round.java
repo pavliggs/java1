@@ -1,6 +1,6 @@
 package ru.progwards.pavliggs.N13dot2;
 
-public class Round {
+public class Round extends Figure {
     private double diameter;
 
     public Round(double diameter) {

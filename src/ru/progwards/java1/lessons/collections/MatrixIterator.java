@@ -18,26 +18,31 @@ public class MatrixIterator<T> implements Iterator<T> {
 
     @Override
     public T next() {
-        if (j < array[i].length) {
-            /* когда индекс j будет равен последнему элементу во внутреннем массиве, то обнуляем j,
-            * а i увеличиваем на 1*/
-            if (j == array[i].length - 1) {
-                j = 0;
-                int x = i;
-                return array[i++][j + array[x].length - 1];
-            } else
-                return array[i][j++];
-        } else
+        if (i == array.length)
             throw new NoSuchElementException("No such element.");
+        if (j == array[i].length - 1) {
+            // сохраняем текущее значение j
+            int saveValueJ = j;
+            // обнуляем
+            j = 0;
+            return array[i++][saveValueJ];
+        } else
+            return array[i][j++];
     }
 
     public static void main(String[] args) {
-        Integer[][] arr = {{1, 3, 9, 100}, {4, 5, 13}, {10, 7, 6}};
+        Integer[][] arr = {{1, 3, 9}, {4, 5, 13}, {10, 7, 6}};
+//        Integer[][] arr = {{1, 3, 9, 100}};
         MatrixIterator<Integer> matrixArr = new MatrixIterator<>(arr);
 
         while (matrixArr.hasNext()) {
             Integer intObj = matrixArr.next();
             System.out.print(intObj + " ");
         }
+//        System.out.println(matrixArr.next());
+//        System.out.println(matrixArr.next());
+//        System.out.println(matrixArr.next());
+//        System.out.println(matrixArr.next());
+//        System.out.println(matrixArr.next());
     }
 }
