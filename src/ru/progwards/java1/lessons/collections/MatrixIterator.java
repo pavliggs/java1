@@ -18,7 +18,7 @@ public class MatrixIterator<T> implements Iterator<T> {
 
     @Override
     public T next() {
-        /* после того как мы возвратим последнний элемент в последней строке i увеличится на 1, что не совсем корректно
+        /* после того как мы возвратим последний элемент в последней строке i увеличится на 1, что не совсем корректно
          * если не использовать метод hasNext(), то программа вызовет исключение */
         if (i == array.length)
             throw new NoSuchElementException("No such element.");
