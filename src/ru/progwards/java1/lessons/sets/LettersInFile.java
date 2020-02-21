@@ -9,25 +9,32 @@ public class LettersInFile {
         try(FileReader fileReader = new FileReader(fileName)) {
             Scanner scanner = new Scanner(fileReader);
             StringBuilder stringBuilder = new StringBuilder();
+            // проходимся по словам во всех строках файла fileName
             while (scanner.hasNextLine()) {
+                // присваиваем str слово в файле
                 String str = scanner.next();
+                // фильтруем слово через цикл так, чтобы остались только символы алфавита и запишем их в stringBuilder
                 for (char ch : str.toCharArray()) {
                     if (Character.isAlphabetic(ch))
-                        stringBuilder.append(ch + " ");
+                        stringBuilder.append(ch);
                 }
             }
-            String[] letter = stringBuilder.toString().trim().split(" ");
-            List<String> listLetter = Arrays.asList(letter);
-            Set<String> stringSet = new TreeSet<>(listLetter);
-            Iterator<String> iterator = stringSet.iterator();
-            StringBuilder stringBuilder1 = new StringBuilder();
+            // создадим пустое множество
+            TreeSet<Character> charSet = new TreeSet<>();
+            /* заполним множество символами, содержащимися в stringBuilder
+            * все символы во множестве будут уникальны и отсортируются в соответствие с компаратором,
+            * который реализует класс Character */
+            for (Character ch : stringBuilder.toString().toCharArray())
+                charSet.add(ch);
+            Iterator<Character> iterator = charSet.iterator();
+            StringBuilder result = new StringBuilder();
+            // при помощи итератора пройдёмся по элементам множества и каждый элемент добавим в result
             while (iterator.hasNext()) {
-                String str = iterator.next();
-                stringBuilder1.append(str);
+                Character ch = iterator.next();
+                result.append(ch);
             }
-            return stringBuilder1.toString();
+            return result.toString();
         } catch (IOException e) {
-            System.out.println(e.getMessage());
             throw e;
         }
     }
@@ -36,7 +43,7 @@ public class LettersInFile {
         try {
             System.out.println(process("letter.txt"));
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 }
