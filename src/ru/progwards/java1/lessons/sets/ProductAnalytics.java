@@ -146,11 +146,11 @@ public class ProductAnalytics {
         allProducts.add(product13);
         allProducts.add(product8);
 
-//        System.out.println(new ProductAnalytics(allProducts, shops).products);
+        System.out.println(new ProductAnalytics(allProducts, shops).products);
 //
-//        System.out.println(new ProductAnalytics(allProducts, shops).existInAll());
-//        System.out.println(new ProductAnalytics(allProducts, shops).existAtListInOne());
-//        System.out.println(new ProductAnalytics(allProducts, shops).notExistInShops());
+        System.out.println(new ProductAnalytics(allProducts, shops).existInAll());
+        System.out.println(new ProductAnalytics(allProducts, shops).existAtListInOne());
+        System.out.println(new ProductAnalytics(allProducts, shops).notExistInShops());
         System.out.println(new ProductAnalytics(allProducts, shops).existOnlyInOne());
     }
 }
