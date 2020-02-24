@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class OrderQueue {
+    // компаратор для сортировки объектов типа Order в очереди PriorityQueue по номеру заказа
     static Comparator<Order> comparator = new Comparator<>() {
         @Override
         public int compare(Order o1, Order o2) {
@@ -11,10 +12,12 @@ public class OrderQueue {
         }
     };
 
+    // очереди для заказов различных по сумме заказа
     static PriorityQueue<Order> class1 = new PriorityQueue<>(comparator);
     static PriorityQueue<Order> class2 = new PriorityQueue<>(comparator);
     static PriorityQueue<Order> class3 = new PriorityQueue<>(comparator);
 
+    // в зависимости от суммы заказа добавляем объект в ту или иную очередь
     public void add(Order order) {
         if (order.getSum() > 20_000)
             class1.add(order);
@@ -24,6 +27,8 @@ public class OrderQueue {
             class3.add(order);
     }
 
+    /* получаем заказы в зависимости от их приоритета: самые дорогие заказы с наименьшим номером заказа
+     * обрабатываются в первую очередь */
     public Order get() {
         if (!class1.isEmpty())
             return class1.poll();
