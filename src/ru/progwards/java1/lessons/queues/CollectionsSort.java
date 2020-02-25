@@ -55,7 +55,16 @@ public class CollectionsSort {
         }
     }
 
-    public static Collection<Method> compareSort() {
+    // метод по добавлению в список имён метод в нужном порядке
+    public static Collection<String> getListNamesMethods(Collection<Method> data) {
+        List<String> listNameMethod = new ArrayList<>();
+        for (int i = 0; i < data.size(); i++) {
+            listNameMethod.add(((ArrayList<Method>)data).get(i).name);
+        }
+        return listNameMethod;
+    }
+
+    public static Collection<String> compareSort() {
         /* создаём список и заполняем его произвольными значениями */
         final int ELEM_COUNT = 10_000;
         Random random = new Random();
@@ -82,25 +91,25 @@ public class CollectionsSort {
         Method method3 = new Method("collSort", finish3);
 
         // помещаем эти объекты в список
-        List<Method> listName = new ArrayList<>(List.of(method1, method2, method3));
+        List<Method> listMethod = new ArrayList<>(List.of(method1, method2, method3));
         // сортируем список согласно компаратору, то есть по имени метода (по алфавиту)
-        Collections.sort(listName);
+        Collections.sort(listMethod);
 
         /* при помощи цикла меняем местами свойства объектов (сортировка по времени работы метода, а если время
          * равно, то по алфавиту) */
-        for (int i = 0; i < listName.size(); i++) {
-            for (int j = i+1; j < listName.size(); j++) {
-                if (listName.get(i).speed > listName.get(j).speed) {
-                    long speed = listName.get(i).speed;
-                    String name = listName.get(i).name;
-                    listName.get(i).speed = listName.get(j).speed;
-                    listName.get(i).name = listName.get(j).name;
-                    listName.get(j).speed = speed;
-                    listName.get(j).name = name;
+        for (int i = 0; i < listMethod.size(); i++) {
+            for (int j = i+1; j < listMethod.size(); j++) {
+                if (listMethod.get(i).speed > listMethod.get(j).speed) {
+                    long speed = listMethod.get(i).speed;
+                    String name = listMethod.get(i).name;
+                    listMethod.get(i).speed = listMethod.get(j).speed;
+                    listMethod.get(i).name = listMethod.get(j).name;
+                    listMethod.get(j).speed = speed;
+                    listMethod.get(j).name = name;
                 }
             }
         }
-        return listName;
+        return getListNamesMethods(listMethod);
     }
 
     public static void main(String[] args) {
