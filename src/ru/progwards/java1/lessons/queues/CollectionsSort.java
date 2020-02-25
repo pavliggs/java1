@@ -32,27 +32,37 @@ public class CollectionsSort {
         Collections.sort((List)data);
     }
 
-    public static Collection<String> compareSort() {
-        final int ELEM_COUNT = 100;
-        Random random = new Random();
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < ELEM_COUNT; i++) {
-            list.add(random.nextInt());
+    static class Method implements Comparable<Method> {
+        String name;
+        long speed;
+        public Method(String name, long speed) {
+            this.name = name;
+            this.speed = speed;
         }
 
-//        class Method implements Comparable<Method>{
-//            String name;
-//            long speed;
-//            public Method(String name, long speed) {
-//                this.name = name;
-//                this.speed = speed;
-//            }
-//
-//            @Override
-//            public int compareTo(Method o) {
-//                return Long.compare(speed, o.speed);
-//            }
-//        }
+        // сравнение сделал по наименованию метода
+        @Override
+        public int compareTo(Method o) {
+            return name.compareTo(o.name);
+        }
+
+        @Override
+        public String toString() {
+            return "Method{" +
+                    "name='" + name + '\'' +
+                    ", speed=" + speed +
+                    '}';
+        }
+    }
+
+    public static Collection<Method> compareSort() {
+        /* создаём список и заполняем его произвольными значениями */
+        final int ELEM_COUNT = 10_000;
+        Random random = new Random();
+        List<Integer> list = new ArrayList<>();
+        for (int i = ELEM_COUNT; i >= 0; i--) {
+            list.add(random.nextInt());
+        }
 
         long start = System.currentTimeMillis();
         mySort(list);
@@ -66,30 +76,31 @@ public class CollectionsSort {
         collSort(list);
         long finish3 = System.currentTimeMillis() - start;
 
-//        Method method1 = new Method("mySort", finish1);
-//        Method method2 = new Method("minSort", finish2);
-//        Method method3 = new Method("collSort", finish3);
+        // создаём объекты с наименованием и временем работы метода
+        Method method1 = new Method("mySort", finish1);
+        Method method2 = new Method("minSort", finish2);
+        Method method3 = new Method("collSort", finish3);
 
-        List<String> listResult = new ArrayList<>(List.of("mySort", "minSort", "collSort"));
+        // помещаем эти объекты в список
+        List<Method> listName = new ArrayList<>(List.of(method1, method2, method3));
+        // сортируем список согласно компаратору, то есть по имени метода (по алфавиту)
+        Collections.sort(listName);
 
-        Collections.sort(listResult);
-
-//        Comparator<Method> comparator = new Comparator<Method>() {
-//            @Override
-//            public int compare(Method o1, Method o2) {
-//                return Long.compare(o1.speed, o2.speed);
-//            }
-//        };
-//        for (int i = 0; i < listResult.size(); i++) {
-//            for (int j = i + 1; j < listResult.size(); j++) {
-//                if (list.get(i) > arrInt[j]) {
-//                    int temp = arrInt[i];
-//                    arrInt[i] = arrInt[j];
-//                    arrInt[j] = temp;
-//                }
-//            }
-
-        return listResult;
+        /* при помощи цикла меняем местами свойства объектов (сортировка по времени работы метода, а если время
+         * равно, то по алфавиту) */
+        for (int i = 0; i < listName.size(); i++) {
+            for (int j = i+1; j < listName.size(); j++) {
+                if (listName.get(i).speed > listName.get(j).speed) {
+                    long speed = listName.get(i).speed;
+                    String name = listName.get(i).name;
+                    listName.get(i).speed = listName.get(j).speed;
+                    listName.get(i).name = listName.get(j).name;
+                    listName.get(j).speed = speed;
+                    listName.get(j).name = name;
+                }
+            }
+        }
+        return listName;
     }
 
     public static void main(String[] args) {
@@ -97,12 +108,14 @@ public class CollectionsSort {
         Collections.addAll(arrayDeque, -5, 15, 0, -20, 100, 70);
 
         System.out.println(arrayDeque);
-//        mySort(arrayDeque);
-//        minSort(arrayDeque);
+        mySort(arrayDeque);
+        minSort(arrayDeque);
         System.out.println(arrayDeque);
 
         List<Integer> list = new ArrayList<>();
-        Collections.addAll(list, 100, 1, -7, 17, 9, 43);
+        for (int i = 10; i > 0 ; i--) {
+            list.add(i);
+        }
         System.out.println(list);
         collSort(list);
         System.out.println(list);
