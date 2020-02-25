@@ -4,19 +4,21 @@ import java.util.*;
 
 public class CollectionsSort {
     public static void mySort(Collection<Integer> data) {
+        // преобразуем коллекцию в массив
         Integer[] arrInt = data.toArray(new Integer[data.size()]);
         for (int i = 0; i < arrInt.length; i++) {
             for (int j = i + 1; j < arrInt.length; j++) {
                 if (arrInt[i] > arrInt[j]) {
-                    //при помощи дополнительной переменной поменяем местами элементы массива
                     int temp = arrInt[i];
                     arrInt[i] = arrInt[j];
                     arrInt[j] = temp;
                 }
             }
         }
+        // чистим коллекцию
         data.clear();
-        data.addAll(List.of(arrInt));
+        // добавляем в коллекцию отсортированный массив
+        Collections.addAll(data, arrInt);
     }
 
     public static void minSort(Collection<Integer> data) {
@@ -40,9 +42,12 @@ public class CollectionsSort {
             this.speed = speed;
         }
 
-        // сравнение сделал по наименованию метода
+        // переопределим метод, согласно которому будут сортироваться объекты в коллекции
         @Override
         public int compareTo(Method o) {
+            int compareResult = Long.compare(speed, o.speed);
+            if (compareResult != 0)
+                return compareResult;
             return name.compareTo(o.name);
         }
 
@@ -55,6 +60,17 @@ public class CollectionsSort {
         }
     }
 
+    public static Collection<Integer> createList() {
+        /* создаём список и заполняем его произвольными значениями */
+        final int ELEM_COUNT = 10_000;
+        Random random = new Random();
+        List<Integer> list = new ArrayList<>();
+        for (int i = ELEM_COUNT; i >= 0; i--) {
+            list.add(random.nextInt());
+        }
+        return list;
+    }
+
     // метод по добавлению в список имён метод в нужном порядке
     public static Collection<String> getListNamesMethods(Collection<Method> data) {
         List<String> listNameMethod = new ArrayList<>();
@@ -65,24 +81,16 @@ public class CollectionsSort {
     }
 
     public static Collection<String> compareSort() {
-        /* создаём список и заполняем его произвольными значениями */
-        final int ELEM_COUNT = 10_000;
-        Random random = new Random();
-        List<Integer> list = new ArrayList<>();
-        for (int i = ELEM_COUNT; i >= 0; i--) {
-            list.add(random.nextInt());
-        }
-
         long start = System.currentTimeMillis();
-        mySort(list);
+        mySort(createList());
         long finish1 = System.currentTimeMillis() - start;
 
         start = System.currentTimeMillis();
-        minSort(list);
+        minSort(createList());
         long finish2 = System.currentTimeMillis() - start;
 
         start = System.currentTimeMillis();
-        collSort(list);
+        collSort(createList());
         long finish3 = System.currentTimeMillis() - start;
 
         // создаём объекты с наименованием и временем работы метода
@@ -94,21 +102,6 @@ public class CollectionsSort {
         List<Method> listMethod = new ArrayList<>(List.of(method1, method2, method3));
         // сортируем список согласно компаратору, то есть по имени метода (по алфавиту)
         Collections.sort(listMethod);
-
-        /* при помощи цикла меняем местами свойства объектов (сортировка по времени работы метода, а если время
-         * равно, то по алфавиту) */
-        for (int i = 0; i < listMethod.size(); i++) {
-            for (int j = i+1; j < listMethod.size(); j++) {
-                if (listMethod.get(i).speed > listMethod.get(j).speed) {
-                    long speed = listMethod.get(i).speed;
-                    String name = listMethod.get(i).name;
-                    listMethod.get(i).speed = listMethod.get(j).speed;
-                    listMethod.get(i).name = listMethod.get(j).name;
-                    listMethod.get(j).speed = speed;
-                    listMethod.get(j).name = name;
-                }
-            }
-        }
         return getListNamesMethods(listMethod);
     }
 
