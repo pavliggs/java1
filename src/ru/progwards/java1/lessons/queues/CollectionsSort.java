@@ -71,7 +71,7 @@ public class CollectionsSort {
         return list;
     }
 
-    // метод по добавлению в список имён метод в нужном порядке
+    // метод по добавлению в список имён методов в нужном порядке
     public static Collection<String> getListNamesMethods(Collection<Method> data) {
         List<String> listNameMethod = new ArrayList<>();
         for (int i = 0; i < data.size(); i++) {
