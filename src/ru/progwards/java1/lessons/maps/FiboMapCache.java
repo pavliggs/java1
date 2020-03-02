@@ -25,11 +25,15 @@ public class FiboMapCache {
     }
 
     public BigDecimal fiboNumber(int n) {
-        if (cacheOn) {
-            if (fiboCache.containsKey(n))
+        try {
+            if (cacheOn) {
+                if (fiboCache.containsKey(n))
+                    return fiboCache.get(n);
+                fiboCache.put(n, resultFibo(n));
                 return fiboCache.get(n);
-            fiboCache.put(n, resultFibo(n));
-            return fiboCache.get(n);
+            }
+        } catch (Throwable t) {
+            System.out.println(t);
         }
         return resultFibo(n);
     }
