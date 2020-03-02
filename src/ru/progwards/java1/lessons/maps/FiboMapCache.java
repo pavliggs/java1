@@ -29,7 +29,7 @@ public class FiboMapCache {
             if (fiboCache.containsKey(n))
                 return fiboCache.get(n);
             fiboCache.put(n, resultFibo(n));
-//            return fiboCache.get(n);
+            return fiboCache.get(n);
         }
         return resultFibo(n);
     }
