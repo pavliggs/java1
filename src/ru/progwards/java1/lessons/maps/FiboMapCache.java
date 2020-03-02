@@ -42,16 +42,9 @@ public class FiboMapCache {
         fiboCache = null;
     }
 
-    public void fillCache() {
-        for (int n = 1; n <= 10000; n++) {
-            fiboNumber(n);
-        }
-    }
-
     public static void test() {
         FiboMapCache fiboMapCache1 = new FiboMapCache(true);
         FiboMapCache fiboMapCache2 = new FiboMapCache(false);
-//        fiboMapCache1.fillCache();
 
         long start = System.currentTimeMillis();
         for (int n = 1; n <= 1000; n++) {

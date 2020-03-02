@@ -76,7 +76,7 @@ public class UsageFrequency {
         Map<String, Integer> map = new LinkedHashMap<>();
         /* проходимся по arrayWords и добавляем в словарь элементы, в которых указывается слово и количество его
          * повторений в массиве arrayWords */
-        for (int i = 0; i < arrayWords.length; i++) {
+        for (int i = 1; i < arrayWords.length; i++) {
             map.putIfAbsent(arrayWords[i], numberOfRepetitionsWord(arrayWords, arrayWords[i]));
         }
         return map;
@@ -84,7 +84,7 @@ public class UsageFrequency {
 
     public static void main(String[] args) {
         UsageFrequency obj = new UsageFrequency();
-        obj.processFile("wiki.train.tokens");
+        obj.processFile("wiki.test.tokens");
         System.out.println(obj.getLetters());
         System.out.println(obj.getWords());
     }
