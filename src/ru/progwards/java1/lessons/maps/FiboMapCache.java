@@ -13,6 +13,7 @@ public class FiboMapCache {
         fiboCache = new HashMap<>();
     }
 
+    // метод возвращает n-ое число Фибоначчи типа данных BigDecimal
     public BigDecimal resultFibo(int n) {
         BigDecimal fibo1 = new BigDecimal(1);
         BigDecimal fibo2 = new BigDecimal(1);
@@ -27,8 +28,10 @@ public class FiboMapCache {
     public BigDecimal fiboNumber(int n) {
         try {
             if (cacheOn) {
+                // если занчение с таким ключом уже имеется, то получим его
                 if (fiboCache.containsKey(n))
                     return fiboCache.get(n);
+                // если значения с таким ключом нет, то добавим в fiboCache рассчитанное число Фибоначчи
                 fiboCache.put(n, resultFibo(n));
                 return fiboCache.get(n);
             }
