@@ -1,12 +1,13 @@
 package ru.progwards.java1.lessons.maps;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class SalesInfo {
     Map<Integer, BuyInfo> mapObj = new TreeMap<>();
 
-    public static class BuyInfo {
+    private static class BuyInfo {
         private String name;
         private String product;
         private int quantity;
@@ -54,18 +55,18 @@ public class SalesInfo {
                 String line = scanner.nextLine();
                 String[] lineArr = getArray(line);
                 if (lineArr.length == 4 &&
-                        getInt(lineArr[2]).getClass() == Integer.class &&
-                        getDouble(lineArr[3]).getClass() == Double.class) {
+                        isNumber(lineArr[2]) &&
+                        isNumber(lineArr[3])) {
                     count++;
                     // добавляем в mapObj элементы с ключом count и значением - объектом BuyInfo
                     mapObj.put(count, new BuyInfo(lineArr[0], lineArr[1], getInt(lineArr[2]), getDouble(lineArr[3])));
                 }
             }
             return count;
-        } catch (Throwable t) {
-            System.out.println(t);
+        } catch (IOException e) {
+            System.out.println(e);
+            return 0;
         }
-        return 0;
     }
 
     public Map<String, Double> getGoods() {
@@ -94,7 +95,6 @@ public class SalesInfo {
         for (Map.Entry<Integer, BuyInfo> entry : mapObj.entrySet()) {
             String name = entry.getValue().getName();
             double sumBuy = entry.getValue().getSumBuy();
-            int count = 1;
             /* если элемент с таким ключом уже имеется, то к переменной sumBuy добавляем значение уже найденного
              * элемента и перезаписываем элемент в treeMap, где значением будет новый объект с новыми параметрами */
             if (treeMap.containsKey(name)) {
@@ -103,7 +103,7 @@ public class SalesInfo {
                 treeMap.put(name, new AbstractMap.SimpleEntry<>(sumBuy, quantity));
             } else
                 // если элемента с таким ключом нет, то записываем его в treeMap
-                treeMap.put(name, new AbstractMap.SimpleEntry<>(sumBuy, count));
+                treeMap.put(name, new AbstractMap.SimpleEntry<>(sumBuy, 1));
         }
         return treeMap;
     }
@@ -115,13 +115,28 @@ public class SalesInfo {
         return strArr;
     }
 
+    // метод приводит тип данных String к Integer
     private Integer getInt(String str) {
         return Integer.valueOf(str);
     }
 
+    // метод приводит тип данных String к Double
     private Double getDouble(String str) {
         return Double.valueOf(str);
     }
+
+    // метод возвращает true, если переданная строка является числом типа int или double
+    private boolean isNumber(String str) {
+        StringBuilder newStr = new StringBuilder();
+        /* проходимся по символам строки и если символ не является символом алфавита, то добавляем его в newStr
+         * (подходит для числа типа int и double (если вдруг число содержит точку)) */
+        for (char symbol : str.toCharArray()) {
+            if (!Character.isAlphabetic(symbol))
+                newStr.append(symbol);
+        }
+        return str.length() == newStr.length();
+    }
+
 
     public static void main(String[] args) {
         SalesInfo object = new SalesInfo();
