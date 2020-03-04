@@ -95,15 +95,16 @@ public class SalesInfo {
         for (Map.Entry<Integer, BuyInfo> entry : mapObj.entrySet()) {
             String name = entry.getValue().getName();
             double sumBuy = entry.getValue().getSumBuy();
-            /* если элемент с таким ключом уже имеется, то к переменной sumBuy добавляем значение уже найденного
+            int quantity = entry.getValue().getQuantity();
+            /* если элемент с таким ключом уже имеется, то к переменным sumBuy и quantity добавляем значения уже найденного
              * элемента и перезаписываем элемент в treeMap, где значением будет новый объект с новыми параметрами */
             if (treeMap.containsKey(name)) {
                 sumBuy += treeMap.get(name).getKey();
-                int quantity = treeMap.get(name).getValue() + 1;
+                quantity += treeMap.get(name).getValue();
                 treeMap.put(name, new AbstractMap.SimpleEntry<>(sumBuy, quantity));
             } else
                 // если элемента с таким ключом нет, то записываем его в treeMap
-                treeMap.put(name, new AbstractMap.SimpleEntry<>(sumBuy, 1));
+                treeMap.put(name, new AbstractMap.SimpleEntry<>(sumBuy, quantity));
         }
         return treeMap;
     }
