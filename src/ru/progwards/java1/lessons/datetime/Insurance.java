@@ -20,7 +20,7 @@ public class Insurance {
     public Insurance(String strStart, FormatStyle style) {
         if (style == FormatStyle.SHORT) {
             LocalDate ld = LocalDate.parse(strStart, DateTimeFormatter.ISO_LOCAL_DATE);
-            start = ZonedDateTime.of(ld, LocalTime.now(), ZoneId.systemDefault());
+            start = ZonedDateTime.of(ld, LocalTime.of(0, 0), ZoneId.systemDefault());
         }
         if (style == FormatStyle.LONG) {
             LocalDateTime ldt = LocalDateTime.parse(strStart, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
@@ -86,7 +86,7 @@ public class Insurance {
 
     public static void main(String[] args) {
         ZonedDateTime zdtStart = ZonedDateTime.of(2019, 6, 2, 10, 0, 0, 0, ZoneId.systemDefault());
-        Insurance ins = new Insurance("2007-12-03T10:15:30+01:00[Europe/Paris]", FormatStyle.FULL);
+        Insurance ins = new Insurance("2007-12-03", FormatStyle.SHORT);
         ZonedDateTime zdtFinish = ZonedDateTime.of(2020, 3, 9, 10, 0, 0, 0, ZoneId.systemDefault());
         ins.setDuration(zdtFinish);
         System.out.println(ins.duration);
