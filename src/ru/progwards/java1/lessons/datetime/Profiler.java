@@ -9,9 +9,9 @@ public class Profiler {
     private static LinkedHashMap<String, StatisticInfo> sectionMap = new LinkedHashMap<>();
 
     public static void enterSection(String name) {
-        // добаялем в sectionMap объект StatisticInfo (секцию) с именем name
+        // добавляем в sectionMap объект StatisticInfo (секцию) с именем name
         sectionMap.putIfAbsent(name, new StatisticInfo(name));
-        // добаялем в sectionStartTimeDeque время входа этой секции в миллисекундах
+        // добавляем в sectionStartTimeDeque время входа этой секции в миллисекундах
         sectionStartTimeDeque.push(Instant.now().toEpochMilli());
         // добавляем имя name этой секции в sectionNameDeque
         sectionNameDeque.push(name);
