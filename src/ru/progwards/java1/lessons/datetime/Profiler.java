@@ -27,7 +27,7 @@ public class Profiler {
         sectionMap.get(name).selfTime += period;
         // удаляем имя этой секции из стека
         sectionNameDeque.pop();
-        // еслли стек с именами секций не пустой, то это занчит, что секция является вложенной в другую
+        // если стек с именами секций не пустой, то это значит, что секция является вложенной в другую
         if (!sectionNameDeque.isEmpty()) {
             // присваиваем externalSectionName имя секции, в которую вложена данная секция (секция из которой мы выходим)
             String externalSectionName = sectionNameDeque.peek();
