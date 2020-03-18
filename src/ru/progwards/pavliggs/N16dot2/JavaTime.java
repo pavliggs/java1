@@ -37,3 +37,7 @@ public class JavaTime {
         System.out.println(duration.toHours());
     }
 }
+
+//"yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSS'Z'"
+//"dd.MM.yyyy HH:mm:ss.S"
+//"'От''езд' - EEEE dd MMMM 'в' ha"

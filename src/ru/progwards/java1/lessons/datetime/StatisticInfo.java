@@ -1,28 +1,13 @@
 package ru.progwards.java1.lessons.datetime;
 
 public class StatisticInfo {
-    private String sectionName;
-    private long fullTime;
-    public long selfTime;
-    private int count;
+    public String sectionName;
+    public int fullTime;
+    public int selfTime;
+    int count;
 
-    StatisticInfo(String sectionName, long fullTime, long selfTime, int count) {
+    StatisticInfo(String sectionName) {
         this.sectionName = sectionName;
-        this.fullTime = fullTime;
-        this.selfTime = selfTime;
-        this.count = count;
-    }
-
-    long getFullTime() {
-        return fullTime;
-    }
-
-    long getSelfTime() {
-        return selfTime;
-    }
-
-    int getCount() {
-        return count;
     }
 
     @Override
