@@ -18,4 +18,16 @@ public class Test1 {
         }
 
     }
+
+
+    /*
+    * src/file.txt
+    * src/data/file.txt
+    * src/content/settings.bin
+    * src/help.txt
+    * src/settings.bin
+    *
+    *{"src/data/file.txt", "src/file.txt"}
+    *
+    * */
 }
