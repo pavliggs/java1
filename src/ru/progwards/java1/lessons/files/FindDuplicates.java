@@ -49,40 +49,47 @@ public class FindDuplicates {
         }
     }
 
-    public List<List<String>> findDuplicates(String startPath) throws IOException {
+    public List<List<String>> findDuplicates(String startPath) {
         List<List<String>> list = new ArrayList<>();
-        ArrayList<String> listPaths = new ArrayList<>();
-        Map<FileInfo, Path> mapFiles = new LinkedHashMap<>();
+        Map<FileInfo, List<String>> mapFiles = new HashMap<>();
+
         PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher("glob:**");
 
-        Files.walkFileTree(Paths.get(startPath), new SimpleFileVisitor<>() {
-            @Override
-            public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) {
-                try {
-                    if (!attrs.isDirectory()) {
-                        FileInfo fileInfo = new FileInfo(path.getFileName(), attrs.lastModifiedTime(), attrs.size(), Files.readAllBytes(path));
-                        if (mapFiles.containsKey(fileInfo)) {
-                            if (listPaths.isEmpty())
-                                listPaths.add(mapFiles.get(fileInfo).toString());
-                            listPaths.add(path.toAbsolutePath().toString());
-                            list.add(listPaths);
+        try {
+            Files.walkFileTree(Paths.get(startPath), new SimpleFileVisitor<>() {
+                @Override
+                public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) {
+                    try {
+                        if (!attrs.isDirectory()) {
+                            FileInfo fileInfo = new FileInfo(path.getFileName(), attrs.lastModifiedTime(), attrs.size(), Files.readAllBytes(path));
+                            if (mapFiles.containsKey(fileInfo))
+                                mapFiles.get(fileInfo).add(path.toAbsolutePath().toString());
+                            mapFiles.putIfAbsent(fileInfo, new ArrayList<>());
+                            mapFiles.get(fileInfo).add(path.toAbsolutePath().toString());
                         }
-                        mapFiles.putIfAbsent(fileInfo, path.toAbsolutePath());
+                    } catch (IOException e) {
+                        System.out.println(e.getMessage());
                     }
-                } catch (IOException e) {
-                    System.out.println(e.getMessage());
+                    return FileVisitResult.CONTINUE;
                 }
-                return FileVisitResult.CONTINUE;
-            }
 
-            @Override
-            public FileVisitResult visitFileFailed(Path path, IOException e) {
-                return FileVisitResult.CONTINUE;
+                @Override
+                public FileVisitResult visitFileFailed(Path path, IOException e) {
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+            for (int i = list.size() - 1; i >= 0 ; i--) {
+                if (list.get(i).size() == 1)
+                    list.remove(i);
             }
-        });
-        return list;
+            return list;
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
     public static void main(String[] args) {
+        System.out.println(new FindDuplicates().findDuplicates(""));
     }
 }
