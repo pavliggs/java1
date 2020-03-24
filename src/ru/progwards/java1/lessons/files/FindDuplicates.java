@@ -21,22 +21,6 @@ public class FindDuplicates {
             this.content = content;
         }
 
-        public Path getName() {
-            return name;
-        }
-
-        public FileTime getLastModifiedTime() {
-            return lastModifiedTime;
-        }
-
-        public long getSize() {
-            return size;
-        }
-
-        public byte[] getContent() {
-            return content;
-        }
-
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -50,7 +34,6 @@ public class FindDuplicates {
     }
 
     public List<List<String>> findDuplicates(String startPath) {
-        List<List<String>> list = new ArrayList<>();
         Map<FileInfo, List<String>> mapFiles = new HashMap<>();
 
         PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher("glob:**");
@@ -78,11 +61,19 @@ public class FindDuplicates {
                     return FileVisitResult.CONTINUE;
                 }
             });
-            for (int i = list.size() - 1; i >= 0 ; i--) {
-                if (list.get(i).size() == 1)
-                    list.remove(i);
+            Set<Map.Entry<FileInfo, List<String>>> entries = mapFiles.entrySet();
+
+            Iterator<Map.Entry<FileInfo, List<String>>> entryIterator = entries.iterator();
+
+            while (entryIterator.hasNext()) {
+                if (entryIterator.next().getValue().size() == 1)
+                    entryIterator.remove();
             }
-            return list;
+
+            Collection<List<String>> list = mapFiles.values();
+
+            List<List<String>> listResult = new ArrayList<>(list);
+            return listResult;
         } catch (IOException e) {
             System.out.println(e.getMessage());
             return null;
