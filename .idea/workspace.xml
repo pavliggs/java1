@@ -1,0 +1,1384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="homework 17, attempt 4">
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/symlink/src/ru/progwards/java1/lessons/files/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/symlink/src/ru/progwards/java1/lessons/files/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/lessons/files/FindDuplicates.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/lessons/files/FindDuplicates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symlink/out/production/HelloWorld/ru/progwards/java1/lessons/files/FindDuplicates.class" beforeDir="false" afterPath="$PROJECT_DIR$/symlink/out/production/HelloWorld/ru/progwards/java1/lessons/files/FindDuplicates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symlink/src/ru/progwards/java1/lessons/files/FindDuplicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/symlink/src/ru/progwards/java1/lessons/files/FindDuplicates.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="HelloWorld" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/NioFileCopy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="36" column="89" lean-forward="true" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2281#2282#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FileInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FilesSelect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="21" column="89" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2649#2650#0" expanded="true" />
+                <element signature="e#2720#2721#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/UsageFrequency.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/SalesInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1583353853908" expanded="true" signature="5317:5406" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getsi</find>
+      <find>HIT</find>
+      <find>DESTROYED</find>
+      <find>field</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/collections/Creator.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N13dot3/TreeSetWithComparator.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N13dot3/T13dot3/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/collections/ArrayIterator.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/collections/MatrixIterator.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/sets/SetOperations.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/sets/Product.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/sets/Shop.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/sets/ProductAnalytics.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/sets/LettersInFile.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N13dot1/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N14dot1/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N14dot2/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/Order.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/OrderQueue.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/StackCalc.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/Calculate.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/CollectionsSort.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot1/T15dot1/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot1/HashMapEntry.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot2/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot3/Test.java" />
+        <option value="$PROJECT_DIR$/wiki.test.tokens" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/io2/Translator.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/FiboMapCache.java" />
+        <option value="$PROJECT_DIR$/salesInfo.txt" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/SalesInfo.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot1/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot1/DataAndTime.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot2/T16dot2/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot3/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/Insurance.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/UserSession.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/SessionManager.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot2/JavaTime.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/StatisticInfo.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/Profiler.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot1/Path.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot1/NioPath.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot1/T17dot1/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/T17dot2/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot3/NioWalkFileTree.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot3/NioGlobFileMatcherRecursiveExt.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/NioFileCopy.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/UsageFrequency.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FilesSelect.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FileInfo.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderItem.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-160" />
+    <option name="y" value="60" />
+    <option name="width" value="1680" />
+    <option name="height" value="930" />
+  </component>
+  <component name="ProjectId" id="1TqxGbFUY4Ppr3kW13AavXgvtq9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="progwards" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="progwards" type="462c0819:PsiDirectoryNode" />
+              <item name="java1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="progwards" type="462c0819:PsiDirectoryNode" />
+              <item name="java1" type="462c0819:PsiDirectoryNode" />
+              <item name="lessons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="progwards" type="462c0819:PsiDirectoryNode" />
+              <item name="java1" type="462c0819:PsiDirectoryNode" />
+              <item name="lessons" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585255746671" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ru/progwards/java1/SeaBattle/pavliggs/seabattle.1.0.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="ru.progwards.java1.lessons.interfaces" />
+      <recent name="ru.progwards.pavliggs.DogAndGoatInterface" />
+      <recent name="ru.progwards.pavliggs.inheritanceExample" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.FindDuplicates">
+    <configuration name="FilesSelect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java1.lessons.files.FilesSelect" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.java1.lessons.files.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FindDuplicates" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java1.lessons.files.FindDuplicates" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.java1.lessons.files.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NioFileCopy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.pavliggs.N17dot2.NioFileCopy" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.pavliggs.N17dot2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NioGlobFileMatcherRecursiveExt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.pavliggs.N17dot3.NioGlobFileMatcherRecursiveExt" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.pavliggs.N17dot3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NioWalkFileTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.pavliggs.N17dot3.NioWalkFileTree" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.pavliggs.N17dot3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.NioFileCopy" />
+      <item itemvalue="Application.NioWalkFileTree" />
+      <item itemvalue="Application.NioGlobFileMatcherRecursiveExt" />
+      <item itemvalue="Application.FindDuplicates" />
+      <item itemvalue="Application.FilesSelect" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FindDuplicates" />
+        <item itemvalue="Application.FilesSelect" />
+        <item itemvalue="Application.NioWalkFileTree" />
+        <item itemvalue="Application.NioFileCopy" />
+        <item itemvalue="Application.NioGlobFileMatcherRecursiveExt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="" />
+      <created>1574201332338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574201332338</updated>
+    </task>
+    <task id="LOCAL-00064" summary="homework 10, attempt 9">
+      <created>1579815026033</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1579815026033</updated>
+    </task>
+    <task id="LOCAL-00065" summary="homework 10, attempt 10">
+      <created>1579889235932</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1579889235932</updated>
+    </task>
+    <task id="LOCAL-00066" summary="homework 10, attempt 11">
+      <created>1579898940019</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1579898940019</updated>
+    </task>
+    <task id="LOCAL-00067" summary="homework 10, attempt 12">
+      <created>1579902191042</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1579902191043</updated>
+    </task>
+    <task id="LOCAL-00068" summary="homework 10, attempt 13">
+      <created>1579903325595</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1579903325595</updated>
+    </task>
+    <task id="LOCAL-00069" summary="homework 10, attempt 14">
+      <created>1579984974315</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1579984974316</updated>
+    </task>
+    <task id="LOCAL-00070" summary="homework 10, attempt 15">
+      <created>1579985335166</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1579985335166</updated>
+    </task>
+    <task id="LOCAL-00071" summary="homework 10, attempt 16">
+      <created>1580322140645</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1580322140646</updated>
+    </task>
+    <task id="LOCAL-00072" summary="homework 11, attempt 1">
+      <created>1580504964606</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1580504964607</updated>
+    </task>
+    <task id="LOCAL-00073" summary="homework 11, attempt 2">
+      <created>1580588255035</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1580588255036</updated>
+    </task>
+    <task id="LOCAL-00074" summary="homework 11, attempt 3">
+      <created>1580588393634</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1580588393634</updated>
+    </task>
+    <task id="LOCAL-00075" summary="homework 11, attempt 4">
+      <created>1580591371900</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1580591371901</updated>
+    </task>
+    <task id="LOCAL-00076" summary="homework 11, attempt 5">
+      <created>1580593443377</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1580593443377</updated>
+    </task>
+    <task id="LOCAL-00077" summary="homework 11, attempt 6">
+      <created>1580770136503</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1580770136504</updated>
+    </task>
+    <task id="LOCAL-00078" summary="homework 11, attempt 7">
+      <created>1580770945690</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1580770945690</updated>
+    </task>
+    <task id="LOCAL-00079" summary="homework 11, attempt 8">
+      <created>1580772466761</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1580772466761</updated>
+    </task>
+    <task id="LOCAL-00080" summary="homework 12, attempt 1">
+      <created>1581882067857</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1581882067857</updated>
+    </task>
+    <task id="LOCAL-00081" summary="homework 12, attempt 2">
+      <created>1581882562918</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1581882562918</updated>
+    </task>
+    <task id="LOCAL-00082" summary="homework 12, attempt 3">
+      <created>1581966686375</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1581966686376</updated>
+    </task>
+    <task id="LOCAL-00083" summary="homework 12, attempt 4">
+      <created>1582052047632</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1582052047648</updated>
+    </task>
+    <task id="LOCAL-00084" summary="homework 12, attempt 5">
+      <created>1582053031771</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1582053031771</updated>
+    </task>
+    <task id="LOCAL-00085" summary="homework 13, attempt 1">
+      <created>1582235026293</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1582235026293</updated>
+    </task>
+    <task id="LOCAL-00086" summary="homework 13, attempt 2">
+      <created>1582314065921</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1582314065921</updated>
+    </task>
+    <task id="LOCAL-00087" summary="homework 13, attempt 3">
+      <created>1582315766531</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1582315766531</updated>
+    </task>
+    <task id="LOCAL-00088" summary="homework 14, attempt 1">
+      <created>1582579460933</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1582579460933</updated>
+    </task>
+    <task id="LOCAL-00089" summary="homework 14, attempt 2">
+      <created>1582583512985</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1582583512985</updated>
+    </task>
+    <task id="LOCAL-00090" summary="homework 14, attempt 3">
+      <created>1582637615273</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1582637615274</updated>
+    </task>
+    <task id="LOCAL-00091" summary="homework 14, attempt 4">
+      <created>1582638671283</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1582638671283</updated>
+    </task>
+    <task id="LOCAL-00092" summary="homework 14, attempt 5">
+      <created>1582659075359</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1582659075359</updated>
+    </task>
+    <task id="LOCAL-00093" summary="homework 15, attempt 1">
+      <created>1583170998774</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1583170998774</updated>
+    </task>
+    <task id="LOCAL-00094" summary="homework 15, attempt 2">
+      <created>1583171504327</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1583171504327</updated>
+    </task>
+    <task id="LOCAL-00095" summary="homework 15, attempt 3">
+      <created>1583171855790</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1583171855790</updated>
+    </task>
+    <task id="LOCAL-00096" summary="homework 15, attempt 4">
+      <created>1583172200471</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1583172200471</updated>
+    </task>
+    <task id="LOCAL-00097" summary="homework 15, attempt 5">
+      <created>1583274731292</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1583274731293</updated>
+    </task>
+    <task id="LOCAL-00098" summary="homework 15, attempt 6">
+      <created>1583353071260</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1583353071261</updated>
+    </task>
+    <task id="LOCAL-00099" summary="homework 15, attempt 7">
+      <created>1583353870225</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1583353870226</updated>
+    </task>
+    <task id="LOCAL-00100" summary="homework 16, attempt 1">
+      <created>1583874274210</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1583874274211</updated>
+    </task>
+    <task id="LOCAL-00101" summary="homework 16, attempt 2">
+      <created>1583874882386</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1583874882386</updated>
+    </task>
+    <task id="LOCAL-00102" summary="homework 16, attempt 3">
+      <created>1583875214756</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1583875214757</updated>
+    </task>
+    <task id="LOCAL-00103" summary="homework 16, attempt 4">
+      <created>1583879013198</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1583879013198</updated>
+    </task>
+    <task id="LOCAL-00104" summary="homework 16, attempt 5">
+      <created>1584453309281</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1584453309282</updated>
+    </task>
+    <task id="LOCAL-00105" summary="homework 16, attempt 6">
+      <created>1584472790658</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1584472790658</updated>
+    </task>
+    <task id="LOCAL-00106" summary="homework 16, attempt 7">
+      <created>1584567091390</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1584567091390</updated>
+    </task>
+    <task id="LOCAL-00107" summary="homework 16, attempt 8">
+      <created>1584567170334</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1584567170334</updated>
+    </task>
+    <task id="LOCAL-00108" summary="homework 16, attempt 9">
+      <created>1584567214891</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1584567214891</updated>
+    </task>
+    <task id="LOCAL-00109" summary="homework 17, attempt 1">
+      <created>1585001247464</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1585001247466</updated>
+    </task>
+    <task id="LOCAL-00110" summary="homework 17, attempt 2">
+      <created>1585061871493</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1585061871493</updated>
+    </task>
+    <task id="LOCAL-00111" summary="homework 17, attempt 3">
+      <created>1585080305984</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1585080305984</updated>
+    </task>
+    <task id="LOCAL-00112" summary="homework 17, attempt 4">
+      <created>1585162947895</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1585162947895</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" sideWeight="0.26062322" side_tool="true" weight="0.23825504" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.7393768" visible="true" weight="0.21543624" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.28186968" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50201344" side_tool="true" weight="0.28186968" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" sideWeight="0.26062322" side_tool="true" weight="0.23825504" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.7393768" visible="true" weight="0.2818792" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.28186968" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="homework 14, attempt 1" />
+    <MESSAGE value="homework 14, attempt 2" />
+    <MESSAGE value="homework 14, attempt 3" />
+    <MESSAGE value="homework 14, attempt 4" />
+    <MESSAGE value="homework 14, attempt 5" />
+    <MESSAGE value="homework 15, attempt 1" />
+    <MESSAGE value="homework 15, attempt 2" />
+    <MESSAGE value="homework 15, attempt 3" />
+    <MESSAGE value="homework 15, attempt 4" />
+    <MESSAGE value="homework 15, attempt 5" />
+    <MESSAGE value="homework 15, attempt 6" />
+    <MESSAGE value="homework 15, attempt 7" />
+    <MESSAGE value="homework 16, attempt 1" />
+    <MESSAGE value="homework 16, attempt 2" />
+    <MESSAGE value="homework 16, attempt 3" />
+    <MESSAGE value="homework 16, attempt 4" />
+    <MESSAGE value="homework 16, attempt 5" />
+    <MESSAGE value="homework 16, attempt 6" />
+    <MESSAGE value="homework 16, attempt 7" />
+    <MESSAGE value="homework 16, attempt 8" />
+    <MESSAGE value="homework 16, attempt 9" />
+    <MESSAGE value="homework 17, attempt 1" />
+    <MESSAGE value="homework 17, attempt 2" />
+    <MESSAGE value="homework 17, attempt 3" />
+    <MESSAGE value="homework 17, attempt 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework 17, attempt 4" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HelloWorld$Main.ic" NAME="Main Coverage Results" MODIFIED="1574290260884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/util/AbstractMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="621" column="9" lean-forward="true" selection-start-line="621" selection-start-column="9" selection-end-line="621" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N14dot2/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="58" lean-forward="true" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N14dot1/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot1/HashMapEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot2/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="5" selection-start-line="6" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot3/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/salesInfo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot1/T15dot1/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="5" selection-start-line="5" selection-start-column="4" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/time/temporal/TemporalUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2731">
+          <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#627#628#0" expanded="true" />
+            <element signature="e#654#655#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/OrderQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="73" lean-forward="true" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/Calculate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/time/format/DateTimeFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="745" column="45" selection-start-line="745" selection-start-column="45" selection-end-line="745" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/CollectionsSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-442">
+          <caret line="77" column="70" lean-forward="true" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/StackCalc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/FiboMapCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="73" column="58" selection-start-line="73" selection-start-column="58" selection-end-line="73" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot1/DataAndTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot2/JavaTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot2/T16dot2/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="5" selection-start-line="6" selection-start-column="4" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot1/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" selection-start-line="7" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/Insurance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/UserSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="28" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+            <element signature="e#627#628#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/SessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/compare_if_cycles/CyclesGoldenFibo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/Profiler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+            <element signature="e#2191#2192#0" expanded="true" />
+            <marker date="1584567208234" expanded="true" signature="1950:2203" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/StatisticInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding>
+            <element signature="e#210#211#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot3/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot1/T17dot1/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot1/NioPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/T17dot2/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="55" lean-forward="true" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/changeFtof.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/classes/ComplexNum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="52" column="69" lean-forward="true" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot3/NioWalkFileTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot3/NioGlobFileMatcherRecursiveExt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/interfaces/CompareWeight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="194" column="36" lean-forward="true" selection-start-line="194" selection-start-column="36" selection-end-line="194" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/collections/Finder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="53" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/collections/Creator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/collections/ArrayIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="149" column="28" selection-start-line="149" selection-start-column="4" selection-end-line="149" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/lang/Comparable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="136" column="29" lean-forward="true" selection-start-line="136" selection-start-column="4" selection-end-line="136" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/NioFileCopy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FilesSelect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="89" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
+            <element signature="e#2720#2721#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/UsageFrequency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/SalesInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="50" column="59" selection-start-line="50" selection-start-column="59" selection-end-line="50" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1583353853908" expanded="true" signature="5317:5406" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FileInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="36" column="89" lean-forward="true" selection-start-line="36" selection-start-column="89" selection-end-line="36" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2281#2282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>13</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>HelloWorld</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
