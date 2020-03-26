@@ -8,8 +8,8 @@ import java.util.*;
 public class FindDuplicates {
 
     public List<List<String>> findDuplicates(String startPath) {
-        Map<Path, FileInfo> mapFileInfo = new HashMap<>();
-        Map<Path, List<String>> mapList = new HashMap<>();
+        // здесь ключ - объект класса FileInfo, значение - список
+        Map<FileInfo, List<String>> mapInfo = new LinkedHashMap<>();
 
         PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher("glob:**");
 
@@ -20,14 +20,18 @@ public class FindDuplicates {
                     try {
                         if (pathMatcher.matches(path)) {
                             FileInfo fileInfo = new FileInfo(path.getFileName(), attrs.lastModifiedTime(), attrs.size(), Files.readAllBytes(path), path.toAbsolutePath());
-                            if (mapFileInfo.containsKey(fileInfo.getName())) {
-                                if (mapFileInfo.get(fileInfo.getName()).equals(fileInfo))
-                                    mapList.get(fileInfo.getName()).add(fileInfo.getPath().toString());
-                            }
-                            else {
-                                mapFileInfo.putIfAbsent(fileInfo.getName(), fileInfo);
-                                mapList.putIfAbsent(fileInfo.getName(), new ArrayList<>());
-                                mapList.get(fileInfo.getName()).add(fileInfo.getPath().toString());
+                            if (mapInfo.isEmpty()) {
+                                mapInfo.put(fileInfo, new ArrayList<>());
+                                mapInfo.get(fileInfo).add(fileInfo.getPath().toString());
+                            } else {
+                                for (Map.Entry<FileInfo, List<String>> entry : mapInfo.entrySet()) {
+                                    if (entry.getKey().equals(fileInfo)) {
+                                        entry.getValue().add(fileInfo.getPath().toString());
+                                        break;
+                                    }
+                                }
+                                mapInfo.put(fileInfo, new ArrayList<>());
+                                mapInfo.get(fileInfo).add(fileInfo.getPath().toString());
                             }
                         }
                     } catch (IOException e) {
@@ -44,12 +48,12 @@ public class FindDuplicates {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        return getList(mapList);
+        return getList(mapInfo);
     }
 
-    private List<List<String>> getList(Map<Path, List<String>> mapList) {
-        Set<Map.Entry<Path, List<String>>> entries = mapList.entrySet();
-        Iterator<Map.Entry<Path, List<String>>> entryIterator = entries.iterator();
+    private List<List<String>> getList(Map<FileInfo, List<String>> mapList) {
+        Set<Map.Entry<FileInfo, List<String>>> entries = mapList.entrySet();
+        Iterator<Map.Entry<FileInfo, List<String>>> entryIterator = entries.iterator();
 
         while (entryIterator.hasNext()) {
             if (entryIterator.next().getValue().size() == 1)
@@ -64,4 +68,5 @@ public class FindDuplicates {
     public static void main(String[] args) {
         System.out.println(new FindDuplicates().findDuplicates("C:\\Users\\Эльдорадо\\inFolder"));
     }
+
 }
