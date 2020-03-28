@@ -11,8 +11,8 @@ public class Test {
             Path path = Paths.get(name);
             byte[] allBytes = Files.readAllBytes(path);
             for (int i = 0; i < allBytes.length; i++) {
-                if (allBytes[i] == 'f')
-                    allBytes[i] = 'F';
+                if (allBytes[i] == (byte)'F')
+                    allBytes[i] = (byte)'f';
             }
             Files.write(path, allBytes);
             return true;
@@ -23,7 +23,5 @@ public class Test {
 
     public static void main(String[] args) {
         System.out.println(new Test().replaceF("changeFtof.txt"));
-        System.out.println((byte)'F');
-        System.out.println((byte)'f');
     }
 }

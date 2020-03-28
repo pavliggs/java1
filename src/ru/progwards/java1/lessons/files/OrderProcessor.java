@@ -13,7 +13,7 @@ import java.util.*;
 public class OrderProcessor {
     private Path directory;
     private int countFileInCorrect;
-    private Set<Order> setAllOrder = new HashSet<>();
+    private Set<Order> setOrder = new HashSet<>();
 
     public OrderProcessor(String startPath) {
         directory = Paths.get(startPath);
@@ -22,7 +22,6 @@ public class OrderProcessor {
 
     public int loadOrders(LocalDate start, LocalDate finish, String shopId) {
         PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher("glob:**/*.cvs");
-        Set<Order> setOrder = new HashSet<>();
 
         try {
             Files.walkFileTree(directory, new SimpleFileVisitor<>() {
@@ -30,17 +29,22 @@ public class OrderProcessor {
                 public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) {
                     try {
                         if (pathMatcher.matches(path)) {
+                            // если имя файла подходит заданному формату
                             if (isCorrectNameFile(path.getFileName().toString())) {
                                 String fileName = path.getFileName().toString();
                                 List<String> stringList = Files.readAllLines(path);
+                                // создаём объект
                                 Order order = new Order(getSubString(fileName, 0, 3),
                                         getSubString(fileName, 4, 10),
                                         getSubString(fileName, 11, 15),
                                         getLocalDateTime(attrs.lastModifiedTime()),
                                         createListOrderItem(stringList),
                                         getSumBuy(createListOrderItem(stringList)));
-                                setAllOrder.add(order);
+                                // добавляем заказы во множество, учитывая переданные параметры метода
+                                addSetOrder(order, setOrder, start, finish, shopId);
                             } else {
+                                /* если имя файла некорректно, то увеличиваем countFileInCorrect на 1
+                                 * и очищаем этот файл */
                                 ++countFileInCorrect;
                                 Files.writeString(path, "");
                             }
@@ -59,43 +63,12 @@ public class OrderProcessor {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
-        for (Order order : setAllOrder) {
-            LocalDate localDate = LocalDate.from(order.datetime);
-            if (start == null && finish == null) {
-                if (shopId == null)
-                    setOrder.add(order);
-                else if (order.shopId.equals(shopId))
-                    setOrder.add(order);
-            } else if (start == null) {
-                if (localDate.isBefore(finish) || localDate.equals(finish)) {
-                    if (shopId == null)
-                        setOrder.add(order);
-                    else if (order.shopId.equals(shopId))
-                        setOrder.add(order);
-                }
-            } else if (finish == null) {
-                if (localDate.isAfter(start) || localDate.equals(start)) {
-                    if (shopId == null)
-                        setOrder.add(order);
-                    else if (order.shopId.equals(shopId))
-                        setOrder.add(order);
-                }
-            } else if ((localDate.isAfter(start) && localDate.isBefore(finish)) ||
-                    localDate.equals(start) || localDate.equals(finish)) {
-                if (shopId == null)
-                    setOrder.add(order);
-                else if (order.shopId.equals(shopId))
-                    setOrder.add(order);
-            }
-        }
-        System.out.println(setOrder);
         return countFileInCorrect;
     }
 
     public List<Order> process(String shopId) {
         List<Order> orderList = new ArrayList<>();
-        for (Order order : setAllOrder) {
+        for (Order order : setOrder) {
             if (shopId == null)
                 orderList.add(order);
             if (order.shopId.equals(shopId))
@@ -115,7 +88,7 @@ public class OrderProcessor {
 
     public Map<String, Double> statisticsByShop() {
         Map<String, Double> map = new TreeMap<>();
-        for (Order order : setAllOrder) {
+        for (Order order : setOrder) {
             if (map.containsKey(order.shopId)) {
                 double sumNew = map.get(order.shopId) + order.sum;
                 map.put(order.shopId, sumNew);
@@ -127,7 +100,7 @@ public class OrderProcessor {
 
     public Map<String, Double> statisticsByGoods() {
         Map<String, Double> map = new TreeMap<>();
-        for (Order order : setAllOrder) {
+        for (Order order : setOrder) {
             for (int i = 0; i < order.items.size(); i++) {
                 String productName = order.items.get(i).googsName;
                 double sumBuy = order.items.get(i).price * order.items.get(i).count;
@@ -143,7 +116,7 @@ public class OrderProcessor {
 
     public Map<LocalDate, Double> statisticsByDay() {
         Map<LocalDate, Double> map = new TreeMap<>();
-        for (Order order : setAllOrder) {
+        for (Order order : setOrder) {
             LocalDate localDate = LocalDate.from(order.datetime);
             if (map.containsKey(localDate)) {
                 double sumNew = map.get(localDate) + order.sum;
@@ -152,6 +125,36 @@ public class OrderProcessor {
             map.putIfAbsent(localDate, order.sum);
         }
         return map;
+    }
+
+    public void addSetOrder(Order order, Set<Order> setOrder, LocalDate start, LocalDate finish, String shopId) {
+        LocalDate localDate = LocalDate.from(order.datetime);
+        if (start == null && finish == null) {
+            if (shopId == null)
+                setOrder.add(order);
+            else if (order.shopId.equals(shopId))
+                setOrder.add(order);
+        } else if (start == null) {
+            if (localDate.isBefore(finish) || localDate.equals(finish)) {
+                if (shopId == null)
+                    setOrder.add(order);
+                else if (order.shopId.equals(shopId))
+                    setOrder.add(order);
+            }
+        } else if (finish == null) {
+            if (localDate.isAfter(start) || localDate.equals(start)) {
+                if (shopId == null)
+                    setOrder.add(order);
+                else if (order.shopId.equals(shopId))
+                    setOrder.add(order);
+            }
+        } else if ((localDate.isAfter(start) && localDate.isBefore(finish)) ||
+                localDate.equals(start) || localDate.equals(finish)) {
+            if (shopId == null)
+                setOrder.add(order);
+            else if (order.shopId.equals(shopId))
+                setOrder.add(order);
+        }
     }
 
     public boolean isCorrectNameFile(String str) {
