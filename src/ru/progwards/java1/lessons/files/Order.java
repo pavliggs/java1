@@ -10,4 +10,14 @@ public class Order {
     public LocalDateTime datetime;
     public List<OrderItem> items;
     public double sum;
+
+    public Order(String shopId, String orderId, String customerId,
+                 LocalDateTime datetime, List<OrderItem> items, double sum) {
+        this.shopId = shopId;
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.datetime = datetime;
+        this.items = items;
+        this.sum = sum;
+    }
 }
