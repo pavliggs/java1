@@ -1,6 +1,5 @@
 package ru.progwards.java1.lessons.files;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -66,30 +65,27 @@ public class OrderProcessor {
             if (start == null && finish == null) {
                 if (shopId == null)
                     setOrder.add(order);
-                if (order.shopId.equals(shopId))
+                else if (order.shopId.equals(shopId))
                     setOrder.add(order);
-            }
-            if (start == null) {
+            } else if (start == null) {
                 if (localDate.isBefore(finish) || localDate.equals(finish)) {
                     if (shopId == null)
                         setOrder.add(order);
-                    if (order.shopId.equals(shopId))
+                    else if (order.shopId.equals(shopId))
                         setOrder.add(order);
                 }
-            }
-            if (finish == null) {
+            } else if (finish == null) {
                 if (localDate.isAfter(start) || localDate.equals(start)) {
                     if (shopId == null)
                         setOrder.add(order);
-                    if (order.shopId.equals(shopId))
+                    else if (order.shopId.equals(shopId))
                         setOrder.add(order);
                 }
-            }
-            if ((localDate.isAfter(start) && localDate.isBefore(finish)) ||
+            } else if ((localDate.isAfter(start) && localDate.isBefore(finish)) ||
                     localDate.equals(start) || localDate.equals(finish)) {
                 if (shopId == null)
                     setOrder.add(order);
-                if (order.shopId.equals(shopId))
+                else if (order.shopId.equals(shopId))
                     setOrder.add(order);
             }
         }
@@ -159,7 +155,7 @@ public class OrderProcessor {
     }
 
     public boolean isCorrectNameFile(String str) {
-        return str.matches("[A-Z0-9]{3}-[A-Z0-9]{6}-[0-9]{4}[.][a-z]{3}");
+        return str.matches("[A-Z0-9]{3}-[A-Z0-9]{6}-[A-Z0-9]{4}[.][a-z]{3}");
     }
 
     public OrderItem createOrderItem(String str) {
@@ -204,6 +200,11 @@ public class OrderProcessor {
     }
 
     public static void main(String[] args) {
-        
+        OrderProcessor orderProcessor = new OrderProcessor("C:\\Users\\Эльдорадо\\inFolder");
+        System.out.println(orderProcessor.loadOrders(null, null, null));
+        System.out.println(orderProcessor.statisticsByShop());
+        System.out.println(orderProcessor.statisticsByGoods());
+        System.out.println(orderProcessor.statisticsByDay());
+        System.out.println(orderProcessor.process(null));
     }
 }

@@ -20,4 +20,16 @@ public class Order {
         this.items = items;
         this.sum = sum;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "shopId='" + shopId + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", customerId='" + customerId + '\'' +
+                ", datetime=" + datetime +
+                ", items=" + items +
+                ", sum=" + sum +
+                '}';
+    }
 }
