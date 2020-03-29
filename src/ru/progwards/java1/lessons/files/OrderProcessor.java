@@ -71,7 +71,7 @@ public class OrderProcessor {
         for (Order order : setOrder) {
             if (shopId == null)
                 orderList.add(order);
-            if (order.shopId.equals(shopId))
+            else if (order.shopId.equals(shopId))
                 orderList.add(order);
         }
 
@@ -127,6 +127,7 @@ public class OrderProcessor {
         return map;
     }
 
+    // метод добавляет объекты во множество учитывая некоторые условия
     public void addSetOrder(Order order, Set<Order> setOrder, LocalDate start, LocalDate finish, String shopId) {
         LocalDate localDate = LocalDate.from(order.datetime);
         if (start == null && finish == null) {
@@ -157,16 +158,19 @@ public class OrderProcessor {
         }
     }
 
+    // метод проверяет корректность формата переданной строки
     public boolean isCorrectNameFile(String str) {
         return str.matches("[A-Z0-9]{3}-[A-Z0-9]{6}-[A-Z0-9]{4}[.][a-z]{3}");
     }
 
+    // из определенной строки создаём объект OrderItem
     public OrderItem createOrderItem(String str) {
         str = str.replace(", ", ",");
         String[] strArr = str.split(",");
         return new OrderItem(strArr[0], Integer.parseInt(strArr[1]), Double.parseDouble(strArr[2]));
     }
 
+    // из списка строк создаём список объектов OrderItem
     public List<OrderItem> createListOrderItem(List<String> list) {
         List<OrderItem> orderItemList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
@@ -182,6 +186,7 @@ public class OrderProcessor {
         return orderItemList;
     }
 
+    // считаем суммы всех покупок в заказе
     public double getSumBuy(List<OrderItem> orderItemList) {
         double result = 0;
         for (int i = 0; i < orderItemList.size(); i++) {
@@ -192,10 +197,12 @@ public class OrderProcessor {
         return result;
     }
 
+    // из строки получаем подстроку
     public String getSubString(String str, int fromInt, int toInt) {
         return str.substring(fromInt, toInt);
     }
 
+    // из объекта FileTime получаем объект LocalDateTime
     public LocalDateTime getLocalDateTime(FileTime fileTime) {
         Instant instant = Instant.ofEpochMilli(fileTime.toMillis());
         LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());

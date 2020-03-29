@@ -4,7 +4,6 @@
     <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/T17dot2/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/T17dot2/Test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="131">
+              <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderItem.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -41,18 +40,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="43" column="84" lean-forward="true" selection-start-line="43" selection-start-column="84" selection-end-line="43" selection-end-column="84" />
+            <state relative-caret-position="301">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2680#2681#0" expanded="true" />
-                <element signature="e#2751#2752#0" expanded="true" />
-                <element signature="e#3401#3402#0" expanded="true" />
-                <element signature="e#3474#3475#0" expanded="true" />
-                <element signature="e#7306#7307#0" expanded="true" />
-                <element signature="e#7381#7382#0" expanded="true" />
-                <element signature="e#7867#7868#0" expanded="true" />
-                <element signature="e#7919#7920#0" expanded="true" />
+                <element signature="e#3415#3416#0" expanded="true" />
+                <element signature="e#3488#3489#0" expanded="true" />
+                <element signature="e#7730#7731#0" expanded="true" />
+                <element signature="e#7782#7783#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FilesSelect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="544">
               <caret line="35" column="72" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -75,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="1360">
               <caret line="85" column="94" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -155,9 +150,9 @@
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FilesSelect.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FileInfo.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderItem.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/T17dot2/Test.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java" />
       </list>
     </option>
@@ -287,7 +282,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585433770545" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585434564950" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ru/progwards/java1/SeaBattle/pavliggs/seabattle.1.0.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -380,10 +375,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.FindDuplicates" />
       <item itemvalue="Application.FilesSelect" />
-      <item itemvalue="Application.PhoneNumber" />
+      <item itemvalue="Application.FindDuplicates" />
       <item itemvalue="Application.OrderProcessor" />
+      <item itemvalue="Application.PhoneNumber" />
       <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
@@ -406,13 +401,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574201332338</updated>
-    </task>
-    <task id="LOCAL-00066" summary="homework 10, attempt 11">
-      <created>1579898940019</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1579898940019</updated>
     </task>
     <task id="LOCAL-00067" summary="homework 10, attempt 12">
       <created>1579902191042</created>
@@ -750,7 +738,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585426241278</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="homework 17, attempt 8">
+      <created>1585433779848</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1585433779848</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TodoView">
@@ -772,10 +767,10 @@
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.7393768" visible="true" weight="0.22483222" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.7393768" visible="true" weight="0.22818792" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.28186968" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49731544" weight="0.28186968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -825,7 +820,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 14, attempt 4" />
     <MESSAGE value="homework 14, attempt 5" />
     <MESSAGE value="homework 15, attempt 1" />
     <MESSAGE value="homework 15, attempt 2" />
@@ -850,7 +844,8 @@
     <MESSAGE value="homework 17, attempt 5" />
     <MESSAGE value="homework 17, attempt 6" />
     <MESSAGE value="homework 17, attempt 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework 17, attempt 7" />
+    <MESSAGE value="homework 17, attempt 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework 17, attempt 8" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HelloWorld$Main.ic" NAME="Main Coverage Results" MODIFIED="1574290260884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -1217,13 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/NioFileCopy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1244,16 +1232,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/time/temporal/TemporalUnit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -1265,28 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="139" column="24" lean-forward="true" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="85" column="94" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FilesSelect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="35" column="72" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2649#2650#0" expanded="true" />
-            <element signature="e#2720#2721#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1312,20 +1268,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FilesSelect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="43" column="84" lean-forward="true" selection-start-line="43" selection-start-column="84" selection-end-line="43" selection-end-column="84" />
+        <state relative-caret-position="544">
+          <caret line="35" column="72" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2680#2681#0" expanded="true" />
-            <element signature="e#2751#2752#0" expanded="true" />
-            <element signature="e#3401#3402#0" expanded="true" />
-            <element signature="e#3474#3475#0" expanded="true" />
-            <element signature="e#7306#7307#0" expanded="true" />
-            <element signature="e#7381#7382#0" expanded="true" />
-            <element signature="e#7867#7868#0" expanded="true" />
-            <element signature="e#7919#7920#0" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
+            <element signature="e#2720#2721#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="85" column="94" selection-start-line="85" selection-start-column="64" selection-end-line="85" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3415#3416#0" expanded="true" />
+            <element signature="e#3488#3489#0" expanded="true" />
+            <element signature="e#7730#7731#0" expanded="true" />
+            <element signature="e#7782#7783#0" expanded="true" />
           </folding>
         </state>
       </provider>
