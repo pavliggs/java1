@@ -48,7 +48,8 @@ public class OrderProcessor {
                                 order.sum = getSumBuy(createListOrderItem(stringList));
                                 // добавляем заказы во множество, учитывая переданные параметры метода
                                 addSetOrder(order, setOrder, start, finish, shopId);
-                            } else {
+                            }
+                            if (!isCorrectNameFile(path.getFileName().toString())) {
                                 /* если имя файла некорректно, то увеличиваем countFileInCorrect на 1
                                  * и очищаем этот файл */
                                 ++countFileInCorrect;
