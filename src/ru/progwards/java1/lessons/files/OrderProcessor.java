@@ -30,8 +30,12 @@ public class OrderProcessor {
                 public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) {
                     try {
                         if (pathMatcher.matches(path)) {
-                            // если имя файла подходит заданному формату
-                            if (isCorrectNameFile(path.getFileName().toString())) {
+                            // поместим содержимое файла в переменную
+                            String content = Files.readString(path);
+                            // isCorrectContent будет true, если содержимое не содержит ошибку
+                            boolean isCorrectContent = !content.contains("Error");
+                            // если имя файла подходит заданному формату и содержимое файла не содержит ошибку
+                            if (isCorrectNameFile(path.getFileName().toString()) && isCorrectContent) {
                                 String fileName = path.getFileName().toString();
                                 List<String> stringList = Files.readAllLines(path);
                                 // создаём объект
