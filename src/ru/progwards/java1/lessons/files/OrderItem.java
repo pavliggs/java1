@@ -5,11 +5,11 @@ public class OrderItem {
     public int count;
     public double price;
 
-    public OrderItem(String googsName, int count, double price) {
-        this.googsName = googsName;
-        this.count = count;
-        this.price = price;
-    }
+//    public OrderItem(String googsName, int count, double price) {
+//        this.googsName = googsName;
+//        this.count = count;
+//        this.price = price;
+//    }
 
     @Override
     public String toString() {

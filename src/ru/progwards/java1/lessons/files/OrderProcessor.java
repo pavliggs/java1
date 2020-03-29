@@ -34,12 +34,19 @@ public class OrderProcessor {
                                 String fileName = path.getFileName().toString();
                                 List<String> stringList = Files.readAllLines(path);
                                 // создаём объект
-                                Order order = new Order(getSubString(fileName, 0, 3),
-                                        getSubString(fileName, 4, 10),
-                                        getSubString(fileName, 11, 15),
-                                        getLocalDateTime(attrs.lastModifiedTime()),
-                                        createListOrderItem(stringList),
-                                        getSumBuy(createListOrderItem(stringList)));
+//                                Order order = new Order(getSubString(fileName, 0, 3),
+//                                        getSubString(fileName, 4, 10),
+//                                        getSubString(fileName, 11, 15),
+//                                        getLocalDateTime(attrs.lastModifiedTime()),
+//                                        createListOrderItem(stringList),
+//                                        getSumBuy(createListOrderItem(stringList)));
+                                Order order = new Order();
+                                order.shopId = getSubString(fileName, 0, 3);
+                                order.orderId = getSubString(fileName, 4, 10);
+                                order.customerId = getSubString(fileName, 11, 15);
+                                order.datetime = getLocalDateTime(attrs.lastModifiedTime());
+                                order.items = createListOrderItem(stringList);
+                                order.sum = getSumBuy(createListOrderItem(stringList));
                                 // добавляем заказы во множество, учитывая переданные параметры метода
                                 addSetOrder(order, setOrder, start, finish, shopId);
                             } else {
@@ -167,7 +174,12 @@ public class OrderProcessor {
     public OrderItem createOrderItem(String str) {
         str = str.replace(", ", ",");
         String[] strArr = str.split(",");
-        return new OrderItem(strArr[0], Integer.parseInt(strArr[1]), Double.parseDouble(strArr[2]));
+        OrderItem orderItem = new OrderItem();
+        orderItem.googsName = strArr[0];
+        orderItem.count = Integer.parseInt(strArr[1]);
+        orderItem.price = Double.parseDouble(strArr[2]);
+//        return new OrderItem(strArr[0], Integer.parseInt(strArr[1]), Double.parseDouble(strArr[2]));
+        return orderItem;
     }
 
     // из списка строк создаём список объектов OrderItem
