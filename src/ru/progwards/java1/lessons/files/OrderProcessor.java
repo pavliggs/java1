@@ -21,7 +21,7 @@ public class OrderProcessor {
     }
 
     public int loadOrders(LocalDate start, LocalDate finish, String shopId) {
-        PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher("glob:**/*.cvs");
+        PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher("glob:**/*.csv");
 
         try {
             Files.walkFileTree(directory, new SimpleFileVisitor<>() {
@@ -167,7 +167,7 @@ public class OrderProcessor {
 
     // метод проверяет корректность формата переданной строки
     public boolean isCorrectNameFile(String str) {
-        return str.matches("[A-Z0-9]{3}-[A-Z0-9]{6}-[A-Z0-9]{4}[.][a-z]{3}");
+        return str.matches("[A-Z0-9]{3}-[A-Z0-9]{6}-[0-9]{4}[.][a-z]{3}");
     }
 
     // из определенной строки создаём объект OrderItem
