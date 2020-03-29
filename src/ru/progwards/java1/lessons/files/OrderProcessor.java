@@ -13,11 +13,12 @@ import java.util.*;
 public class OrderProcessor {
     private Path directory;
     private int countFileInCorrect;
-    private Set<Order> setOrder = new HashSet<>();
+    private Set<Order> setOrder;
 
     public OrderProcessor(String startPath) {
         directory = Paths.get(startPath);
         countFileInCorrect = 0;
+        setOrder = new HashSet<>();
     }
 
     public int loadOrders(LocalDate start, LocalDate finish, String shopId) {
@@ -34,12 +35,6 @@ public class OrderProcessor {
                                 String fileName = path.getFileName().toString();
                                 List<String> stringList = Files.readAllLines(path);
                                 // создаём объект
-//                                Order order = new Order(getSubString(fileName, 0, 3),
-//                                        getSubString(fileName, 4, 10),
-//                                        getSubString(fileName, 11, 15),
-//                                        getLocalDateTime(attrs.lastModifiedTime()),
-//                                        createListOrderItem(stringList),
-//                                        getSumBuy(createListOrderItem(stringList)));
                                 Order order = new Order();
                                 order.shopId = getSubString(fileName, 0, 3);
                                 order.orderId = getSubString(fileName, 4, 10);
@@ -178,7 +173,6 @@ public class OrderProcessor {
         orderItem.googsName = strArr[0];
         orderItem.count = Integer.parseInt(strArr[1]);
         orderItem.price = Double.parseDouble(strArr[2]);
-//        return new OrderItem(strArr[0], Integer.parseInt(strArr[1]), Double.parseDouble(strArr[2]));
         return orderItem;
     }
 

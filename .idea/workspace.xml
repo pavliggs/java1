@@ -19,7 +19,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
+            <state relative-caret-position="-32">
               <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -40,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="23" column="91" lean-forward="true" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
+            <state relative-caret-position="289">
+              <caret line="174" column="56" selection-start-line="174" selection-start-column="56" selection-end-line="174" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#7151#7152#0" expanded="true" />
@@ -289,7 +289,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585480242010" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585488104922" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ru/progwards/java1/SeaBattle/pavliggs/seabattle.1.0.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -408,13 +408,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574201332338</updated>
-    </task>
-    <task id="LOCAL-00069" summary="homework 10, attempt 14">
-      <created>1579984974315</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1579984974316</updated>
     </task>
     <task id="LOCAL-00070" summary="homework 10, attempt 15">
       <created>1579985335166</created>
@@ -752,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585479675036</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="homework 17, attempt 11">
+      <created>1585480255701</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1585480255702</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TodoView">
@@ -827,7 +827,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 15, attempt 2" />
     <MESSAGE value="homework 15, attempt 3" />
     <MESSAGE value="homework 15, attempt 4" />
     <MESSAGE value="homework 15, attempt 5" />
@@ -852,7 +851,8 @@
     <MESSAGE value="homework 17, attempt 8" />
     <MESSAGE value="homework 17, attempt 9" />
     <MESSAGE value="homework 17, attempt 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework 17, attempt 10" />
+    <MESSAGE value="homework 17, attempt 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework 17, attempt 11" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HelloWorld$Main.ic" NAME="Main Coverage Results" MODIFIED="1574290260884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -1296,7 +1296,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
+        <state relative-caret-position="-32">
           <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1313,8 +1313,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="23" column="91" lean-forward="true" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
+        <state relative-caret-position="289">
+          <caret line="174" column="56" selection-start-line="174" selection-start-column="56" selection-end-line="174" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#7151#7152#0" expanded="true" />
