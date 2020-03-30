@@ -115,7 +115,12 @@ public class OrderProcessor {
             boolean isNotContainError = !content.contains("Error");
             // isNotEmpty будет true, если содержимое не пустое
             boolean isNotEmpty = !content.isEmpty();
-            LocalDate localDate = LocalDate.from(createOrder(path).datetime);
+            // время последнего изменения файла
+            LocalDate localDate = LocalDate.from(getLocalDateTime(Files.getLastModifiedTime(path)));
+            // имя файла
+            String fileName = path.getFileName().toString();
+            // shopId файла
+            String shopIdFile = getSubString(fileName, 0 ,3);
             if (start == null && finish == null) {
                 if (shopId == null) {
                     // если содержимое файла не содержит ошибку и файл не пустой
@@ -126,7 +131,7 @@ public class OrderProcessor {
                         Files.writeString(path, "");
                     }
                 }
-                else if (createOrder(path).shopId.equals(shopId)) {
+                else if (shopIdFile.equals(shopId)) {
                     if (isNotContainError && isNotEmpty)
                         setOrder.add(createOrder(path));
                     else {
@@ -144,7 +149,7 @@ public class OrderProcessor {
                             Files.writeString(path, "");
                         }
                     }
-                    else if (createOrder(path).shopId.equals(shopId)) {
+                    else if (shopIdFile.equals(shopId)) {
                         if (isNotContainError && isNotEmpty)
                             setOrder.add(createOrder(path));
                         else {
@@ -163,7 +168,7 @@ public class OrderProcessor {
                             Files.writeString(path, "");
                         }
                     }
-                    else if (createOrder(path).shopId.equals(shopId)) {
+                    else if (shopIdFile.equals(shopId)) {
                         if (isNotContainError && isNotEmpty)
                             setOrder.add(createOrder(path));
                         else {
@@ -182,7 +187,7 @@ public class OrderProcessor {
                         Files.writeString(path, "");
                     }
                 }
-                else if (createOrder(path).shopId.equals(shopId)) {
+                else if (shopIdFile.equals(shopId)) {
                     if (isNotContainError && isNotEmpty)
                         setOrder.add(createOrder(path));
                     else {

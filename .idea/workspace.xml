@@ -40,17 +40,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-168">
-              <caret line="117" column="77" lean-forward="true" selection-start-line="117" selection-start-column="77" selection-end-line="117" selection-end-column="77" />
+            <state relative-caret-position="-952">
+              <caret line="118" column="100" lean-forward="true" selection-start-line="118" selection-start-column="100" selection-end-line="118" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1458#1459#0" expanded="true" />
                 <element signature="e#2065#2066#0" expanded="true" />
                 <element signature="e#2138#2139#0" expanded="true" />
-                <element signature="e#8782#8783#0" expanded="true" />
+                <element signature="e#8973#8974#0" expanded="true" />
                 <element signature="e#9579#9580#0" expanded="true" />
                 <element signature="e#9654#9655#0" expanded="true" />
-                <element signature="e#10353#10354#0" expanded="true" />
+                <element signature="e#10544#10545#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -303,7 +303,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585570305320" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585571630617" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ru/progwards/java1/SeaBattle/pavliggs/seabattle.1.0.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -422,13 +422,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574201332338</updated>
-    </task>
-    <task id="LOCAL-00077" summary="homework 11, attempt 6">
-      <created>1580770136503</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1580770136504</updated>
     </task>
     <task id="LOCAL-00078" summary="homework 11, attempt 7">
       <created>1580770945690</created>
@@ -766,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585566456069</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="homework 17, attempt 19">
+      <created>1585570385466</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1585570385466</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TodoView">
@@ -841,7 +841,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 16, attempt 3" />
     <MESSAGE value="homework 16, attempt 4" />
     <MESSAGE value="homework 16, attempt 5" />
     <MESSAGE value="homework 16, attempt 6" />
@@ -866,7 +865,8 @@
     <MESSAGE value="homework 17, attempt 16" />
     <MESSAGE value="homework 17, attempt 17" />
     <MESSAGE value="homework 17, attempt 18" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework 17, attempt 18" />
+    <MESSAGE value="homework 17, attempt 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework 17, attempt 19" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HelloWorld$Main.ic" NAME="Main Coverage Results" MODIFIED="1574290260884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -1327,17 +1327,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168">
-          <caret line="117" column="77" lean-forward="true" selection-start-line="117" selection-start-column="77" selection-end-line="117" selection-end-column="77" />
+        <state relative-caret-position="-952">
+          <caret line="118" column="100" lean-forward="true" selection-start-line="118" selection-start-column="100" selection-end-line="118" selection-end-column="100" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1458#1459#0" expanded="true" />
             <element signature="e#2065#2066#0" expanded="true" />
             <element signature="e#2138#2139#0" expanded="true" />
-            <element signature="e#8782#8783#0" expanded="true" />
+            <element signature="e#8973#8974#0" expanded="true" />
             <element signature="e#9579#9580#0" expanded="true" />
             <element signature="e#9654#9655#0" expanded="true" />
-            <element signature="e#10353#10354#0" expanded="true" />
+            <element signature="e#10544#10545#0" expanded="true" />
           </folding>
         </state>
       </provider>
