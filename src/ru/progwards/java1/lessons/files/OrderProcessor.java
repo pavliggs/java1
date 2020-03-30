@@ -4,10 +4,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.util.*;
 
 public class OrderProcessor {
@@ -32,12 +29,14 @@ public class OrderProcessor {
                         if (pathMatcher.matches(path)) {
                             // поместим содержимое файла в переменную
                             String content = Files.readString(path);
-                            // isCorrectContent будет true, если содержимое не содержит ошибку
-                            boolean isCorrectContent = !content.contains("Error");
+                            // isNotContainError будет true, если содержимое не содержит ошибку
+                            boolean isNotContainError = !content.contains("Error");
+                            // isNotEmpty будет true, если содержимое не пустое
+                            boolean isNotEmpty = !content.isEmpty();
                             // если имя файла подходит заданному формату
                             if (isCorrectNameFile(path.getFileName().toString())) {
-                                // и содержимое файла не содержит ошибку
-                                if (isCorrectContent) {
+                                // и содержимое файла не содержит ошибку и файл не пустой
+                                if (isNotContainError && isNotEmpty) {
                                     String fileName = path.getFileName().toString();
                                     List<String> stringList = Files.readAllLines(path);
                                     // создаём объект
@@ -224,10 +223,11 @@ public class OrderProcessor {
 
     public static void main(String[] args) {
         OrderProcessor orderProcessor = new OrderProcessor("C:\\Users\\Эльдорадо\\inFolder");
-        System.out.println(orderProcessor.loadOrders(null, null, null));
+        System.out.println(orderProcessor.loadOrders(LocalDate.of(2020, Month.MARCH, 30), null, null));
+        System.out.println(orderProcessor.setOrder);
+        System.out.println(orderProcessor.process("S02"));
         System.out.println(orderProcessor.statisticsByShop());
         System.out.println(orderProcessor.statisticsByGoods());
         System.out.println(orderProcessor.statisticsByDay());
-        System.out.println(orderProcessor.process(null));
     }
 }
