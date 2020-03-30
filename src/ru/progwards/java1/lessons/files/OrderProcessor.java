@@ -35,25 +35,26 @@ public class OrderProcessor {
                             // isCorrectContent будет true, если содержимое не содержит ошибку
                             boolean isCorrectContent = !content.contains("Error");
                             // если имя файла подходит заданному формату и содержимое файла не содержит ошибку
-                            if (isCorrectNameFile(path.getFileName().toString()) && isCorrectContent) {
-                                String fileName = path.getFileName().toString();
-                                List<String> stringList = Files.readAllLines(path);
-                                // создаём объект
-                                Order order = new Order();
-                                order.shopId = getSubString(fileName, 0, 3);
-                                order.orderId = getSubString(fileName, 4, 10);
-                                order.customerId = getSubString(fileName, 11, 15);
-                                order.datetime = getLocalDateTime(attrs.lastModifiedTime());
-                                order.items = createListOrderItem(stringList);
-                                order.sum = getSumBuy(createListOrderItem(stringList));
-                                // добавляем заказы во множество, учитывая переданные параметры метода
-                                addSetOrder(order, setOrder, start, finish, shopId);
-                            }
-                            if (!isCorrectNameFile(path.getFileName().toString())) {
-                                /* если имя файла некорректно, то увеличиваем countFileInCorrect на 1
-                                 * и очищаем этот файл */
-                                ++countFileInCorrect;
-                                Files.writeString(path, "");
+                            if (isCorrectNameFile(path.getFileName().toString())) {
+                                if (isCorrectContent) {
+                                    String fileName = path.getFileName().toString();
+                                    List<String> stringList = Files.readAllLines(path);
+                                    // создаём объект
+                                    Order order = new Order();
+                                    order.shopId = getSubString(fileName, 0, 3);
+                                    order.orderId = getSubString(fileName, 4, 10);
+                                    order.customerId = getSubString(fileName, 11, 15);
+                                    order.datetime = getLocalDateTime(attrs.lastModifiedTime());
+                                    order.items = createListOrderItem(stringList);
+                                    order.sum = getSumBuy(createListOrderItem(stringList));
+                                    // добавляем заказы во множество, учитывая переданные параметры метода
+                                    addSetOrder(order, setOrder, start, finish, shopId);
+                                } else {
+                                    /* если имя файла некорректно, то увеличиваем countFileInCorrect на 1
+                                     * и очищаем этот файл */
+                                    ++countFileInCorrect;
+                                    Files.writeString(path, "");
+                                }
                             }
                         }
                     } catch (IOException e) {
