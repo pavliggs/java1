@@ -34,8 +34,9 @@ public class OrderProcessor {
                             String content = Files.readString(path);
                             // isCorrectContent будет true, если содержимое не содержит ошибку
                             boolean isCorrectContent = !content.contains("Error");
-                            // если имя файла подходит заданному формату и содержимое файла не содержит ошибку
+                            // если имя файла подходит заданному формату
                             if (isCorrectNameFile(path.getFileName().toString())) {
+                                // и содержимое файла не содержит ошибку
                                 if (isCorrectContent) {
                                     String fileName = path.getFileName().toString();
                                     List<String> stringList = Files.readAllLines(path);
@@ -50,7 +51,7 @@ public class OrderProcessor {
                                     // добавляем заказы во множество, учитывая переданные параметры метода
                                     addSetOrder(order, setOrder, start, finish, shopId);
                                 } else {
-                                    /* если имя файла некорректно, то увеличиваем countFileInCorrect на 1
+                                    /* если содержимое файла содержит ошибку, то увеличиваем countFileInCorrect на 1
                                      * и очищаем этот файл */
                                     ++countFileInCorrect;
                                     Files.writeString(path, "");
