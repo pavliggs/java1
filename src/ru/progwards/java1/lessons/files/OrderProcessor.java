@@ -25,40 +25,11 @@ public class OrderProcessor {
             Files.walkFileTree(directory, new SimpleFileVisitor<>() {
                 @Override
                 public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) {
-                    try {
-                        if (pathMatcher.matches(path)) {
-                            // поместим содержимое файла в переменную
-                            String content = Files.readString(path);
-                            // isNotContainError будет true, если содержимое не содержит ошибку
-                            boolean isNotContainError = !content.contains("Error");
-                            // isNotEmpty будет true, если содержимое не пустое
-                            boolean isNotEmpty = !content.isEmpty();
-                            // если имя файла подходит заданному формату
-                            if (isCorrectNameFile(path.getFileName().toString())) {
-                                // и содержимое файла не содержит ошибку и файл не пустой
-                                if (isNotContainError && isNotEmpty) {
-                                    String fileName = path.getFileName().toString();
-                                    List<String> stringList = Files.readAllLines(path);
-                                    // создаём объект
-                                    Order order = new Order();
-                                    order.shopId = getSubString(fileName, 0, 3);
-                                    order.orderId = getSubString(fileName, 4, 10);
-                                    order.customerId = getSubString(fileName, 11, 15);
-                                    order.datetime = getLocalDateTime(attrs.lastModifiedTime());
-                                    order.items = createListOrderItem(stringList);
-                                    order.sum = getSumBuy(createListOrderItem(stringList));
-                                    // добавляем заказы во множество, учитывая переданные параметры метода
-                                    addSetOrder(order, setOrder, start, finish, shopId);
-                                } else {
-                                    /* если содержимое файла содержит ошибку, то увеличиваем countFileInCorrect на 1
-                                     * и очищаем этот файл */
-                                    ++countFileInCorrect;
-                                    Files.writeString(path, "");
-                                }
-                            }
+                    if (pathMatcher.matches(path)) {
+                        // если имя файла подходит заданному формату
+                        if (isCorrectNameFile(path.getFileName().toString())) {
+                          addSetOrder(path, start, finish, shopId);
                         }
-                    } catch (IOException e) {
-                        System.out.println(e.getMessage());
                     }
                     return FileVisitResult.CONTINUE;
                 }
@@ -136,34 +107,111 @@ public class OrderProcessor {
     }
 
     // метод добавляет объекты во множество учитывая некоторые условия
-    public void addSetOrder(Order order, Set<Order> setOrder, LocalDate start, LocalDate finish, String shopId) {
-        LocalDate localDate = LocalDate.from(order.datetime);
-        if (start == null && finish == null) {
-            if (shopId == null)
-                setOrder.add(order);
-            else if (order.shopId.equals(shopId))
-                setOrder.add(order);
-        } else if (start == null) {
-            if (localDate.isBefore(finish) || localDate.equals(finish)) {
-                if (shopId == null)
-                    setOrder.add(order);
-                else if (order.shopId.equals(shopId))
-                    setOrder.add(order);
+    public void addSetOrder(Path path, LocalDate start, LocalDate finish, String shopId) {
+        try {
+            // поместим содержимое файла в переменную
+            String content = Files.readString(path);
+            // isNotContainError будет true, если содержимое не содержит ошибку
+            boolean isNotContainError = !content.contains("Error");
+            // isNotEmpty будет true, если содержимое не пустое
+            boolean isNotEmpty = !content.isEmpty();
+            LocalDate localDate = LocalDate.from(createOrder(path).datetime);
+            if (start == null && finish == null) {
+                if (shopId == null) {
+                    // если содержимое файла не содержит ошибку и файл не пустой
+                    if (isNotContainError && isNotEmpty)
+                        setOrder.add(createOrder(path));
+                    else {
+                        ++countFileInCorrect;
+                        Files.writeString(path, "");
+                    }
+                }
+                else if (createOrder(path).shopId.equals(shopId)) {
+                    if (isNotContainError && isNotEmpty)
+                        setOrder.add(createOrder(path));
+                    else {
+                        ++countFileInCorrect;
+                        Files.writeString(path, "");
+                    }
+                }
+            } else if (start == null) {
+                if (localDate.isBefore(finish) || localDate.equals(finish)) {
+                    if (shopId == null) {
+                        if (isNotContainError && isNotEmpty)
+                            setOrder.add(createOrder(path));
+                        else {
+                            ++countFileInCorrect;
+                            Files.writeString(path, "");
+                        }
+                    }
+                    else if (createOrder(path).shopId.equals(shopId)) {
+                        if (isNotContainError && isNotEmpty)
+                            setOrder.add(createOrder(path));
+                        else {
+                            ++countFileInCorrect;
+                            Files.writeString(path, "");
+                        }
+                    }
+                }
+            } else if (finish == null) {
+                if (localDate.isAfter(start) || localDate.equals(start)) {
+                    if (shopId == null) {
+                        if (isNotContainError && isNotEmpty)
+                            setOrder.add(createOrder(path));
+                        else {
+                            ++countFileInCorrect;
+                            Files.writeString(path, "");
+                        }
+                    }
+                    else if (createOrder(path).shopId.equals(shopId)) {
+                        if (isNotContainError && isNotEmpty)
+                            setOrder.add(createOrder(path));
+                        else {
+                            ++countFileInCorrect;
+                            Files.writeString(path, "");
+                        }
+                    }
+                }
+            } else if ((localDate.isAfter(start) && localDate.isBefore(finish)) ||
+                    localDate.equals(start) || localDate.equals(finish)) {
+                if (shopId == null) {
+                    if (isNotContainError && isNotEmpty)
+                        setOrder.add(createOrder(path));
+                    else {
+                        ++countFileInCorrect;
+                        Files.writeString(path, "");
+                    }
+                }
+                else if (createOrder(path).shopId.equals(shopId)) {
+                    if (isNotContainError && isNotEmpty)
+                        setOrder.add(createOrder(path));
+                    else {
+                        ++countFileInCorrect;
+                        Files.writeString(path, "");
+                    }
+                }
             }
-        } else if (finish == null) {
-            if (localDate.isAfter(start) || localDate.equals(start)) {
-                if (shopId == null)
-                    setOrder.add(order);
-                else if (order.shopId.equals(shopId))
-                    setOrder.add(order);
-            }
-        } else if ((localDate.isAfter(start) && localDate.isBefore(finish)) ||
-                localDate.equals(start) || localDate.equals(finish)) {
-            if (shopId == null)
-                setOrder.add(order);
-            else if (order.shopId.equals(shopId))
-                setOrder.add(order);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
+    }
+
+    // метод создаёт объект Order
+    public Order createOrder(Path path) {
+        Order order = new Order();
+        try {
+            String fileName = path.getFileName().toString();
+            List<String> stringList = Files.readAllLines(path);
+            order.shopId = getSubString(fileName, 0, 3);
+            order.orderId = getSubString(fileName, 4, 10);
+            order.customerId = getSubString(fileName, 11, 15);
+            order.datetime = getLocalDateTime(Files.getLastModifiedTime(path));
+            order.items = createListOrderItem(stringList);
+            order.sum = getSumBuy(createListOrderItem(stringList));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return order;
     }
 
     // метод проверяет корректность формата переданной строки
