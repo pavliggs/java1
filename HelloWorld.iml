@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/STUDY/Java/telegramBot/progwardsbot.1.0.jar!/" />
+          <root url="jar://$USER_HOME$/STUDY/Java/telegramBot/progwardsbot.2.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -30,6 +30,13 @@
         <CLASSES>
           <root url="jar://$MODULE_DIR$/src/ru/progwards/java1/SeaBattle/pavliggs/seabattle.1.0.jar!/" />
         </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES />
         <JAVADOC />
         <SOURCES />
       </library>

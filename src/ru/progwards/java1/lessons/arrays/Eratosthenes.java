@@ -20,7 +20,7 @@ public class Eratosthenes {
         for (int j = i * i; j < sieve.length; j += i) - внутренний цикл
         */
         for (int i = 2; i < sieve.length; i++) {
-            if (sieve[i] == true) {
+            if (sieve[i]) {
                 for (int j = 2 * i; j < sieve.length; j += i) {
                     sieve[j] = false;
                 }

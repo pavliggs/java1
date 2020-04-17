@@ -1,54 +1,107 @@
 package ru.progwards.java1.testlesson;
 
 import org.telegram.telegrambots.ApiContextInitializer;
+import ru.progwards.java1.telegrambot.ProgwardsTelegramBot;
+import java.util.Scanner;
 
 public class PizzaBot extends ProgwardsTelegramBot {
-    private final String menu = "У нас есть пицца, напитки и десерт"; //константа
+   private final String MENU = "У нас есть пицца, напитки и десерты.";
 
-    @Override //переопределение функции родительского класса
-    public String processMessage(String text) {
-        checkTags(text); //функция поиска (отбирает какие строки подходят под запрос пользователя)
-        //возвращает количество строк, которое соответствует запросу пользователя
-        if (foundCount() == 1) {
-            if (checkLastFound("привет"))
-                return "Приветствую тебя, о мой повелитель!\n Что желаешь? " + menu;
-            if (checkLastFound("конец"))
-                return "Спасибо за заказ.";
-            if (checkLastFound("дурак"))
-                return "Не надо ругаться. Я не волшебник, я только учусь";
+    private static final String ORDER_KEY = "order";
+    private static final String ADRESS_KEY = "address";
 
-            return "Отлично, добавляю в заказ " + getLastFound() + " Желаешь что-то еще?";
+    private boolean stop = false;
+
+//    String finishCheck(Integer userId) {
+//
+//    }
+
+    String getOrder(Integer userId) {
+        int count = Integer.parseInt(getUserData(userId, ORDER_KEY));
+        String fullOrder = "";
+        for (int i = 0; i < count; i++) {
+            if (i == count - 1)
+                fullOrder += getUserData(userId, "order" + (i + 1));
+            else
+                fullOrder += getUserData(userId, "order" + (i + 1)) + "\n";
         }
-        if (foundCount() > 1)
-            return "Под твой запрос подходит: \n" + extract() + "Выбери что-то одно, и я добавлю это в заказ.";
-        return "Я не понял, возможно у нас этого нет, попробуй сказать по другому." + menu;
+        return "Дружище, вот твой заказ:\n" + fullOrder;
     }
 
-    public static void main (String[] args) {
-        System.out.println("Hello, Bot!");
-        ApiContextInitializer.init(); //инициализация библиотеки
-
-        PizzaBot pizzaBot = new PizzaBot();
-        pizzaBot.username = "PizzaTastyBot";
-        pizzaBot.token = "695537327:AAHsUdJEcqZ1ZAnQWEb_bqwr8BdD5A2OwJk";
-
-        pizzaBot.addTags("привет", "привет, здрасьте, здравствуй, добр, день, вечер, утро, hi, hello");
-        pizzaBot.addTags("конец", "конец, все, стоп, нет, спасибо");
-        pizzaBot.addTags("дурак", "дурак, придурок, идиот, тупой");
-
-        pizzaBot.addTags("Пицца гавайская", "гавайск, пицц, ананас, куриц");
-        pizzaBot.addTags("Пицца маргарита", "маргарит, пицц, моцарелла, сыр, кетчуп, помидор");
-        pizzaBot.addTags("Пицца пеперони", "пеперони, пицц, салями, колбас, сыр, кетчуп, помидор");
-
-        pizzaBot.addTags("Торт тирамису", "десерт, кофе, маскарпоне, бисквит");
-        pizzaBot.addTags("Торт медовик", "десерт, мед, бисквит");
-        pizzaBot.addTags("Эклеры", "десерт, заварной, крем, тесто");
-
-        pizzaBot.addTags("Кола", "напит, пить, кола");
-        pizzaBot.addTags("Холодный чай", "напит, пить, чай, липтон, лимон");
-        pizzaBot.addTags("Сок", "напит, пить, сок, апельсиноый, яблочный, вишневый");
-
-        pizzaBot.start();
+    void saveOrderItem(Integer userId, FoundTags tags) {
+        String str = getUserData(userId, ORDER_KEY);
+        Integer count = 0;
+        if (str != null)
+            count = Integer.parseInt(str);
+        ++count;
+        setUserData(userId, ORDER_KEY, count.toString());
+        setUserData(userId, "order" + count, getLastFound(tags));
     }
 
+    @Override
+    public String processMessage(Integer userId, String text) {
+
+
+        // сброс данных
+        if (text.equals("/reset"))
+            cleartUserData(userId);
+
+        FoundTags tags = checkTags(text);
+        if (foundCount(tags) == 1) {
+            if (checkLastFound(tags, "привет"))
+                return "Привет, дружище! Что желаешь?\n" + MENU;
+            if (checkLastFound(tags, "заказ"))
+                return getOrder(userId);
+            saveOrderItem(userId, tags);
+            return "Отлично! Добавил в твой заказ.\nДружиже, может что-то ещё?\n" + MENU;
+        }
+        if (foundCount(tags) > 1)
+            return "Дружище, под твой запрос подходит:\n" + extract(tags)
+                    + "Выбери что-то одно и я добавлю это в твой заказ";
+        return "Не понял тебя, дружище. Возможно у нас этого нет((. Попробуй повторить запрос\n" + MENU;
+    }
+
+    void test() {
+        try (Scanner in = new Scanner(System.in)) {
+            String inputMessage = in.nextLine();
+            while (!inputMessage.contains("/stop")) {
+                System.out.println(processMessage(123, inputMessage));
+                inputMessage = in.nextLine();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        ApiContextInitializer.init();
+
+        PizzaBot bot = new PizzaBot();
+        bot.username = "PizzaTastyBot";
+        bot.token = "695537327:AAHsUdJEcqZ1ZAnQWEb_bqwr8BdD5A2OwJk";
+
+        bot.addTags("привет", "привет, здарова, здорово, здарово, здорова, здрасьте, хай, салют, " +
+                            "здравствуйте, приветствую, вечер, день, утро, hello, hi");
+        bot.addTags("конец", "всё, все, стоп, нет, хватит, больше ничего, не нужно, не хочу");
+
+        bot.addTags("заказ", "заказ");
+//        bot.addTags("нет", "нет");
+
+        // пиццы в наличии
+        bot.addTags("Пицца гавайская", "гавайск, пицц, ананас, куриц");
+        bot.addTags("Пицца маргарита", "маргарит, пицц, моцарелла, сыр, кетчуп, помидор");
+        bot.addTags("Пицца пепперони", "перец, чили, пицц, салями, пепперони, колбаса, сыр, кетчуп, " +
+                            "пеперони");
+
+        // десерты в наличии
+        bot.addTags("Торт тирамису", "десерт, кофе, маскарпоне, бисквит, сладк, тирамис");
+        bot.addTags("Торт медовик", "десерт, мед, бисквит, сладк, медовик");
+        bot.addTags("Эклер", "десерт, заварн, крем, тесто, сладк, эклер, пирожн");
+
+        // напитки в наличии
+        bot.addTags("Кола", "напит, пить, кола, лимонад, газировк");
+        bot.addTags("Холодный чай", "напит, пить, чай, липтон, лимон, холодн");
+        bot.addTags("Сок", "напит, пить, сок, апельсиноый, яблочный, вишневый, фруктов, натуральн");
+
+//        bot.start();
+        bot.test();
+    }
 }
