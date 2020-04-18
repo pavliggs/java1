@@ -8,9 +8,10 @@ public class PizzaBot extends TelegramBot {
     private final String MENU = "У нас есть пицца, картошка, напитки и десерты.";
 
     private static final String ORDER_KEY = "orderKey";
-    private static final String ADRESS_KEY = "address";
+    private static final String ADDRESS_KEY = "address";
     private static final String GROUPS = "groups";
     private static final String OFFER_ADD_TO_ORDER = "offerAddToOrder";
+    private static final String OFFER_ADD_GROUPS = "offerAddGroups";
 
     // сохраняем количество позиций в заказе
     int saveOrderKey(Integer userId) {
@@ -56,28 +57,24 @@ public class PizzaBot extends TelegramBot {
     String finishCheck(Integer userId, String text) {
         if (getUserData(userId, OFFER_ADD_TO_ORDER) == null) {
             setUserData(userId, OFFER_ADD_TO_ORDER, "*");
-            Set<String> result = new HashSet<>(getAllGroups());
+            // result - множество из всех групп основных продуктов
+            Set<String> result = new HashSet<>(getAllMainGroups());
+            // groupsOrder - множество из всех групп продуктов, добавленных в заказ
             Set<String> groupsOrder = (Set<String>) getUserData(userId, GROUPS);
+            // оставим в result только те группы, которых нет во множестве groupsOrder
+            // если result не пустое, то группы которые остались в result предложить заказать пользователю
             result.removeAll(groupsOrder);
-            String str = "";
-            int count = 0;
-            for (String group : result) {
-                ++count;
-                if (count == result.size())
-                    str += group;
-                else
-                    str += group + "\n";
-            }
-            return "Дружище, могу предложить тебе добавить в свой заказ:\n" + str + "\n" +
-                    "Что-то из этого желаешь?";
+            if (!result.isEmpty())
+                return "Дружище, могу предложить тебе добавить в свой заказ:\n" + outputColumn(result) + "\n" +
+                        "Что-то из этого желаешь?";
         }
-        if (getUserData(userId, ADRESS_KEY) == null) {
-            setUserData(userId, ADRESS_KEY, "*");
+        if (getUserData(userId, ADDRESS_KEY) == null) {
+            setUserData(userId, ADDRESS_KEY, "*");
             return "Дружище, пиши свой адрес";
         }
-        setUserData(userId, ADRESS_KEY, text);
+        setUserData(userId, ADDRESS_KEY, text);
         String order = "Твой заказ: " + getFullOrder(userId);
-        String adress = "Адрес доставки: " + (String) getUserData(userId, ADRESS_KEY);
+        String adress = "Адрес доставки: " + getUserData(userId, ADDRESS_KEY);
         return "Итого:\n" + order + "\n" + adress + "\n" + "Спасибо за заказ, дружище!";
     }
 
@@ -96,10 +93,21 @@ public class PizzaBot extends TelegramBot {
 
     // вывести группы заказанных продуктов на экран
     String getGroups(Integer userId) {
-        String res = "";
         Set<String> groups = (Set<String>) getUserData(userId, GROUPS);
-        for (String group : groups)
-            res += group + "\n";
+        return outputColumn(groups);
+    }
+
+    // получаем элементы множества в столбик
+    String outputColumn(Set<String> set) {
+        String res = "";
+        int count = 0;
+        for (String elem : set) {
+            ++count;
+            if (count == set.size())
+                res += elem;
+            else
+                res += elem + "\n";
+        }
         return res;
     }
 

@@ -17,7 +17,8 @@ public class TelegramBot extends TelegramLongPollingBot {
     public String username;
     public String token;
     private List<Association> associations = new ArrayList();
-    private Set<String> allGroups = new HashSet<>();
+    private Set<String> allMainGroups = new HashSet<>();
+    private Set<String> allAdditionalGroups = new HashSet<>();
     private ConcurrentHashMap<Integer, ConcurrentHashMap<String, Object>> userData;
     private Map<Integer, String> cashMap = new HashMap<>();
 
@@ -36,7 +37,11 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     // добавляем во множество группы продуктов
     public String addGroup(String group) {
-        allGroups.add(group);
+        StringTokenizer tokenizer = new StringTokenizer(group);
+        if (tokenizer.countTokens() == 1)
+            allMainGroups.add(group);
+        else
+            allAdditionalGroups.add(group);
         return group;
     }
 
@@ -50,12 +55,12 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     public String getNameLastFound(FoundTags found) {
         Object[] a = found.tags.values().toArray();
-        return a.length > 0 ? getSubString((String) a[a.length - 1], 0) : "";
+        return a.length > 0 ? getSubString((String) a[a.length - 1], "-", 0) : "";
     }
 
     public String getGroupLastFound(FoundTags found) {
         Object[] a = found.tags.values().toArray();
-        return a.length > 0 ? getSubString((String) a[a.length - 1], 1) : "";
+        return a.length > 0 ? getSubString((String) a[a.length - 1], "-", 1) : "";
     }
 
     // получить имя продукта, когда пользователь ввёл полное имя продукта (weight = 10)
@@ -65,15 +70,15 @@ public class TelegramBot extends TelegramLongPollingBot {
         for (Map.Entry<Integer, String> entry : set) {
             if (entry.getKey() == 10) {
                 cashMap.put(entry.getKey(), entry.getValue());
-                name = getSubString(entry.getValue(), 0);
+                name = getSubString(entry.getValue(), "-", 0);
                 break;
             }
         }
         return name;
     }
 
-    private String getSubString(String str, int i) {
-        String[] arr = str.split("-");
+    public String getSubString(String str, String delimiter, int i) {
+        String[] arr = str.split(delimiter);
         return arr[i];
     }
 
@@ -91,7 +96,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             String res = "";
 
             for (String name : names)
-                res += getSubString(name, 0) + "\n";
+                res += getSubString(name, "-", 0) + "\n";
 
             return res;
     }
@@ -162,13 +167,19 @@ public class TelegramBot extends TelegramLongPollingBot {
         return username;
     }
 
-    public Set<String> getAllGroups() {
-        return allGroups;
+    // получить множество из основных групп товаров
+    public Set<String> getAllMainGroups() {
+        return allMainGroups;
+    }
+
+    // получить множество из дополнительных групп товаров
+    public Set<String> getAllAdditionalGroups() {
+        return allAdditionalGroups;
     }
 
     // получить имя группы из cashMap
     public String getGroupCashMap() {
-        return getSubString(cashMap.get(10), 1);
+        return getSubString(cashMap.get(10), "-", 1);
     }
 
     public void onUpdateReceived(Update update) {

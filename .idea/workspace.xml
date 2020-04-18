@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/register1/Bit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/register1/ByteRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/N18dot3/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/N18dot3/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorld.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/lessons/abstractnum/Number.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/lessons/abstractnum/Number.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/lessons/arrays/Eratosthenes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/lessons/arrays/Eratosthenes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/lessons/test/Test1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/lessons/test/Test1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/testlesson/PizzaBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/testlesson/PizzaBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/abstractnum/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/abstractnum/Number.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/arrays/Eratosthenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/arrays/Eratosthenes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/testlesson/PizzaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/testlesson/PizzaBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="131" column="47" lean-forward="true" selection-start-line="131" selection-start-column="47" selection-end-line="131" selection-end-column="47" />
+            <state relative-caret-position="238">
+              <caret line="107" column="16" lean-forward="true" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,26 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="219" column="29" lean-forward="true" selection-start-line="219" selection-start-column="29" selection-end-line="219" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1350#1351#0" expanded="true" />
-                <element signature="e#1417#1418#0" expanded="true" />
-                <element signature="e#5263#5264#0" expanded="true" />
-                <element signature="e#5295#5296#0" expanded="true" />
-                <element signature="e#6826#6827#0" expanded="true" />
-                <element signature="e#6866#6867#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="74" column="41" lean-forward="true" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+            <state relative-caret-position="289">
+              <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+            <state relative-caret-position="323">
+              <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,10 +130,10 @@
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/register1/ByteRegister.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/testlesson/PizzaBot.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/testlesson/ExampleHelloWorld.java" />
+        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" />
         <option value="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java" />
       </list>
     </option>
   </component>
@@ -253,7 +224,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587081232546" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587164750210" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PavelKhovaylo" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -372,13 +343,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574201332338</updated>
-    </task>
-    <task id="LOCAL-00079" summary="homework 11, attempt 8">
-      <created>1580772466761</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1580772466761</updated>
     </task>
     <task id="LOCAL-00080" summary="homework 12, attempt 1">
       <created>1581882067857</created>
@@ -716,7 +680,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585571897196</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="project PizzaBot, attempt 1">
+      <created>1587128622622</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1587128622623</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TodoView">
@@ -738,7 +709,7 @@
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.73796034" visible="true" weight="0.1738255" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.73796034" visible="true" weight="0.17583893" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49731544" weight="0.25212464" />
@@ -791,7 +762,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 16, attempt 5" />
     <MESSAGE value="homework 16, attempt 6" />
     <MESSAGE value="homework 16, attempt 7" />
     <MESSAGE value="homework 16, attempt 8" />
@@ -816,7 +786,8 @@
     <MESSAGE value="homework 17, attempt 18" />
     <MESSAGE value="homework 17, attempt 19" />
     <MESSAGE value="homework 17, attempt 20" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework 17, attempt 20" />
+    <MESSAGE value="project PizzaBot, attempt 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="project PizzaBot, attempt 1" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1249,42 +1220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="131" column="47" lean-forward="true" selection-start-line="131" selection-start-column="47" selection-end-line="131" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="219" column="29" lean-forward="true" selection-start-line="219" selection-start-column="29" selection-end-line="219" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1350#1351#0" expanded="true" />
-            <element signature="e#1417#1418#0" expanded="true" />
-            <element signature="e#5263#5264#0" expanded="true" />
-            <element signature="e#5295#5296#0" expanded="true" />
-            <element signature="e#6826#6827#0" expanded="true" />
-            <element signature="e#6866#6867#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1303,8 +1238,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="74" column="41" lean-forward="true" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+        <state relative-caret-position="493">
+          <caret line="53" column="52" lean-forward="true" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="107" column="16" lean-forward="true" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
