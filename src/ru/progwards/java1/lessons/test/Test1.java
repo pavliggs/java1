@@ -21,8 +21,5 @@ public class Test1 {
 
 //        System.out.format("|%04d|%#x|%2.1f|", 2, 15, 3.25);
 
-        String str = "One two";
-        StringTokenizer tokenizer = new StringTokenizer(str);
-        System.out.println(tokenizer.countTokens());
     }
 }

@@ -18,7 +18,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     public String token;
     private List<Association> associations = new ArrayList();
     private Set<String> allMainGroups = new HashSet<>();
-    private Set<String> allAdditionalGroups = new HashSet<>();
+    private Map<String, String> allAdditionalGroups = new HashMap<>();
     private ConcurrentHashMap<Integer, ConcurrentHashMap<String, Object>> userData;
     private Map<Integer, String> cashMap = new HashMap<>();
 
@@ -41,7 +41,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         if (tokenizer.countTokens() == 1)
             allMainGroups.add(group);
         else
-            allAdditionalGroups.add(group);
+            allAdditionalGroups.put(getSubString(group, " ", 0), getSubString(group, " ", 1));
         return group;
     }
 
@@ -86,6 +86,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         return found.tags.size();
     }
 
+    // проверяет содержится ли в found.tags значение с ключом равным 10
     public boolean containsWeightEqualTen(FoundTags found) {
         return found.tags.containsKey(10);
     }
@@ -173,7 +174,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     // получить множество из дополнительных групп товаров
-    public Set<String> getAllAdditionalGroups() {
+    public Map<String, String> getAllAdditionalGroups() {
         return allAdditionalGroups;
     }
 

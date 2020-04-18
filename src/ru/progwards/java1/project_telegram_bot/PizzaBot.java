@@ -40,7 +40,7 @@ public class PizzaBot extends TelegramBot {
     }
 
     // сохраняем позиции заказа и формируем множество из групп заказанных продуктов
-    String saveOrderItemAdd(Integer userId, FoundTags tags) {
+    String saveOrderItemFull(Integer userId, FoundTags tags) {
         int count = saveOrderKey(userId);
         setUserData(userId, "order" + count, getNameFound(tags));
         if (getUserData(userId, GROUPS) == null) {
@@ -55,6 +55,7 @@ public class PizzaBot extends TelegramBot {
     }
 
     String finishCheck(Integer userId, String text) {
+        // предлагаем дозаказать группы товаров, которых нет в заказе
         if (getUserData(userId, OFFER_ADD_TO_ORDER) == null) {
             setUserData(userId, OFFER_ADD_TO_ORDER, "*");
             // result - множество из всех групп основных продуктов
@@ -65,8 +66,21 @@ public class PizzaBot extends TelegramBot {
             // если result не пустое, то группы которые остались в result предложить заказать пользователю
             result.removeAll(groupsOrder);
             if (!result.isEmpty())
-                return "Дружище, могу предложить тебе добавить в свой заказ:\n" + outputColumn(result) + "\n" +
-                        "Что-то из этого желаешь?";
+                return "Дружище, хочу предложить тебе добавить в свой заказ:\n" + outputColumn(result) +
+                        "Если что-то из этого желаешь, то пиши что именно хочешь дозаказать, если " +
+                        "ничего больше не нужно, то напиши слово \"нет\"";
+        }
+        /* предлагаем заказать дополнительные группы товаров к товарам, присутствующим в заказе
+         * (если товары, присутствующие в заказе подразумевают дололнительные товары) */
+        if (getUserData(userId, OFFER_ADD_GROUPS) == null) {
+            setUserData(userId, OFFER_ADD_GROUPS, "*");
+            // groupsOrder - множество из всех групп продуктов, добавленных в заказ
+            Set<String> groupsOrder = (Set<String>) getUserData(userId, GROUPS);
+            // foundAdditionalGroups - словарь из дополнительных групп товаров, которые подходят к товарам в заказе
+            Map<String, String> foundAdditionalGroups = getMapFoundAdditionalGroups(getAllAdditionalGroups(), groupsOrder);
+            if (!foundAdditionalGroups.isEmpty()) {
+                return offerAdditionalGroups(foundAdditionalGroups);
+            }
         }
         if (getUserData(userId, ADDRESS_KEY) == null) {
             setUserData(userId, ADDRESS_KEY, "*");
@@ -76,6 +90,31 @@ public class PizzaBot extends TelegramBot {
         String order = "Твой заказ: " + getFullOrder(userId);
         String adress = "Адрес доставки: " + getUserData(userId, ADDRESS_KEY);
         return "Итого:\n" + order + "\n" + adress + "\n" + "Спасибо за заказ, дружище!";
+    }
+
+    // формируем список основных товаров, имеющихся в заказе и список дополнительных к ним товаров
+    String offerAdditionalGroups(Map<String, String> map) {
+        Set<Map.Entry<String, String>> entries = map.entrySet();
+        String result1 = "";
+        String result2 = "";
+        for (Map.Entry<String, String> entry : entries) {
+            result1 += entry.getKey() + "\n";
+            result2 += entry.getValue() + "\n";
+        }
+        return "Дружище, в твоём заказе присутствуют(ет):\n" + result1 +
+                "Дополнительно к этому предлагаю заказать\n" + result2 +
+                "Если что-то из этого желаешь, то пиши что именно хочешь дозаказать, если " +
+                "ничего больше не нужно, то напиши слово \"нет\"";
+    }
+
+    // получить Map<String, String> из найденных дополнительных групп товаров к товарам в заказе
+    Map<String, String> getMapFoundAdditionalGroups(Map<String, String> map, Set<String> set) {
+        Map<String, String> mapResult = new HashMap<>();
+        for (String str : set) {
+            if (map.containsKey(str))
+                mapResult.put(str, map.get(str));
+        }
+        return mapResult;
     }
 
     // вывести заказ на экран
@@ -92,21 +131,16 @@ public class PizzaBot extends TelegramBot {
     }
 
     // вывести группы заказанных продуктов на экран
-    String getGroups(Integer userId) {
-        Set<String> groups = (Set<String>) getUserData(userId, GROUPS);
-        return outputColumn(groups);
-    }
+//    String getGroups(Integer userId) {
+//        Set<String> groups = (Set<String>) getUserData(userId, GROUPS);
+//        return outputColumn(groups);
+//    }
 
     // получаем элементы множества в столбик
     String outputColumn(Set<String> set) {
         String res = "";
-        int count = 0;
         for (String elem : set) {
-            ++count;
-            if (count == set.size())
-                res += elem;
-            else
-                res += elem + "\n";
+            res += elem + "\n";
         }
         return res;
     }
@@ -141,15 +175,13 @@ public class PizzaBot extends TelegramBot {
                 return "Привет, дружище! Что желаешь?\n" + MENU;
             if (checkLastFound(tags, "заказ"))
                 return "Дружище, вот твой заказ:\n" + getFullOrder(userId);
-            if (checkLastFound(tags, "группы блюд"))
-                return getGroups(userId);
             if (checkLastFound(tags, "конец"))
                 return finishCheck(userId, text);
             return saveOrderItem(userId, tags);
         }
         if (foundCount(tags) > 1) {
             if (containsWeightEqualTen(tags))
-                return saveOrderItemAdd(userId, tags);
+                return saveOrderItemFull(userId, tags);
             return "Дружище, под твой запрос подходит:\n" + extract(tags)
                     + "Выбери что-то одно, напиши полное название и я добавлю это в твой заказ";
         }
@@ -208,9 +240,9 @@ public class PizzaBot extends TelegramBot {
         bot.addTags("Картофель фри", "картофел, картошк, фри", bot.addGroup("картошка"));
         bot.addTags("Картофель Айдахо", "картофел, картошк, айдахо", bot.addGroup("картошка"));
 
-        // соусы
-        bot.addTags("Соус сырный", "соус", bot.addGroup("соус картошка"));
-        bot.addTags("Соус барбекю", "соус, барбекю, кетчуп", bot.addGroup("соус картошка"));
+        // соусы (дополнительный товар к товарам группы "картошка")
+        bot.addTags("Соус сырный", "соус", bot.addGroup("картошка соус"));
+        bot.addTags("Соус барбекю", "соус, барбекю, кетчуп", bot.addGroup("картошка соус"));
 
 //        bot.start();
         bot.test();
