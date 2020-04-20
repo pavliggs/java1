@@ -10,6 +10,9 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -27,21 +30,46 @@ public class TelegramBot extends TelegramLongPollingBot {
         userData = new ConcurrentHashMap();
     }
 
-    public void addTags(String name, String tags, String group) {
-        associations.add(new Association(name, tags, group));
+    // метод преобразует строки файла в элементы списка
+    // пример строки: Пицца гавайская | гавайск, пицц, ананас, ветчин, моцарел, сыр, помидор, томат, кетчуп | 700 | пицца
+    private List<String> readFile(Path path) {
+        List<String> list = new ArrayList<>();
+        try {
+            list = Files.readAllLines(path);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return list;
     }
 
-    public void addTags(String name, String tags) {
-        associations.add(new Association(name, tags, null));
+    // метод создаёт из строки объект Association
+    private Association createAssociation(String str) {
+        StringTokenizer tokenizer = new StringTokenizer(str, "|");
+        if (tokenizer.countTokens() == 2)
+            return new Association(tokenizer.nextToken().trim(), tokenizer.nextToken().trim(),
+                    0, null);
+        return new Association(tokenizer.nextToken().trim(), tokenizer.nextToken().trim(),
+                                Integer.parseInt(tokenizer.nextToken().trim()), addGroup(tokenizer.nextToken().trim()));
+    }
+
+    public void addTags(Path path) {
+        List<String> list = readFile(path);
+        for (String str : list) {
+            if (str.equals(""))
+                continue;
+            associations.add(createAssociation(str));
+        }
     }
 
     // добавляем во множество группы продуктов
     public String addGroup(String group) {
-        StringTokenizer tokenizer = new StringTokenizer(group);
+        StringTokenizer tokenizer = new StringTokenizer(group, "/");
+        /* если строка состоит из 1 слова, то добавляем в allMainGroups
+         * иначе добавляем в allAdditionalGroups */
         if (tokenizer.countTokens() == 1)
             allMainGroups.add(group);
         else
-            allAdditionalGroups.put(getSubString(group, " ", 0), getSubString(group, " ", 1));
+            allAdditionalGroups.put(tokenizer.nextToken(), tokenizer.nextToken());
         return group;
     }
 
@@ -55,12 +83,17 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     public String getNameLastFound(FoundTags found) {
         Object[] a = found.tags.values().toArray();
-        return a.length > 0 ? getSubString((String) a[a.length - 1], "-", 0) : "";
+        return a.length > 0 ? getSubString((String) a[a.length - 1], 0) : "";
+    }
+
+    public String getPriceLastFound(FoundTags found) {
+        Object[] a = found.tags.values().toArray();
+        return a.length > 0 ? getSubString((String) a[a.length - 1], 1) : "";
     }
 
     public String getGroupLastFound(FoundTags found) {
         Object[] a = found.tags.values().toArray();
-        return a.length > 0 ? getSubString((String) a[a.length - 1], "-", 1) : "";
+        return a.length > 0 ? getSubString((String) a[a.length - 1], 2) : "";
     }
 
     // получить имя продукта, когда пользователь ввёл полное имя продукта (weight = 10)
@@ -70,17 +103,34 @@ public class TelegramBot extends TelegramLongPollingBot {
         for (Map.Entry<Integer, String> entry : set) {
             if (entry.getKey() == 10) {
                 cashMap.put(entry.getKey(), entry.getValue());
-                name = getSubString(entry.getValue(), "-", 0);
+                name = getSubString(entry.getValue(), 0);
                 break;
             }
         }
         return name;
     }
 
-    public String getSubString(String str, String delimiter, int i) {
-        String[] arr = str.split(delimiter);
+    // получить цену из cashMap
+    public String getPriceCashMap() {
+        return getSubString(cashMap.get(10), 1);
+    }
+
+    // получить имя группы из cashMap
+    public String getGroupCashMap() {
+        return getSubString(cashMap.get(10), 2);
+    }
+
+    // получить слово из массива слов
+    private String getSubString(String str, int i) {
+        String[] arr = str.split("[|]");
         return arr[i];
     }
+
+    // получить количество лексем (фрагментов строки)
+//    private int getQuantityWords(String str) {
+//        String[] arr = str.split("[|]");
+//        return arr.length;
+//    }
 
     public int foundCount(FoundTags found) {
         return found.tags.size();
@@ -91,13 +141,13 @@ public class TelegramBot extends TelegramLongPollingBot {
         return found.tags.containsKey(10);
     }
 
+    // получить имя и цену найденных продуктов, соответствующих запросу пользователя
     public String extract(FoundTags found) {
-            Collection<String> names = found.tags.values();
-
+            Collection<String> values = found.tags.values();
             String res = "";
 
-            for (String name : names)
-                res += getSubString(name, "-", 0) + "\n";
+            for (String info : values)
+                res += getSubString(info, 0) + " - " + getSubString(info, 1) + "\n";
 
             return res;
     }
@@ -122,6 +172,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         return weight;
     }
 
+    // получить объект содержащим TreeMultimap, состоящий из значений, соответсвующих запросу пользователя
     public FoundTags findAssociation(String text) {
         TreeMultimap<Integer, String> result = TreeMultimap.create();
         Iterator var4 = associations.iterator();
@@ -130,7 +181,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             Association ass = (Association)var4.next();
             int weight = findAssociation(ass, text);
             if (weight > 0) {
-                result.put(weight, ass.name + "-" + ass.group);
+                result.put(weight, ass.name + "|" + ass.price + "|" + ass.group);
             }
         }
 
@@ -173,14 +224,9 @@ public class TelegramBot extends TelegramLongPollingBot {
         return allMainGroups;
     }
 
-    // получить множество из дополнительных групп товаров
+    // получить Map из дополнительных групп товаров
     public Map<String, String> getAllAdditionalGroups() {
         return allAdditionalGroups;
-    }
-
-    // получить имя группы из cashMap
-    public String getGroupCashMap() {
-        return getSubString(cashMap.get(10), "-", 1);
     }
 
     public void onUpdateReceived(Update update) {
@@ -216,11 +262,13 @@ public class TelegramBot extends TelegramLongPollingBot {
     static class Association {
         private String name;
         private String tags;
+        private int price;
         private String group;
 
-        public Association(String name, String tags, String group) {
+        public Association(String name, String tags, int price, String group) {
             this.name = name;
             this.tags = tags;
+            this.price = price;
             this.group = group;
         }
     }
