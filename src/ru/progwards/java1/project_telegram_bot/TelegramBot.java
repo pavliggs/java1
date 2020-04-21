@@ -21,7 +21,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     public String token;
     private List<Association> associations = new ArrayList();
     private Set<String> allMainGroups = new HashSet<>();
-    private Map<String, String> allAdditionalGroups = new HashMap<>();
+    private TreeMultimap<String, String> allAdditionalGroups = TreeMultimap.create();
     private ConcurrentHashMap<Integer, ConcurrentHashMap<String, Object>> userData;
     private Map<Integer, String> cashMap = new HashMap<>();
 
@@ -77,7 +77,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 }
             });
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -147,10 +147,15 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     // получить количество лексем (фрагментов строки)
-//    private int getQuantityWords(String str) {
-//        String[] arr = str.split("[|]");
-//        return arr.length;
-//    }
+    private int getQuantityWords(String str) {
+        String[] arr = str.split("[/]");
+        return arr.length;
+    }
+
+    private String getSubGroup(String str) {
+        String[] arr = str.split("[/]");
+        return arr[1];
+    }
 
     public int foundCount(FoundTags found) {
         return found.tags.size();
@@ -201,7 +206,14 @@ public class TelegramBot extends TelegramLongPollingBot {
             Association ass = (Association)var4.next();
             int weight = findAssociation(ass, text);
             if (weight > 0) {
-                result.put(weight, ass.name + "|" + ass.price + "|" + ass.group);
+                if (ass.group == null)
+                    result.put(weight, ass.name);
+                else {
+                    if (getQuantityWords(ass.group) == 2)
+                        result.put(weight, ass.name + "|" + ass.price + "|" + getSubGroup(ass.group));
+                    else
+                        result.put(weight, ass.name + "|" + ass.price + "|" + ass.group);
+                }
             }
         }
 
@@ -245,7 +257,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     // получить Map из дополнительных групп товаров
-    public Map<String, String> getAllAdditionalGroups() {
+    public TreeMultimap<String, String> getAllAdditionalGroups() {
         return allAdditionalGroups;
     }
 
