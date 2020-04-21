@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class PizzaBot extends TelegramBot {
-    private Path path;
+    private Path inDirectory;
 
     private final String MENU = "У нас есть пицца, картошка, напитки и десерты.";
 
@@ -19,7 +19,7 @@ public class PizzaBot extends TelegramBot {
     private static final String SUGGEST_ADDITIONAL_GROUPS = "offerAddGroups";
 
     PizzaBot (String inFile) {
-        this.path = Paths.get(inFile);
+        this.inDirectory = Paths.get(inFile);
     }
 
     // сохраняем количество позиций в заказе
@@ -240,53 +240,11 @@ public class PizzaBot extends TelegramBot {
     public static void main(String[] args) {
         ApiContextInitializer.init();
 
-        PizzaBot bot = new PizzaBot("C:\\Users\\Эльдорадо\\Desktop\\TestJava\\pizzaBot\\inFolder\\tags.csv");
+        PizzaBot bot = new PizzaBot("C:\\Users\\Эльдорадо\\Desktop\\TestJava\\pizzaBot\\inFolder");
         bot.username = "PizzaTastyBot";
         bot.token = "695537327:AAHsUdJEcqZ1ZAnQWEb_bqwr8BdD5A2OwJk";
 
-        bot.addTags(bot.path);
-
-
-//        bot.addTags("привет", "привет, здарова, здорово, здарово, здорова, здрасьте, хай, салют, " +
-//                "здравствуйте, приветствую, вечер, день, утро, hello, hi");
-//        bot.addTags("конец", "всё, все, стоп, нет, хватит, больше ничего, не нужно, не хочу, закончил, достаточно");
-//
-//        bot.addTags("заказ", "заказ");
-//        bot.addTags("группы блюд", "групп");
-//
-//        // пиццы в наличии
-//        bot.addTags("Пицца гавайская", "гавайск, пицц, ананас, ветчин, моцарел, сыр, помидор, томат, кетчуп", bot.addGroup("пицца"));
-//        bot.addTags("Пицца маргарита", "маргарит, пицц, моцарел, сыр, томат, помидор, базилик, орегано", bot.addGroup("пицца"));
-//        bot.addTags("Пицца пепперони", "пеперони, пепперони, моцарел, сыр, пицц, салями, колбас, чили, " +
-//                "перец, помидор, томат, орегано, базилик, чесно", bot.addGroup("пицца"));
-//        bot.addTags("Пицца Четыре сыра", "пицц, моцарел, сыр, четыре", bot.addGroup("пицца"));
-//        bot.addTags("Пицца мясная", "пицц, моцарел, сыр, томат, помидор, ветчин, колбас, кури, мяс", bot.addGroup("пицца"));
-//        bot.addTags("Пицца Ветчина и сыр", "пицц, моцарел, сыр, ветчин, колбас, ветчина и сыр", bot.addGroup("пицца"));
-//
-//        // десерты в наличии
-//        bot.addTags("Тирамису", "десерт, кофе, маскарпоне, бисквит, сладк, тирамис, торт, пирожн", bot.addGroup("десерт"));
-//        bot.addTags("Медовик", "десерт, мед, бисквит, сладк, медовик, торт", bot.addGroup("десерт"));
-//        bot.addTags("Эклер", "десерт, заварн, крем, сладк, эклер, пирожн", bot.addGroup("десерт"));
-//        bot.addTags("Мороженое Пломбир", "морож, сливочн, пломбир, сладк", bot.addGroup("десерт"));
-//
-//        // напитки в наличии
-//        bot.addTags("Кола", "напит, пить, кола, coca, cola, лимонад, газировк", bot.addGroup("напиток"));
-//        bot.addTags("Фанта", "напит, пить, фанта, fanta, лимонад, газировк", bot.addGroup("напиток"));
-//        bot.addTags("Холодный чай", "напит, пить, чай, липтон, лимон, холодн", bot.addGroup("напиток"));
-//        bot.addTags("Сок яблочный", "сок, напит, пить, ябло, фруктов, натуральн", bot.addGroup("напиток"));
-//        bot.addTags("Сок апельсиновый", "сок, напит, пить, апельсин, фруктов, натуральн", bot.addGroup("напиток"));
-//        bot.addTags("Сок вишнёвый", "сок, напит, пить, вишн, ягод, натуральн", bot.addGroup("напиток"));
-//
-//        // картошка
-//        bot.addTags("Картофель фри", "картофел, картошк, фри", bot.addGroup("картошка"));
-//        bot.addTags("Картофель Айдахо", "картофел, картошк, айдахо", bot.addGroup("картошка"));
-//
-//        // соусы (здесь "картошка" - это то, к какой группе товаров это идёт как дополнительный)
-//        bot.addTags("Соус сырный", "соус", bot.addGroup("картошка|соус"));
-//        bot.addTags("Соус барбекю", "соус, барбекю, кетчуп", bot.addGroup("картошка|соус"));
-//
-//        // лёд
-//        bot.addTags("Лёд", "холодн, охла, лёд, лед", bot.addGroup("напиток|лёд"));
+        bot.addTags(bot.inDirectory);
 
 //        bot.start();
         bot.test();

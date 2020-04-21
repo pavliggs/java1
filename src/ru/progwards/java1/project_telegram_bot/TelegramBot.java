@@ -11,8 +11,8 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -52,12 +52,32 @@ public class TelegramBot extends TelegramLongPollingBot {
                                 Integer.parseInt(tokenizer.nextToken().trim()), addGroup(tokenizer.nextToken().trim()));
     }
 
-    public void addTags(Path path) {
-        List<String> list = readFile(path);
-        for (String str : list) {
-            if (str.equals(""))
-                continue;
-            associations.add(createAssociation(str));
+    // метод получает директорию и читает в ней все файлы, подходящего формата
+    public void addTags(Path directory) {
+        PathMatcher pathMatcher = FileSystems.getDefault().getPathMatcher("glob:**/*.csv");
+
+        try {
+            Files.walkFileTree(directory, new SimpleFileVisitor<>() {
+                @Override
+                public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) {
+                    if (pathMatcher.matches(path)) {
+                        List<String> list = readFile(path);
+                        for (String str : list) {
+                            if (str.equals(""))
+                                continue;
+                            associations.add(createAssociation(str));
+                        }
+                    }
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult visitFileFailed(Path path, IOException e) {
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 
