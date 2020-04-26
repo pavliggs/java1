@@ -106,16 +106,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         return a.length > 0 ? getSubString((String) a[a.length - 1], 0) : "";
     }
 
-//    public String getPriceLastFound(FoundTags found) {
-////        Object[] a = found.tags.values().toArray();
-////        return a.length > 0 ? getSubString((String) a[a.length - 1], 1) : "";
-////    }
-//
-////    public String getGroupLastFound(FoundTags found) {
-////        Object[] a = found.tags.values().toArray();
-////        return a.length > 0 ? getSubString((String) a[a.length - 1], 2) : "";
-////    }
-
     // получить имя продукта, когда пользователь ввёл полное имя продукта (weight = 10)
     public String getNameFound(FoundTags found) {
         Set<Map.Entry<Integer, String>> set = found.tags.entries();

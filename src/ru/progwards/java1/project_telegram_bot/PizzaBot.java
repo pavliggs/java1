@@ -15,8 +15,10 @@ public class PizzaBot extends TelegramBot {
 
     private final String MENU = "У нас есть пицца, картошка, напитки и десерты.";
 
+    private static final String HELLO_USER = "helloUser";
     private static final String ORDER_KEY = "orderKey";
     private static final String ADDRESS_KEY = "address";
+    private static final String ENTER_ADDRESS = "enterAddress";
     private static final String ORDER = "order";
     private static final String QUANTITY = "quantity";
     private static final String PRICES = "prices";
@@ -29,6 +31,21 @@ public class PizzaBot extends TelegramBot {
         this.outDirectory = Paths.get(outDirectory);
     }
 
+    String helloUser(Integer userId) {
+        if (getUserData(userId, HELLO_USER) != null)
+            return "Дружище, я тебя снова искренне приветствую, но давай всё-таки продолжай заказ.\n" +
+                    "Я переживаю, что ты голодный, а голодным быть ВРЕДНО для организма!\n" + MENU;
+        setUserData(userId, HELLO_USER, "*");
+        return "Привет, дружище! Я помогу тебе заказать офигенные НИШТЯКИ.\n" +
+                "Ты не серчай, но немного некоторых правил нашего общения не помешают:\n" +
+                "- если хочешь посмотреть меню, то просто напиши что-то вроде \"покажи меню\"\n" +
+                "- если хочешь что-то заказать, то просто напиши это, а дальше я тебе помогу добавить в заказ\n" +
+                "- если захочешь посмотреть свой текущий заказ, то напиши что-то вроде \"мой заказ\"\n" +
+                "- если захочешь что-то убрать из своего заказа, то напиши что-то вроде \"хочу убрать\"\n" +
+                "- если считаешь, что тебе этого достаточно, то напиши что-то вроде \"мне хватит\"\n" +
+                "А теперь приступим к заказу, дружище!\n" + MENU;
+    }
+
     // сохраняем количество позиций в заказе
     int getOrderKey(Integer userId) {
         Integer orderKey = (Integer) getUserData(userId, ORDER_KEY);
@@ -39,6 +56,7 @@ public class PizzaBot extends TelegramBot {
         return count;
     }
 
+    // метод устанавливает ORDER_KEY, ORDER, QUANTITY, PRICES
     void setOrderInfo(Integer userId, FoundTags tags, Integer count) {
         if (count == 1) {
             setUserData(userId, ORDER_KEY, count);
@@ -49,20 +67,7 @@ public class PizzaBot extends TelegramBot {
             setUserData(userId, PRICES, prices);
             setUserData(userId, DELETE_FROM_ORDER, "no");
         } else {
-            boolean noDuplicates = true;
-            Integer orderKey = (Integer) getUserData(userId, ORDER_KEY);
-            for (int i = 1; i <= orderKey; i++) {
-                if (getNameFound(tags).equals(getUserData(userId, ORDER + i))) {
-                    Integer quantity = (Integer) getUserData(userId, QUANTITY + i);
-                    setUserData(userId, QUANTITY + i, ++quantity);
-                    List<Integer> prices = (List<Integer>) getUserData(userId, PRICES);
-                    Integer price = prices.get(i - 1);
-                    price += Integer.parseInt(getPriceCashMap());
-                    prices.set(i - 1, price);
-                    noDuplicates = false;
-                    break;
-                }
-            }
+            boolean noDuplicates = searchDuplicateProduct(userId, tags);
             if (noDuplicates) {
                 setUserData(userId, ORDER_KEY, count);
                 setUserData(userId, ORDER + count, getNameFound(tags));
@@ -73,7 +78,26 @@ public class PizzaBot extends TelegramBot {
         }
     }
 
-    // сохраняем позиции заказа и формируем множество из групп заказанных продуктов, если foundCount(tags) > 1
+    // метод ищет дубликат продукта
+    boolean searchDuplicateProduct(Integer userId, FoundTags tags) {
+        boolean noDuplicates = true;
+        Integer orderKey = (Integer) getUserData(userId, ORDER_KEY);
+        for (int i = 1; i <= orderKey; i++) {
+            if (getNameFound(tags).equals(getUserData(userId, ORDER + i))) {
+                Integer quantity = (Integer) getUserData(userId, QUANTITY + i);
+                setUserData(userId, QUANTITY + i, ++quantity);
+                List<Integer> prices = (List<Integer>) getUserData(userId, PRICES);
+                Integer price = prices.get(i - 1);
+                price += Integer.parseInt(getPriceCashMap());
+                prices.set(i - 1, price);
+                noDuplicates = false;
+                break;
+            }
+        }
+        return noDuplicates;
+    }
+
+    // сохраняем позиции заказа, количество, цену и формируем множество из групп заказанных продуктов
     String saveOrderItem(Integer userId, FoundTags tags) {
         Integer count = getOrderKey(userId);
         setOrderInfo(userId, tags, count);
@@ -117,6 +141,7 @@ public class PizzaBot extends TelegramBot {
         }
         if (getUserData(userId, ADDRESS_KEY) == null) {
             setUserData(userId, ADDRESS_KEY, "*");
+            setUserData(userId, ENTER_ADDRESS, "yes");
             return "Дружище, пиши свой адрес";
         }
         setUserData(userId, ADDRESS_KEY, text);
@@ -129,6 +154,8 @@ public class PizzaBot extends TelegramBot {
     }
 
     String deleteFromOrder(Integer userId, FoundTags tags) {
+        if (getUserData(userId, DELETE_FROM_ORDER) == null)
+            return "Дружище, пока нечего удалять. Ты ещё ничего не заказал((\n" + MENU;
         if (getUserData(userId, DELETE_FROM_ORDER).equals("yes"))  {
             boolean deletedNotFound = searchDeletedProduct(userId, tags);
             if (deletedNotFound)
@@ -284,14 +311,16 @@ public class PizzaBot extends TelegramBot {
 
         FoundTags tags = checkTags(text);
 
-        // если текст пользователя содержит цифру, то значит он ввёл свой адрес
-        if (containsDigit(text))
-            return finishCheck(userId, text);
+        if (getUserData(userId, ENTER_ADDRESS) != null && getUserData(userId, ENTER_ADDRESS).equals("yes")) {
+            if (containsDigit(text))
+                return finishCheck(userId, text);
+            return "Дружище, сейчас необходимо ввести твой адрес!";
+        }
 
         // если tags.tags содержит 1 элемент
         if (foundCount(tags) == 1) {
             if (checkLastFound(tags, "привет"))
-                return "Привет, дружище! Что желаешь?\n" + MENU;
+                return helloUser(userId);
             if (checkLastFound(tags, "меню"))
                 return getMenu() + "Выбери что-то одно, напиши полное название и я добавлю это в твой заказ";
             if (checkLastFound(tags, "заказ")) {

@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1547">
-              <caret line="133" column="32" lean-forward="true" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
+            <state relative-caret-position="255">
+              <caret line="314" column="36" lean-forward="true" selection-start-line="314" selection-start-column="36" selection-end-line="314" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="145" column="8" lean-forward="true" selection-start-line="145" selection-start-column="8" selection-end-line="145" selection-end-column="8" />
+            <state relative-caret-position="-2515">
+              <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5433#5434#0" expanded="true" />
@@ -274,7 +274,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587933753423" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587940035043" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PavelKhovaylo" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -393,13 +393,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574201332338</updated>
-    </task>
-    <task id="LOCAL-00086" summary="homework 13, attempt 2">
-      <created>1582314065921</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1582314065921</updated>
     </task>
     <task id="LOCAL-00087" summary="homework 13, attempt 3">
       <created>1582315766531</created>
@@ -737,7 +730,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587912384842</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="project PizzaBot, attempt 8">
+      <created>1587935294723</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1587935294723</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TodoView">
@@ -751,7 +751,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.26203966" side_tool="true" weight="0.23489933" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -762,7 +761,7 @@
       <window_info content_ui="combo" id="Project" order="6" sideWeight="0.73796034" visible="true" weight="0.20268457" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.16005665" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.3526912" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -812,7 +811,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 17, attempt 3" />
     <MESSAGE value="homework 17, attempt 4" />
     <MESSAGE value="homework 17, attempt 5" />
     <MESSAGE value="homework 17, attempt 6" />
@@ -837,7 +835,8 @@
     <MESSAGE value="project PizzaBot, attempt 5" />
     <MESSAGE value="project PizzaBot, attempt 6" />
     <MESSAGE value="project PizzaBot, attempt 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="project PizzaBot, attempt 7" />
+    <MESSAGE value="project PizzaBot, attempt 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="project PizzaBot, attempt 8" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1278,8 +1277,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="145" column="8" lean-forward="true" selection-start-line="145" selection-start-column="8" selection-end-line="145" selection-end-column="8" />
+        <state relative-caret-position="-2515">
+          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5433#5434#0" expanded="true" />
@@ -1296,8 +1295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="133" column="32" lean-forward="true" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
+        <state relative-caret-position="255">
+          <caret line="314" column="36" lean-forward="true" selection-start-line="314" selection-start-column="36" selection-end-line="314" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
