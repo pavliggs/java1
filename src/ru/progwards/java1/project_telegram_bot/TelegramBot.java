@@ -233,27 +233,31 @@ public class TelegramBot extends TelegramLongPollingBot {
         return new FoundTags(result);
     }
 
-    public void setUserData(Integer userid, String name, Object data) {
+    public void setUserData(Integer userId, String name, Object data) {
         ConcurrentHashMap thisData;
-        if (userData.containsKey(userid)) {
-            thisData = userData.get(userid);
+        if (userData.containsKey(userId)) {
+            thisData = userData.get(userId);
         } else {
             thisData = new ConcurrentHashMap();
-            userData.put(userid, thisData);
+            userData.put(userId, thisData);
         }
 
         thisData.put(name, data);
     }
 
-    public Object getUserData(Integer userid, String name) {
-        return userData.containsKey(userid) ? userData.get(userid).get(name) : null;
+    public Object getUserData(Integer userId, String name) {
+        return userData.containsKey(userId) ? userData.get(userId).get(name) : null;
     }
 
-    public void cleartUserData(Integer userid) {
-        if (userData.containsKey(userid)) {
-            userData.remove(userid);
+    public void clearUserData(Integer userId) {
+        if (userData.containsKey(userId)) {
+            userData.remove(userId);
         }
+    }
 
+    // удалить какие-нибудь данные у userId
+    public void deleteFromUserData(Integer userId, String str) {
+        userData.get(userId).remove(str);
     }
 
     public String getBotToken() {
@@ -289,7 +293,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    public String processMessage(Integer userid, String text) {
+    public String processMessage(Integer userId, String text) {
         return text;
     }
 

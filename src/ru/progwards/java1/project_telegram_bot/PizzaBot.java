@@ -22,7 +22,7 @@ public class PizzaBot extends TelegramBot {
     private static final String PRICES = "prices";
     private static final String GROUPS = "groups";
     private static final String OFFER_ADD_TO_ORDER = "offerAddToOrder";
-//    private static final String SUGGEST_ADDITIONAL_GROUPS = "suggestAdditionalGroups";
+    private static final String DELETE_FROM_ORDER = "deleteFromOrder";
 
     PizzaBot (String inDirectory, String outDirectory) {
         this.inDirectory = Paths.get(inDirectory);
@@ -47,6 +47,7 @@ public class PizzaBot extends TelegramBot {
             List<Integer> prices = new ArrayList<>();
             prices.add(Integer.parseInt(getPriceCashMap()));
             setUserData(userId, PRICES, prices);
+            setUserData(userId, DELETE_FROM_ORDER, "no");
         } else {
             boolean noDuplicates = true;
             Integer orderKey = (Integer) getUserData(userId, ORDER_KEY);
@@ -56,7 +57,7 @@ public class PizzaBot extends TelegramBot {
                     setUserData(userId, QUANTITY + i, ++quantity);
                     List<Integer> prices = (List<Integer>) getUserData(userId, PRICES);
                     Integer price = prices.get(i - 1);
-                    price += price;
+                    price += Integer.parseInt(getPriceCashMap());
                     prices.set(i - 1, price);
                     noDuplicates = false;
                     break;
@@ -98,7 +99,7 @@ public class PizzaBot extends TelegramBot {
     String finishCheck(Integer userId, String text) {
         // если в заказе ничего нет, то метод вернёт null
         if (getUserData(userId, ORDER_KEY) == null)
-            return null;
+            return "Дружище, ты ещё ничего не заказал((\n" + MENU;
         // предлагаем дозаказать группы товаров, которых нет в заказе
         if (getUserData(userId, OFFER_ADD_TO_ORDER) == null) {
             setUserData(userId, OFFER_ADD_TO_ORDER, "*");
@@ -127,8 +128,53 @@ public class PizzaBot extends TelegramBot {
         return "Итого:\n" + order + orderPrice + address + "Спасибо за заказ, дружище!";
     }
 
-    String deleteFromOrder(Integer userId) {
-        return null;
+    String deleteFromOrder(Integer userId, FoundTags tags) {
+        if (getUserData(userId, DELETE_FROM_ORDER).equals("yes"))  {
+            boolean deletedNotFound = searchDeletedProduct(userId, tags);
+            if (deletedNotFound)
+                return "Дружище, ты что-то напутал. Такого нет в твоём заказе((";
+            return "Дружище, \"" + getNameFound(tags) + "\" успешно удалён из твоего заказа.\nМожет что-то ещё?\n" + MENU;
+        } else {
+            setUserData(userId, DELETE_FROM_ORDER, "yes");
+            return "Дружище, если ты желаешь что-то удалить из своего заказа," +
+                    " то напиши полное название удаляемого товара, если передумал, то напиши \"передумал\"";
+        }
+    }
+
+    boolean searchDeletedProduct(Integer userId, FoundTags tags) {
+        boolean deletedNotFound = true;
+        Integer count = (Integer) getUserData(userId, ORDER_KEY);
+        for (int i = 1; i <= count ; i++) {
+            if (getNameFound(tags).equals(getUserData(userId, ORDER + i))) {
+                if ((Integer) getUserData(userId, QUANTITY + i) > 1) {
+                    Integer quantity = (Integer) getUserData(userId, QUANTITY + i);
+                    setUserData(userId, QUANTITY + i, --quantity);
+                    List<Integer> prices = (List<Integer>) getUserData(userId, PRICES);
+                    Integer price = prices.get(i - 1);
+                    price -= Integer.parseInt(getPriceCashMap());
+                    prices.set(i - 1, price);
+                } else {
+                    Integer orderKey = (Integer) getUserData(userId, ORDER_KEY);
+                    if (orderKey > 1)
+                        setUserData(userId, ORDER_KEY, --orderKey);
+                    else
+                        deleteFromUserData(userId, ORDER_KEY);
+                    deleteFromUserData(userId, ORDER + i);
+                    deleteFromUserData(userId, QUANTITY + i);
+                    List<Integer> prices = (List<Integer>) getUserData(userId, PRICES);
+                    prices.remove(i - 1);
+                }
+                setUserData(userId, DELETE_FROM_ORDER, "no");
+                deletedNotFound = false;
+                break;
+            }
+        }
+        return deletedNotFound;
+    }
+
+    String cancelDeleteFromOrder(Integer userId) {
+        setUserData(userId, DELETE_FROM_ORDER, "no");
+        return "Дружище, продолжай заказывать.\n" + MENU;
     }
 
     // формируем список основных товаров, имеющихся в заказе и список дополнительных к ним товаров
@@ -234,7 +280,7 @@ public class PizzaBot extends TelegramBot {
 
         // сброс данных
         if (text.equals("/reset"))
-            cleartUserData(userId);
+            clearUserData(userId);
 
         FoundTags tags = checkTags(text);
 
@@ -250,19 +296,29 @@ public class PizzaBot extends TelegramBot {
                 return getMenu() + "Выбери что-то одно, напиши полное название и я добавлю это в твой заказ";
             if (checkLastFound(tags, "заказ")) {
                 if (getFullOrder(userId) == null)
-                    return "Дружище, ты ещё ничего не заказал((";
+                    return "Дружище, ты ещё ничего не заказал((\n" + MENU;
                 return "Дружище, вот твой заказ:\n" + getFullOrder(userId);
             }
             if (checkLastFound(tags, "конец"))
                 return finishCheck(userId, text);
-            if (containsWeightEqualTen(tags))
+            if (checkLastFound(tags, "удалить"))
+                return deleteFromOrder(userId, tags);
+            if (checkLastFound(tags, "передумал"))
+                return cancelDeleteFromOrder(userId);
+            if (containsWeightEqualTen(tags)) {
+                if (getUserData(userId, DELETE_FROM_ORDER) != null && getUserData(userId, DELETE_FROM_ORDER).equals("yes"))
+                    return deleteFromOrder(userId, tags);
                 return saveOrderItem(userId, tags);
+            }
             return "Дружище, под твой запрос подходит:\n" + extract(tags)
                     + "Выбери что-то одно, напиши полное название и я добавлю это в твой заказ";
         }
         if (foundCount(tags) > 1) {
-            if (containsWeightEqualTen(tags))
+            if (containsWeightEqualTen(tags)) {
+                if (getUserData(userId, DELETE_FROM_ORDER) != null && getUserData(userId, DELETE_FROM_ORDER).equals("yes"))
+                    return deleteFromOrder(userId, tags);
                 return saveOrderItem(userId, tags);
+            }
             return "Дружище, под твой запрос подходит:\n" + extract(tags)
                     + "Выбери что-то одно, напиши полное название и я добавлю это в твой заказ";
         }
