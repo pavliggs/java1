@@ -82,7 +82,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     // добавляем во множество группы продуктов
-    public String addGroup(String group) {
+    private String addGroup(String group) {
         StringTokenizer tokenizer = new StringTokenizer(group, "/");
         /* если строка состоит из 1 слова, то добавляем в allMainGroups
          * иначе добавляем в allAdditionalGroups */
@@ -101,20 +101,20 @@ public class TelegramBot extends TelegramLongPollingBot {
         return getNameLastFound(found).toLowerCase().equals(text.toLowerCase());
     }
 
-    public String getNameLastFound(FoundTags found) {
+    private String getNameLastFound(FoundTags found) {
         Object[] a = found.tags.values().toArray();
         return a.length > 0 ? getSubString((String) a[a.length - 1], 0) : "";
     }
 
-    public String getPriceLastFound(FoundTags found) {
-        Object[] a = found.tags.values().toArray();
-        return a.length > 0 ? getSubString((String) a[a.length - 1], 1) : "";
-    }
-
-    public String getGroupLastFound(FoundTags found) {
-        Object[] a = found.tags.values().toArray();
-        return a.length > 0 ? getSubString((String) a[a.length - 1], 2) : "";
-    }
+//    public String getPriceLastFound(FoundTags found) {
+////        Object[] a = found.tags.values().toArray();
+////        return a.length > 0 ? getSubString((String) a[a.length - 1], 1) : "";
+////    }
+//
+////    public String getGroupLastFound(FoundTags found) {
+////        Object[] a = found.tags.values().toArray();
+////        return a.length > 0 ? getSubString((String) a[a.length - 1], 2) : "";
+////    }
 
     // получить имя продукта, когда пользователь ввёл полное имя продукта (weight = 10)
     public String getNameFound(FoundTags found) {
@@ -168,13 +168,26 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     // получить имя и цену найденных продуктов, соответствующих запросу пользователя
     public String extract(FoundTags found) {
-            Collection<String> values = found.tags.values();
-            String res = "";
+        Collection<String> values = found.tags.values();
+        String res = "";
 
-            for (String info : values)
-                res += getSubString(info, 0) + " - " + getSubString(info, 1) + "\n";
+        for (String info : values)
+            res += getSubString(info, 0) + " - " + getSubString(info, 1) + "\n";
 
-            return res;
+        return res;
+    }
+
+    // получить список наименований и цен ассортимента пиццерии
+    public String getMenu() {
+        String res = "";
+
+        for (Association ass : associations) {
+            if (ass.group == null)
+                continue;
+            res += ass.name + " - " + ass.price + "\n";
+        }
+
+        return res;
     }
 
     private int findAssociation(Association ass, String text) {
@@ -198,7 +211,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     // получить объект содержащим TreeMultimap, состоящий из значений, соответсвующих запросу пользователя
-    public FoundTags findAssociation(String text) {
+    private FoundTags findAssociation(String text) {
         TreeMultimap<Integer, String> result = TreeMultimap.create();
         Iterator var4 = associations.iterator();
 
@@ -291,7 +304,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     }
 
-    static class Association {
+    private static class Association {
         private String name;
         private String tags;
         private int price;
