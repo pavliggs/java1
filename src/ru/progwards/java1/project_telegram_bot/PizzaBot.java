@@ -40,8 +40,9 @@ public class PizzaBot extends TelegramBot {
                 "Ты не серчай, но немного некоторых правил нашего общения не помешают:\n" +
                 "- если хочешь посмотреть меню, то просто напиши что-то вроде \"покажи меню\"\n" +
                 "- если хочешь что-то заказать, то просто напиши это, а дальше я тебе помогу добавить в заказ\n" +
-                "- если захочешь посмотреть свой текущий заказ, то напиши что-то вроде \"мой заказ\"\n" +
-                "- если захочешь что-то убрать из своего заказа, то напиши что-то вроде \"хочу убрать\"\n" +
+                "- если хочешь посмотреть свой текущий заказ, то напиши что-то вроде \"мой заказ\"\n" +
+                "- если хочешь что-то убрать из своего заказа, то напиши что-то вроде \"хочу убрать\"\n" +
+                "- если возникло желание очистить свой заказ, то напиши что-то вроде \"хочу сбросить\"\n" +
                 "- если считаешь, что тебе этого достаточно, то напиши что-то вроде \"мне хватит\"\n" +
                 "А теперь приступим к заказу, дружище!\n" + MENU;
     }
@@ -108,8 +109,8 @@ public class PizzaBot extends TelegramBot {
             /* предлагаем заказать дополнительные группы товаров к товарам, присутствующим в заказе
              * (если товары, присутствующие в заказе подразумевают дололнительные товары) */
             TreeMultimap<String, String> foundAdditionalGroups = getMapFoundAdditionalGroups(getAllAdditionalGroups(), groups, getGroupCashMap());
-                if (!foundAdditionalGroups.isEmpty())
-                    return "Отлично! Добавил в твой заказ.\n" + suggestAdditionalGroups(foundAdditionalGroups);
+            if (!foundAdditionalGroups.isEmpty())
+                return "Отлично! Добавил в твой заказ.\n" + suggestAdditionalGroups(foundAdditionalGroups);
         } else {
             Set<String> groups = (Set<String>) getUserData(userId, GROUPS);
             groups.add(getGroupCashMap());
@@ -153,8 +154,9 @@ public class PizzaBot extends TelegramBot {
         return "Итого:\n" + order + orderPrice + address + "Спасибо за заказ, дружище!";
     }
 
+    // метод удаления продукта из заказа
     String deleteFromOrder(Integer userId, FoundTags tags) {
-        if (getUserData(userId, DELETE_FROM_ORDER) == null)
+        if (getUserData(userId, ORDER_KEY) == null)
             return "Дружище, пока нечего удалять. Ты ещё ничего не заказал((\n" + MENU;
         if (getUserData(userId, DELETE_FROM_ORDER).equals("yes"))  {
             boolean deletedNotFound = searchDeletedProduct(userId, tags);
@@ -168,6 +170,15 @@ public class PizzaBot extends TelegramBot {
         }
     }
 
+    // метод очищает заказ
+    String clearOrder(Integer userId) {
+        if (getUserData(userId, ORDER_KEY) == null)
+            return "Дружище, в твоём заказе ничего нет. Что желаешь?\n" + MENU;
+        clearUserData(userId);
+        return "Дружище, я убрал всё из твоего заказа. Давай начнём сначала\n" + MENU;
+    }
+
+    // метод ищет в заказе удаляемый продукт
     boolean searchDeletedProduct(Integer userId, FoundTags tags) {
         boolean deletedNotFound = true;
         Integer count = (Integer) getUserData(userId, ORDER_KEY);
@@ -219,7 +230,7 @@ public class PizzaBot extends TelegramBot {
                 "нет, то может что-то ещё?\n" + MENU;
     }
 
-    // получить Map<String, String> из найденных дополнительных групп товаров к товарам в заказе
+    // получить Map<String, String> из найденных дополнительных групп товаров к последнему товару в заказе
     TreeMultimap<String, String> getMapFoundAdditionalGroups(TreeMultimap<String, String> map, Set<String> set, String lastGroup) {
         TreeMultimap<String, String> mapResult = TreeMultimap.create(map);
         Set<Map.Entry<String, String>> entries = mapResult.entries();
@@ -229,7 +240,8 @@ public class PizzaBot extends TelegramBot {
             Map.Entry<String, String> entry = iterator.next();
             /* например: картошка|соус
              * если значение (соус) содержится в заказанных группах товаров, то удаляем entry
-             * или если ключ (картошка) не содержится в заказанных группах товаров - тоже удаляем entry */
+             * или если ключ (картошка) не содержится в заказанных группах товаров - удаляем entry
+             * или если ключ (картошка) не равен группе последнего добавденного товара - тоже удаляем entry */
             if (set.contains(entry.getValue()) || !set.contains(entry.getKey()) || !entry.getKey().equals(lastGroup)) {
                 iterator.remove();
             }
@@ -256,18 +268,43 @@ public class PizzaBot extends TelegramBot {
         if (getUserData(userId, ORDER_KEY) == null)
             return null;
         Integer count = (Integer) getUserData(userId, ORDER_KEY);
-        String fullOrder = "";
+        List<String> list = createList(userId, count);
+        return getOrderFromList(getSortedList(list));
+    }
+
+    // создание списка из информации о заказанных продуктах
+    List<String> createList(Integer userId, int count) {
+        List<String> list = new ArrayList<>();
         for (int i = 1; i <= count; i++) {
-            if (i == count)
-                fullOrder += getUserData(userId, ORDER +  i) + " " +
-                        getUserData(userId, QUANTITY + i) + " - " +
-                        ((List<Integer>) getUserData(userId, PRICES)).get(i - 1);
-            else
-                fullOrder += getUserData(userId, ORDER + i) + " " +
-                        getUserData(userId, QUANTITY + i) + " - " +
-                        ((List<Integer>) getUserData(userId, PRICES)).get(i - 1) + ", ";
+            String infoProduct = getUserData(userId, ORDER +  i) + " " +
+                    getUserData(userId, QUANTITY + i) + " - " +
+                    ((List<Integer>) getUserData(userId, PRICES)).get(i - 1);
+            list.add(infoProduct);
         }
-        return fullOrder;
+        return list;
+    }
+
+    // отсортировать список по алфавиту
+    List<String> getSortedList(List<String> list) {
+        list.sort(new Comparator<>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
+            }
+        });
+        return list;
+    }
+
+    // получить из списка заказ
+    String getOrderFromList(List<String> list) {
+        String order = "";
+        for (int i = 0; i < list.size(); i++) {
+            if (i == list.size() - 1)
+                order += list.get(i);
+            else
+                order += list.get(i) + "\n";
+        }
+        return order;
     }
 
     // получить сумму заказа
@@ -303,12 +340,6 @@ public class PizzaBot extends TelegramBot {
 
     @Override
     public String processMessage(Integer userId, String text) {
-
-
-        // сброс данных
-        if (text.equals("/reset"))
-            clearUserData(userId);
-
         FoundTags tags = checkTags(text);
 
         if (getUserData(userId, ENTER_ADDRESS) != null && getUserData(userId, ENTER_ADDRESS).equals("yes")) {
@@ -319,7 +350,7 @@ public class PizzaBot extends TelegramBot {
 
         // если tags.tags содержит 1 элемент
         if (foundCount(tags) == 1) {
-            if (checkLastFound(tags, "привет"))
+            if (checkLastFound(tags, "привет") || checkLastFound(tags, "/start"))
                 return helloUser(userId);
             if (checkLastFound(tags, "меню"))
                 return getMenu() + "Выбери что-то одно, напиши полное название и я добавлю это в твой заказ";
@@ -332,6 +363,8 @@ public class PizzaBot extends TelegramBot {
                 return finishCheck(userId, text);
             if (checkLastFound(tags, "удалить"))
                 return deleteFromOrder(userId, tags);
+            if (checkLastFound(tags, "сбросить"))
+                return clearOrder(userId);
             if (checkLastFound(tags, "передумал"))
                 return cancelDeleteFromOrder(userId);
             if (containsWeightEqualTen(tags)) {
@@ -374,7 +407,7 @@ public class PizzaBot extends TelegramBot {
 
         bot.addTags(bot.inDirectory);
 
-//        bot.start();
-        bot.test();
+        bot.start();
+//        bot.test();
     }
 }
