@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="">
+    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="project PizzaBot, attempt 11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" afterDir="false" />
     </list>
@@ -24,12 +24,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="411" column="5" selection-start-line="411" selection-start-column="5" selection-end-line="411" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="39" column="10" lean-forward="true" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#14098#14099#0" expanded="true" />
-                <element signature="e#14153#14154#0" expanded="true" />
+                <element signature="e#14554#14555#0" expanded="true" />
+                <element signature="e#14609#14610#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -269,7 +269,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588011057574" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588020101790" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PavelKhovaylo" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -388,13 +388,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574201332338</updated>
-    </task>
-    <task id="LOCAL-00088" summary="homework 14, attempt 1">
-      <created>1582579460933</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1582579460933</updated>
     </task>
     <task id="LOCAL-00089" summary="homework 14, attempt 2">
       <created>1582583512985</created>
@@ -732,7 +725,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587940237547</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="project PizzaBot, attempt 10">
+      <created>1588011148891</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1588011148892</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TodoView">
@@ -745,7 +745,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.26203966" side_tool="true" weight="0.23489933" />
@@ -807,7 +807,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 17, attempt 5" />
     <MESSAGE value="homework 17, attempt 6" />
     <MESSAGE value="homework 17, attempt 7" />
     <MESSAGE value="homework 17, attempt 8" />
@@ -832,7 +831,8 @@
     <MESSAGE value="project PizzaBot, attempt 7" />
     <MESSAGE value="project PizzaBot, attempt 8" />
     <MESSAGE value="project PizzaBot, attempt 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="project PizzaBot, attempt 9" />
+    <MESSAGE value="project PizzaBot, attempt 10" />
+    <option name="LAST_COMMIT_MESSAGE" value="project PizzaBot, attempt 10" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1285,12 +1285,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="411" column="5" selection-start-line="411" selection-start-column="5" selection-end-line="411" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="39" column="10" lean-forward="true" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#14098#14099#0" expanded="true" />
-            <element signature="e#14153#14154#0" expanded="true" />
+            <element signature="e#14554#14555#0" expanded="true" />
+            <element signature="e#14609#14610#0" expanded="true" />
           </folding>
         </state>
       </provider>

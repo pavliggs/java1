@@ -9,6 +9,38 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
+/*
+* Это БОТ по заказу пиццы, напитков и прочей всякой всячины
+*
+* структура файла (файл должен быть с расширением .csv) с товарами(готовой едой) такова:
+* (ниже приведён пример добавления какого-то товара)
+*
+* Пицца гавайская | гавайск, пицц, ананас, ветчин, моцарел, сыр, помидор, томат, кетчуп | 700 | пицца
+* строка состоит из 4 элементов: наименование товара, теги (слова, по которым находится товар), цена, группа товара
+* между элементами обязательно стоит знак "|"
+*
+* каждая группа товаров, например "пицца" записывается в отдельном файле
+*
+* также имеются дополнительные товаров
+* (ниже приведён пример добавления дополнительного товара)
+*
+* Соус барбекю | соус, барбекю, кетчуп | 20 | картошка/соуc
+* здесь также 4 элемента, но группа (последний элемент) - записывается через знак "/"
+* до знака "/" - это то, к какой группе товаров этот товар предлагается как дополнительный
+* после знака "/" - это группа самого дополнительного товара
+*
+* также имеется файл со словами-помощниками (пример ниже):
+*
+* привет | привет, здарова, здорово, здарово, здорова, здрасьте, хай, салют, здравствуйте, приветствую, вечер, день, утро, hello, hi
+* здесь строка состоит уже из 2 элементов: наименование и сами теги
+*
+* ВАЖНО!!! Для корректной работы бота при добавлении товаров или слов-помощников пользоваться всеми вышеперечисленными
+* рекомендациями!
+*
+* Спасибо!
+*
+* */
+
 public class PizzaBot extends TelegramBot {
     private Path inDirectory;
     private Path outDirectory;
@@ -181,8 +213,8 @@ public class PizzaBot extends TelegramBot {
     // метод ищет в заказе удаляемый продукт
     boolean searchDeletedProduct(Integer userId, FoundTags tags) {
         boolean deletedNotFound = true;
-        Integer count = (Integer) getUserData(userId, ORDER_KEY);
-        for (int i = 1; i <= count ; i++) {
+        Integer orderKey = (Integer) getUserData(userId, ORDER_KEY);
+        for (int i = 1; i <= orderKey ; i++) {
             if (getNameFound(tags).equals(getUserData(userId, ORDER + i))) {
                 if ((Integer) getUserData(userId, QUANTITY + i) > 1) {
                     Integer quantity = (Integer) getUserData(userId, QUANTITY + i);
@@ -192,15 +224,12 @@ public class PizzaBot extends TelegramBot {
                     price -= Integer.parseInt(getPriceCashMap());
                     prices.set(i - 1, price);
                 } else {
-                    Integer orderKey = (Integer) getUserData(userId, ORDER_KEY);
-                    if (orderKey > 1)
-                        setUserData(userId, ORDER_KEY, --orderKey);
-                    else
+                    if (orderKey == 1)
                         deleteFromUserData(userId, ORDER_KEY);
                     deleteFromUserData(userId, ORDER + i);
                     deleteFromUserData(userId, QUANTITY + i);
                     List<Integer> prices = (List<Integer>) getUserData(userId, PRICES);
-                    prices.remove(i - 1);
+                    prices.set(i - 1, 0);
                 }
                 setUserData(userId, DELETE_FROM_ORDER, "no");
                 deletedNotFound = false;
@@ -267,15 +296,17 @@ public class PizzaBot extends TelegramBot {
         // если в заказе ничего нет, то метод вернёт null
         if (getUserData(userId, ORDER_KEY) == null)
             return null;
-        Integer count = (Integer) getUserData(userId, ORDER_KEY);
-        List<String> list = createList(userId, count);
+        Integer orderKey = (Integer) getUserData(userId, ORDER_KEY);
+        List<String> list = createList(userId, orderKey);
         return getOrderFromList(getSortedList(list));
     }
 
     // создание списка из информации о заказанных продуктах
-    List<String> createList(Integer userId, int count) {
+    List<String> createList(Integer userId, int orderKey) {
         List<String> list = new ArrayList<>();
-        for (int i = 1; i <= count; i++) {
+        for (int i = 1; i <= orderKey; i++) {
+            if (getUserData(userId, ORDER + i) == null)
+                continue;
             String infoProduct = getUserData(userId, ORDER +  i) + " " +
                     getUserData(userId, QUANTITY + i) + " - " +
                     ((List<Integer>) getUserData(userId, PRICES)).get(i - 1);
@@ -368,9 +399,12 @@ public class PizzaBot extends TelegramBot {
             if (checkLastFound(tags, "передумал"))
                 return cancelDeleteFromOrder(userId);
             if (containsWeightEqualTen(tags)) {
-                if (getUserData(userId, DELETE_FROM_ORDER) != null && getUserData(userId, DELETE_FROM_ORDER).equals("yes"))
+                if (getUserData(userId, ORDER_KEY) != null && getUserData(userId, DELETE_FROM_ORDER).equals("yes"))
                     return deleteFromOrder(userId, tags);
                 return saveOrderItem(userId, tags);
+            } else {
+                if (getUserData(userId, ORDER_KEY) != null && getUserData(userId, DELETE_FROM_ORDER).equals("yes"))
+                    return "Дружище, пожалуйста, напиши полное название";
             }
             return "Дружище, под твой запрос подходит:\n" + extract(tags)
                     + "Выбери что-то одно, напиши полное название и я добавлю это в твой заказ";
@@ -400,14 +434,14 @@ public class PizzaBot extends TelegramBot {
     public static void main(String[] args) {
         ApiContextInitializer.init();
 
-        PizzaBot bot = new PizzaBot("C:\\Users\\Эльдорадо\\Desktop\\TestJava\\pizzaBot\\inFolder",
-                                    "C:\\Users\\Эльдорадо\\Desktop\\TestJava\\pizzaBot\\outFolder");
+        PizzaBot bot = new PizzaBot("C:\\Users\\Эльдорадо\\IdeaProjects\\HelloWorld\\src\\ru\\progwards\\java1\\project_telegram_bot\\inFolder",
+                                    "C:\\Users\\Эльдорадо\\IdeaProjects\\HelloWorld\\src\\ru\\progwards\\java1\\project_telegram_bot\\outFolder");
         bot.username = "PizzaTastyBot";
         bot.token = "695537327:AAHsUdJEcqZ1ZAnQWEb_bqwr8BdD5A2OwJk";
 
         bot.addTags(bot.inDirectory);
 
-        bot.start();
-//        bot.test();
+//        bot.start();
+        bot.test();
     }
 }
