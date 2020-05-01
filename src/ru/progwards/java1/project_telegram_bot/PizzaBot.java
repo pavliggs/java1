@@ -435,7 +435,7 @@ public class PizzaBot extends TelegramBot {
         ApiContextInitializer.init();
 
         PizzaBot bot = new PizzaBot("C:\\Users\\Эльдорадо\\IdeaProjects\\HelloWorld\\src\\ru\\progwards\\java1\\project_telegram_bot\\inFolder",
-                                    "C:\\Users\\Эльдорадо\\IdeaProjects\\HelloWorld\\src\\ru\\progwards\\java1\\project_telegram_bot\\outFolder");
+                "C:\\Users\\Эльдорадо\\IdeaProjects\\HelloWorld\\src\\ru\\progwards\\java1\\project_telegram_bot\\outFolder");
         bot.username = "PizzaTastyBot";
         bot.token = "695537327:AAHsUdJEcqZ1ZAnQWEb_bqwr8BdD5A2OwJk";
 

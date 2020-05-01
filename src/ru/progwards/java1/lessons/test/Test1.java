@@ -27,18 +27,20 @@ public class Test1 {
 //        System.out.println(arr.length);
 //        System.out.println(arr[1]);
 
-        System.out.println(Integer.valueOf(5));
-        String str = null;
-        System.out.println(str);
-        Integer integer = null;
-        System.out.println(integer);
+//        System.out.println(Integer.valueOf(5));
+//        String str = null;
+//        System.out.println(str);
+//        Integer integer = null;
+//        System.out.println(integer);
+//
+//        List<Integer> list = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            list.add(5);
+//        }
+//        System.out.println(list);
+//        list.set(1, 7);
+//        System.out.println(list);
 
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            list.add(5);
-        }
-        System.out.println(list);
-        list.set(1, 7);
-        System.out.println(list);
+        System.out.println("dghk".compareTo("dsdddsd"));
     }
 }

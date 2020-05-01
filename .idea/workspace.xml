@@ -6,11 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="project PizzaBot, attempt 11">
+    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,50 +19,6 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="HelloWorld" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="39" column="10" lean-forward="true" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#14554#14555#0" expanded="true" />
-                <element signature="e#14609#14610#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="243" column="36" selection-start-line="243" selection-start-column="36" selection-end-line="243" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8888#8889#0" expanded="true" />
-                <element signature="e#8936#8937#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -86,71 +43,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/Calculate.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/queues/CollectionsSort.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot1/T15dot1/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot1/HashMapEntry.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot2/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N15dot3/Test.java" />
-        <option value="$PROJECT_DIR$/wiki.test.tokens" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/io2/Translator.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/FiboMapCache.java" />
-        <option value="$PROJECT_DIR$/salesInfo.txt" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/SalesInfo.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot1/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot1/DataAndTime.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot2/T16dot2/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot3/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/Insurance.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/UserSession.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/SessionManager.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N16dot2/JavaTime.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/StatisticInfo.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/Profiler.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot1/Path.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot1/NioPath.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot1/T17dot1/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot3/NioWalkFileTree.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot3/NioGlobFileMatcherRecursiveExt.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/NioFileCopy.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/UsageFrequency.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FilesSelect.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FileInfo.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N17dot2/T17dot2/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N18dot1/Seed.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderItem.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/Order.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N18dot2/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N18dot3/Person.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/pavliggs/N18dot3/Test.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/abstractnum/Number.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/abstractnum/Pyramid.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/arrays/Eratosthenes.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/bigints/BigAlgebra.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/io1/CharFilter.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/register1/Bit.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/register1/ByteRegister.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/testlesson/PizzaBot.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/testlesson/ExampleHelloWorld.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java" />
-        <option value="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" />
-      </list>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-20" />
+    <option name="x" value="-160" />
+    <option name="y" value="60" />
     <option name="width" value="1680" />
     <option name="height" value="930" />
   </component>
@@ -158,123 +53,19 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="progwards" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="progwards" type="462c0819:PsiDirectoryNode" />
-              <item name="java1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="progwards" type="462c0819:PsiDirectoryNode" />
-              <item name="java1" type="462c0819:PsiDirectoryNode" />
-              <item name="lessons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="progwards" type="462c0819:PsiDirectoryNode" />
-              <item name="java1" type="462c0819:PsiDirectoryNode" />
-              <item name="lessons" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="progwards" type="462c0819:PsiDirectoryNode" />
-              <item name="java1" type="462c0819:PsiDirectoryNode" />
-              <item name="lessons" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="progwards" type="462c0819:PsiDirectoryNode" />
-              <item name="java1" type="462c0819:PsiDirectoryNode" />
-              <item name="project_telegram_bot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="progwards" type="462c0819:PsiDirectoryNode" />
-              <item name="java1" type="462c0819:PsiDirectoryNode" />
-              <item name="pavliggs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="progwards" type="462c0819:PsiDirectoryNode" />
-              <item name="java1" type="462c0819:PsiDirectoryNode" />
-              <item name="testlesson" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HelloWorld" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="progwards" type="462c0819:PsiDirectoryNode" />
-              <item name="pavliggs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="progwardsbot.2.0.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HelloWorld" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="progwardsbot.2.0.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="telegrambot" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588020101790" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PavelKhovaylo" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588030244280" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -282,18 +73,6 @@
       <recent name="ru.progwards.pavliggs.DogAndGoatInterface" />
       <recent name="ru.progwards.pavliggs.inheritanceExample" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.PizzaBot (1)">
     <configuration name="Bit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -388,13 +167,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574201332338</updated>
-    </task>
-    <task id="LOCAL-00089" summary="homework 14, attempt 2">
-      <created>1582583512985</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1582583512985</updated>
+      <workItem from="1588371904655" duration="4358000" />
     </task>
     <task id="LOCAL-00090" summary="homework 14, attempt 3">
       <created>1582637615273</created>
@@ -732,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588011148892</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="project PizzaBot, attempt 11">
+      <created>1588020111144</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1588020111144</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TodoView">
@@ -744,70 +524,12 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Favorites" order="0" sideWeight="0.26203966" side_tool="true" weight="0.23489933" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.73796034" visible="true" weight="0.20536913" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.3512748" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5026846" side_tool="true" weight="0.28186968" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3286119" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.3295302" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" sideWeight="0.26203966" side_tool="true" weight="0.23489933" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.73796034" visible="true" weight="0.19731544" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49731544" visible="true" weight="0.31444758" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5026846" side_tool="true" weight="0.28186968" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3286119" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.3295302" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout-to-restore>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 17, attempt 6" />
     <MESSAGE value="homework 17, attempt 7" />
     <MESSAGE value="homework 17, attempt 8" />
     <MESSAGE value="homework 17, attempt 9" />
@@ -832,7 +554,30 @@
     <MESSAGE value="project PizzaBot, attempt 8" />
     <MESSAGE value="project PizzaBot, attempt 9" />
     <MESSAGE value="project PizzaBot, attempt 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="project PizzaBot, attempt 10" />
+    <MESSAGE value="project PizzaBot, attempt 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="project PizzaBot, attempt 11" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1588372482309">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1588372482309" />
+    <state width="1493" height="226" key="GridCell.Tab.0.bottom" timestamp="1588376828938">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="226" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1588376828938" />
+    <state width="1493" height="226" key="GridCell.Tab.0.center" timestamp="1588376828938">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="226" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1588376828938" />
+    <state width="1493" height="226" key="GridCell.Tab.0.left" timestamp="1588376828937">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="226" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1588376828937" />
+    <state width="1493" height="226" key="GridCell.Tab.0.right" timestamp="1588376828938">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="226" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1588376828938" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -840,461 +585,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HelloWorld$Main.ic" NAME="Main Coverage Results" MODIFIED="1574290260884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/abstractnum/IntNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="37" lean-forward="true" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-          <folding>
-            <element signature="e#221#222#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/abstractnum/DoubleNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="56" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="56" />
-          <folding>
-            <element signature="e#232#233#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/interfaces/CalculateFibonacci.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/arrays/Eratosthenes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/compare_if_cycles/CyclesGoldenFibo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/bigints/ArrayInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="50" />
-          <folding>
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#232#233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/bigints/BigAlgebra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/bigints/AbsInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="e#110#111#0" expanded="true" />
-            <element signature="e#134#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/bigints/IntInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="e#124#125#0" expanded="true" />
-            <element signature="e#150#151#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/abstractnum/Number.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="e#115#116#0" expanded="true" />
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#179#180#0" expanded="true" />
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#279#280#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N18dot2/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/io1/CharFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="64" lean-forward="true" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/telegrambots-4.4.0-jar-with-dependencies.jar!/org/telegram/telegrambots/bots/TelegramLongPollingBot.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/telegrambots-4.4.0-jar-with-dependencies.jar!/org/telegram/telegrambots/bots/DefaultAbsSender.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11860">
-          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/telegrambots-4.4.0-jar-with-dependencies.jar!/com/google/common/collect/TreeMultimap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="264" column="12" selection-start-line="264" selection-start-column="12" selection-end-line="264" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/telegrambots-4.4.0-jar-with-dependencies.jar!/org/telegram/telegrambots/meta/generics/LongPollingBot.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/telegrambots-4.4.0-jar-with-dependencies.jar!/org/telegram/telegrambots/meta/generics/BotSession.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/telegrambots-4.4.0-jar-with-dependencies.jar!/org/telegram/telegrambots/meta/api/objects/Message.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="336" column="19" selection-start-line="336" selection-start-column="19" selection-end-line="336" selection-end-column="19" />
-          <folding>
-            <element signature="e#10801#10802#0" expanded="true" />
-            <element signature="e#10865#10866#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/telegrambots-4.4.0-jar-with-dependencies.jar!/org/telegram/telegrambots/meta/api/objects/Update.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/telegrambots-4.4.0-jar-with-dependencies.jar!/org/telegram/telegrambots/meta/TelegramBotsApi.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="99" column="45" lean-forward="true" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N18dot3/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N18dot3/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="74" lean-forward="true" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/progwardsbot.1.0.jar!/ru/progwards/java1/testlesson/ProgwardsTelegramBot.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="137" column="7" lean-forward="true" selection-start-line="137" selection-start-column="7" selection-end-line="137" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/pavliggs/N11dot2/T11dot2/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/SeaBattle/pavliggs/SeaBattleAlg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="63" column="35" lean-forward="true" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/bitsworld/Binary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/testlesson/ExampleHelloWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/telegrambots-4.4.0-jar-with-dependencies.jar!/com/google/common/collect/AbstractMultimap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="124" selection-start-line="124" selection-end-line="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/register1/Bit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding>
-            <element signature="e#111#112#0" expanded="true" />
-            <element signature="e#139#140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/register1/ByteRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/sets/LettersInFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/sets/SetOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="50" lean-forward="true" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/UsageFrequency.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-158">
-          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/Insurance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/Profiler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/SessionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/StatisticInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/datetime/UserSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/maps/SalesInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="61" column="118" lean-forward="true" selection-start-line="61" selection-start-column="118" selection-end-line="61" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/util/StringTokenizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="198" column="35" lean-forward="true" selection-start-line="198" selection-start-column="35" selection-end-line="198" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/OrderProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-            <element signature="e#1458#1459#0" expanded="true" />
-            <element signature="e#8892#8893#0" expanded="true" />
-            <element signature="e#8973#8974#0" expanded="true" />
-            <element signature="e#10492#10493#0" expanded="true" />
-            <element signature="e#10544#10545#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FilesSelect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="89" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2649#2650#0" expanded="true" />
-            <element signature="e#2720#2721#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/STUDY/Java/telegramBot/progwardsbot.2.0.jar!/ru/progwards/java1/telegrambot/ProgwardsTelegramBot.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="58" column="72" lean-forward="true" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="72" />
-          <folding>
-            <element signature="e#2687#2688#0" expanded="true" />
-            <element signature="e#2748#2749#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/testlesson/PizzaBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FileInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="48" column="69" lean-forward="true" selection-start-line="48" selection-start-column="69" selection-end-line="48" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/files/FindDuplicates.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="23" column="85" lean-forward="true" selection-start-line="23" selection-start-column="85" selection-end-line="23" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/lessons/test/Test1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/TelegramBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="243" column="36" selection-start-line="243" selection-start-column="36" selection-end-line="243" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8888#8889#0" expanded="true" />
-            <element signature="e#8936#8937#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" column="10" lean-forward="true" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#14554#14555#0" expanded="true" />
-            <element signature="e#14609#14610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

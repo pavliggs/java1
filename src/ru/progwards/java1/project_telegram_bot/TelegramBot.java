@@ -9,6 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -170,14 +171,38 @@ public class TelegramBot extends TelegramLongPollingBot {
     // получить список наименований и цен ассортимента пиццерии
     public String getMenu() {
         String res = "";
+        List<Association> list = filterList(associations);
+        sortedList(list);
 
-        for (Association ass : associations) {
-            if (ass.group == null)
-                continue;
+        for (Association ass : list)
             res += ass.name + " - " + ass.price + "\n";
-        }
 
         return res;
+    }
+
+    // метод фильтрует список, убирая ненужные элементы
+    List<Association> filterList(List<Association> list) {
+        List<Association> resultList = new ArrayList<>(list);
+        for (int i = resultList.size() - 1; i >= 0; i--) {
+            if (resultList.get(i).group == null) {
+                resultList.remove(list.get(i));
+                continue;
+            }
+            // если группа состоит из 2х слов (например "картошка/соус"), то оставляем только "картошка"
+            if (getQuantityWords(resultList.get(i).group) == 2)
+                resultList.get(i).group = getSubGroup(resultList.get(i).group);
+        }
+        return resultList;
+    }
+
+    // сортируем список по наименованию группы
+    void sortedList(List<Association> list) {
+        list.sort(new Comparator<Association>() {
+            @Override
+            public int compare(Association o1, Association o2) {
+                return o1.group.compareTo(o2.group);
+            }
+        });
     }
 
     private int findAssociation(Association ass, String text) {
