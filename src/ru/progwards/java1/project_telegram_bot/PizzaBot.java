@@ -58,7 +58,7 @@ public class PizzaBot extends TelegramBot {
     private static final String OFFER_ADD_TO_ORDER = "offerAddToOrder";
     private static final String DELETE_FROM_ORDER = "deleteFromOrder";
 
-    PizzaBot (String inDirectory, String outDirectory) {
+    public PizzaBot(String inDirectory, String outDirectory) {
         this.inDirectory = Paths.get(inDirectory);
         this.outDirectory = Paths.get(outDirectory);
     }
