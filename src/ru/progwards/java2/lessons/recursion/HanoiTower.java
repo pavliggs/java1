@@ -75,6 +75,12 @@ public class HanoiTower {
         pintles.get(to).push(elem);
     }
 
+    /*
+    * метод преобразует deque в массив размером size
+    * 1) если deque пустая, то массив заполняется такими элементами - "  I  "
+    * 2) если размер deque < size, то элементы deque помещаются в конец массива, а оставшиеся элементы массива
+    * будут равны "  I  "
+    * */
     String[] createArray(Deque<String> deque) {
         String[] array = new String[size];
         // если deque пустая, то заполняем массив символом I
