@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -42,7 +41,7 @@ public class GoodsWithLambda {
 
     List<Goods> sortByPartNumber() {
         List<Goods> sortedList =
-                list.stream().sorted(Comparator.comparing(o -> getSubString(o.number.toLowerCase(), 0, 3))).
+                list.stream().sorted(Comparator.comparing(o -> o.number.toLowerCase().substring(0, 3))).
                         collect(Collectors.toList());
         return sortedList;
     }
@@ -75,10 +74,6 @@ public class GoodsWithLambda {
         List<Goods> sortedList =
                 list.stream().filter(compose).collect(Collectors.toList());
         return sortedList;
-    }
-
-    String getSubString(String str, int firstIn, int lastIn) {
-        return str.substring(firstIn, lastIn);
     }
 
     public static void main(String[] args) {
