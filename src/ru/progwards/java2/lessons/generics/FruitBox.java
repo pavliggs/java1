@@ -27,12 +27,18 @@ public class FruitBox<T extends FruitBox> {
         return weight;
     }
 
-    void moveTo(FruitBox fruitBox) {
+    void moveTo(FruitBox<T> fruitBox) {
+        if (this.list.isEmpty()) {
+            System.out.println("Нельзя переложить фрукты из пустой корзины!");
+            return;
+        }
+
+        if (this.equals(fruitBox)) {
+            System.out.println("Нельзя переложить фрукты из корзины в эту же корзину!");
+            return;
+        }
+
         try {
-            if (this.list.isEmpty()) {
-                System.out.println("Нельзя переложить фрукты из пустой корзины!");
-                return;
-            }
             try {
                 if (this.getElement().getClass().equals(fruitBox.getElement().getClass())) {
                     // если фрукты в обоих корзинах равны, то пересыпаем фрукты из this в fruitBox

@@ -24,12 +24,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 2, change 3">
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L3/example/DynamicArr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/generics/DynamicArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/generics/DynamicArray.java" afterDir="false" />
+    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 3, change 1">
       <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/generics/FruitBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/generics/FruitBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/recursion/AsNumbersSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/recursion/AsNumbersSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,14 +197,7 @@
       <workItem from="1589630261661" duration="17575000" />
       <workItem from="1589713797686" duration="22409000" />
       <workItem from="1589796752042" duration="26281000" />
-      <workItem from="1589891582653" duration="11787000" />
-    </task>
-    <task id="LOCAL-00094" summary="homework 15, attempt 2">
-      <created>1583171504327</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1583171504327</updated>
+      <workItem from="1589891582653" duration="12239000" />
     </task>
     <task id="LOCAL-00095" summary="homework 15, attempt 3">
       <created>1583171855790</created>
@@ -546,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589830330926</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="java2 homework 3, change 1">
+      <created>1589920411662</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1589920411663</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +577,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 17, attempt 11" />
     <MESSAGE value="homework 17, attempt 12" />
     <MESSAGE value="homework 17, attempt 13" />
     <MESSAGE value="homework 17, attempt 14" />
@@ -606,7 +601,8 @@
     <MESSAGE value="java2 homework 2, change 1" />
     <MESSAGE value="java2 homework 2, change 2" />
     <MESSAGE value="java2 homework 2, change 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 2, change 3" />
+    <MESSAGE value="java2 homework 3, change 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 3, change 1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588404543776">
@@ -617,22 +613,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589657173567" />
-    <state width="1493" height="283" key="GridCell.Tab.0.bottom" timestamp="1589920158862">
+    <state width="1493" height="283" key="GridCell.Tab.0.bottom" timestamp="1589920376807">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="283" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920158862" />
-    <state width="1493" height="283" key="GridCell.Tab.0.center" timestamp="1589920158861">
+    <state width="1493" height="283" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920376807" />
+    <state width="1493" height="283" key="GridCell.Tab.0.center" timestamp="1589920376807">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="283" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920158861" />
-    <state width="1493" height="283" key="GridCell.Tab.0.left" timestamp="1589920158861">
+    <state width="1493" height="283" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920376807" />
+    <state width="1493" height="283" key="GridCell.Tab.0.left" timestamp="1589920376806">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="283" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920158861" />
-    <state width="1493" height="283" key="GridCell.Tab.0.right" timestamp="1589920158861">
+    <state width="1493" height="283" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920376806" />
+    <state width="1493" height="283" key="GridCell.Tab.0.right" timestamp="1589920376807">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="283" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920158861" />
+    <state width="1493" height="283" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920376807" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1589845418878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -653,10 +649,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1588538335350" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589830343191">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589920421780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589830343191" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920421780" />
     <state x="562" y="160" key="refactoring.ChangeSignatureDialog" timestamp="1589411959490">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
