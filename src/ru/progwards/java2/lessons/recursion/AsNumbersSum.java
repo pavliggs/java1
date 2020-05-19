@@ -5,7 +5,8 @@ public class AsNumbersSum {
         if (number == 1)
             return  "1";
         int res = number - 1;
-        return number + " = " + (number - res) + " + " + asNumbersSum(res);
+        int res2 = number - res;
+        return number + " = " + (res2) + " + " + asNumbersSum(res);
     }
 
     public static void main(String[] args) {
