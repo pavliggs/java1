@@ -24,8 +24,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 3, change 1">
+    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 3, change 2">
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/BiDirList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/DoubleHashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/HashValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/IntHashKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/MainBiDirList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/StringHashKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/tests/calc/SimpleCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/tests/test/calc/DiffTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/tests/test/calc/DivTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/tests/test/calc/ExceptionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/tests/test/calc/MultTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/tests/test/calc/SumTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L3/Test/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N4dot1/EList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N4dot1/OList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N4dot1/TestEList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N4dot1/TestOList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N4dot2/CHashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N4dot2/SHashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N4dot2/TestCHashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N4dot3/BinaryHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N4dot3/TestBinaryHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorld.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/generics/FruitBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/generics/FruitBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/recursion/AsNumbersSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/recursion/AsNumbersSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +61,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -55,6 +81,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-160" />
+    <option name="y" value="60" />
+    <option name="width" value="1680" />
+    <option name="height" value="930" />
+  </component>
   <component name="ProjectId" id="1TqxGbFUY4Ppr3kW13AavXgvtq9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -65,105 +97,125 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589580550181" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N2dot1" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../W5Test" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="ru.progwards.java2.lessons.basetypes" />
       <recent name="ru.progwards.java1.lessons.interfaces" />
       <recent name="ru.progwards.pavliggs.DogAndGoatInterface" />
       <recent name="ru.progwards.pavliggs.inheritanceExample" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.progwards.java2.lessons.tests.test.calc" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Эльдорадо\IdeaProjects\HelloWorld\src\ru\progwards\pavliggs\java2\N2dot1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FruitBox">
-    <configuration name="AsNumbersSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.recursion.AsNumbersSum" />
+  <component name="RunManager" selected="JUnit.ExceptionTest">
+    <configuration name="DivTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.progwards.java2.lessons.recursion.*" />
+          <option name="PATTERN" value="ru.progwards.java2.lessons.tests.test.calc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ru.progwards.java2.lessons.tests.test.calc" />
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.tests.test.calc.DivTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DIntArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java1.lessons.arrays.DIntArray" />
+    <configuration name="ExceptionDivTest.testException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.progwards.java1.lessons.arrays.*" />
+          <option name="PATTERN" value="ru.progwards.java2.lessons.tests.test.calc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ru.progwards.java2.lessons.tests.test.calc" />
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.tests.test.calc.ExceptionDivTest" />
+      <option name="METHOD_NAME" value="testException" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DynamicArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.generics.DynamicArray" />
+    <configuration name="ExceptionMultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.progwards.java2.lessons.generics.*" />
+          <option name="PATTERN" value="ru.progwards.java2.lessons.tests.test.calc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ru.progwards.java2.lessons.tests.test.calc" />
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.tests.test.calc.ExceptionMultTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FruitBox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.generics.FruitBox" />
+    <configuration name="ExceptionMultTest.testException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.progwards.java2.lessons.generics.*" />
+          <option name="PATTERN" value="ru.progwards.java2.lessons.tests.test.calc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ru.progwards.java2.lessons.tests.test.calc" />
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.tests.test.calc.ExceptionMultTest" />
+      <option name="METHOD_NAME" value="testException" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HanoiTower" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.recursion.HanoiTower" />
+    <configuration name="ExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.progwards.java2.lessons.recursion.*" />
+          <option name="PATTERN" value="ru.progwards.java2.lessons.tests.test.calc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ru.progwards.java2.lessons.tests.test.calc" />
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.tests.test.calc.ExceptionTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DIntArray" />
-      <item itemvalue="Application.DynamicArray" />
-      <item itemvalue="Application.HanoiTower" />
-      <item itemvalue="Application.FruitBox" />
-      <item itemvalue="Application.AsNumbersSum" />
+      <item itemvalue="JUnit.ExceptionMultTest" />
+      <item itemvalue="JUnit.ExceptionMultTest.testException" />
+      <item itemvalue="JUnit.DivTest" />
+      <item itemvalue="JUnit.ExceptionDivTest.testException" />
+      <item itemvalue="JUnit.ExceptionTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FruitBox" />
-        <item itemvalue="Application.AsNumbersSum" />
-        <item itemvalue="Application.DynamicArray" />
-        <item itemvalue="Application.HanoiTower" />
-        <item itemvalue="Application.DIntArray" />
+        <item itemvalue="JUnit.ExceptionTest" />
+        <item itemvalue="JUnit.ExceptionDivTest.testException" />
+        <item itemvalue="JUnit.DivTest" />
+        <item itemvalue="JUnit.ExceptionMultTest.testException" />
+        <item itemvalue="JUnit.ExceptionMultTest" />
       </list>
     </recent_temporary>
   </component>
@@ -197,14 +249,20 @@
       <workItem from="1589630261661" duration="17575000" />
       <workItem from="1589713797686" duration="22409000" />
       <workItem from="1589796752042" duration="26281000" />
-      <workItem from="1589891582653" duration="12239000" />
-    </task>
-    <task id="LOCAL-00095" summary="homework 15, attempt 3">
-      <created>1583171855790</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1583171855790</updated>
+      <workItem from="1589891582653" duration="17024000" />
+      <workItem from="1590000090159" duration="4543000" />
+      <workItem from="1590088320118" duration="5289000" />
+      <workItem from="1590174110858" duration="170000" />
+      <workItem from="1590175585806" duration="8854000" />
+      <workItem from="1590345322274" duration="16787000" />
+      <workItem from="1590398486427" duration="31401000" />
+      <workItem from="1590480004696" duration="16540000" />
+      <workItem from="1590604610018" duration="15315000" />
+      <workItem from="1590620702225" duration="315000" />
+      <workItem from="1590690715943" duration="11907000" />
+      <workItem from="1590771945188" duration="2220000" />
+      <workItem from="1590780820562" duration="6599000" />
+      <workItem from="1590862632497" duration="8241000" />
     </task>
     <task id="LOCAL-00096" summary="homework 15, attempt 4">
       <created>1583172200471</created>
@@ -542,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589920411663</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="java2 homework 3, change 2">
+      <created>1589920866318</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1589920866318</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +642,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 17, attempt 12" />
     <MESSAGE value="homework 17, attempt 13" />
     <MESSAGE value="homework 17, attempt 14" />
     <MESSAGE value="homework 17, attempt 15" />
@@ -602,69 +666,94 @@
     <MESSAGE value="java2 homework 2, change 2" />
     <MESSAGE value="java2 homework 2, change 3" />
     <MESSAGE value="java2 homework 3, change 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 3, change 1" />
+    <MESSAGE value="java2 homework 3, change 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 3, change 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588404543776">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1588404543776" />
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1589657173567">
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1590879475899">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589657173567" />
-    <state width="1493" height="283" key="GridCell.Tab.0.bottom" timestamp="1589920376807">
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590879475899" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590879163735">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="283" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920376807" />
-    <state width="1493" height="283" key="GridCell.Tab.0.center" timestamp="1589920376807">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590879163735" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1590865548200">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="283" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920376807" />
-    <state width="1493" height="283" key="GridCell.Tab.0.left" timestamp="1589920376806">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590865548200" />
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom" timestamp="1590883223171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="283" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920376806" />
-    <state width="1493" height="283" key="GridCell.Tab.0.right" timestamp="1589920376807">
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590883223171" />
+    <state width="1493" height="163" key="GridCell.Tab.0.center" timestamp="1590883223171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="283" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920376807" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1589845418878">
+    <state width="1493" height="163" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590883223171" />
+    <state width="1493" height="163" key="GridCell.Tab.0.left" timestamp="1590883223171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589845418878" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1589845418878">
+    <state width="1493" height="163" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590883223171" />
+    <state width="1493" height="163" key="GridCell.Tab.0.right" timestamp="1590883223171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589845418878" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1589845418878">
+    <state width="1493" height="163" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590883223171" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1590789029143">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589845418878" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1589845418878">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590789029143" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1590789029143">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589845418878" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590789029143" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1590789029143">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590789029143" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1590789029143">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590789029143" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1588538335350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1588538335350" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589920421780">
+    <state x="249" y="0" key="SettingsEditor" timestamp="1590879401110">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920421780" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590879401110" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589920872049">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589920872049" />
+    <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590879486982">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590879486982" />
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590174282286">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590174282286" />
+    <state x="209" y="33" key="new project wizard" timestamp="1590528389567">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590528389567" />
     <state x="562" y="160" key="refactoring.ChangeSignatureDialog" timestamp="1589411959490">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="160" key="refactoring.ChangeSignatureDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589411959490" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1589753457414">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1590880172527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589753457414" />
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1589916718504">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590880172527" />
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1590618949371">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1589916718504" />
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1590618949371" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -672,81 +761,5 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HelloWorld$Main.ic" NAME="Main Coverage Results" MODIFIED="1574290260884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>HelloWorld:jar</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>13</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>HelloWorld</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

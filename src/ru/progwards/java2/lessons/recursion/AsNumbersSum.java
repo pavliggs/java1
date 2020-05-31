@@ -6,10 +6,9 @@ public class AsNumbersSum {
             return  "1";
         int res = number - 1;
         int res2 = number - res;
-        return number + " = " + (res2) + " + " + asNumbersSum(res);
+        return number + " = " + asNumbersSum(res);
     }
 
     public static void main(String[] args) {
         System.out.println(asNumbersSum(5));
-    }
-}
+    }}

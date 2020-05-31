@@ -27,7 +27,7 @@ public class FruitBox<T extends FruitBox> {
         return weight;
     }
 
-    void moveTo(FruitBox<T> fruitBox) {
+    void moveTo(FruitBox fruitBox) {
         if (this.list.isEmpty()) {
             System.out.println("Нельзя переложить фрукты из пустой корзины!");
             return;
@@ -85,7 +85,7 @@ public class FruitBox<T extends FruitBox> {
         fruitBox1.add(new Apple());
         fruitBox2.add(new Orange(), new Orange());
         fruitBox3.add(new Apple(), new Apple());
-        fruitBox1.moveTo(fruitBox3);
+        fruitBox1.moveTo(fruitBox2);
         System.out.println(fruitBox3.getWeight());
 
         System.out.println(fruitBox2.compareTo(fruitBox3));
