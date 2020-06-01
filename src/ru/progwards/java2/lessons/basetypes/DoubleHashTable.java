@@ -1,11 +1,6 @@
 package ru.progwards.java2.lessons.basetypes;
 
-import org.telegram.telegrambots.meta.api.methods.groupadministration.DeleteChatStickerSet;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class DoubleHashTable<K extends HashValue,V> {
     private static final double A = 0.6180339887;
@@ -14,10 +9,12 @@ public class DoubleHashTable<K extends HashValue,V> {
     static class Node<K extends HashValue,V> {
         private final K key;
         private V value;
+        private boolean isDeleted;
 
         Node(K key, V value) {
             this.key = key;
             this.value = value;
+            isDeleted = false;
         }
 
         public K getKey() {
@@ -26,6 +23,14 @@ public class DoubleHashTable<K extends HashValue,V> {
 
         public V getValue() {
             return value;
+        }
+
+        public boolean isDeleted() {
+            return isDeleted;
+        }
+
+        private void setDeleted(boolean deleted) {
+            isDeleted = deleted;
         }
 
         @Override
@@ -45,28 +50,32 @@ public class DoubleHashTable<K extends HashValue,V> {
     public void add(K key, V value) {
         int index = getHash(key);
         Node<K, V> node = new Node<>(key, value);
-        if (table[index] == null || table[index].getKey().equals(key)) {
+        /*
+        * если элемент с индексом index = null или ключ элемента соответствует переданному ключу и элемент не
+        * удалённый, то перезаписываем этот элемент
+        * */
+        if (table[index] == null || (table[index].getKey().equals(key) && !table[index].isDeleted())) {
             table[index] = node;
-        } else {
-            // вычисляем шаг, с которым будем идти по массиву
-            int n = getHashStep(key);
-            // считаем колличество коллизий
-            int count = 0;
-            // пока элементы с индексом index + n заняты другими значениями - продолжаем поиск
-            // проходимся по массиву делая полный круг и если не коллизии превысили 10%, то увеличиваем массив
-            for (int i = index + n; ; i += n) {
-                index = i % table.length;
-                if (table[index] == null) {
-                    table[index] = node;
-                    break;
-                }
-                ++count;
-                // если колличество коллизий больше 10%, то увеличиваем размер таблицы
-                if (count > (table.length / 10)) {
-                    table = increaseArrayLenght();
-                    add(key, value);
-                    return;
-                }
+            return;
+        }
+        // вычисляем шаг, с которым будем идти по массиву
+        int n = getHashStep(key);
+        // считаем колличество коллизий (начально значение 1, т.к. мы уже не положили элемент в таблицу с первого раза)
+        int count = 1;
+        // пока элемент с индексом index + n занят другим значением - продолжаем поиск, прибавляя n
+        // проходимся по массиву делая полный круг и если не коллизии превысили 10%, то увеличиваем массив
+        for (int i = index + n; ; i += n) {
+            int indx = i % table.length;
+            if (table[indx] == null || (table[indx].getKey().equals(key) && !table[indx].isDeleted())) {
+                table[indx] = node;
+                break;
+            }
+            ++count;
+            // если колличество коллизий больше 10%, то увеличиваем размер таблицы
+            if (count > (table.length / 10)) {
+                increaseArrayLenght();
+                add(key, value);
+                break;
             }
         }
     }
@@ -75,22 +84,67 @@ public class DoubleHashTable<K extends HashValue,V> {
         int index = getHash(key);
         if (table[index] == null)
             return null;
-        if (table[index].getKey().equals(key))
+        // если ключ элемента соответствует переданному ключу и элемент не удалённый, то возвращаем этот элемент
+        if (table[index].getKey().equals(key) && !table[index].isDeleted())
             return (V) table[index].getValue();
         int n = getHashStep(key);
-        index += n;
-
-        for (int i = index; i < table.length; i += n) {
-            if (table[i] != null && table[i].getKey().equals(key)) {
-                return (V) table[index].getValue();
+        // счетчик коллизий как в методе add
+        int count = 1;
+        for (int i = index + n; ; i += n) {
+            int indx = i % table.length;
+            if (table[indx] != null && table[indx].getKey().equals(key) && !table[indx].isDeleted()) {
+                return (V)table[indx].getValue();
+            }
+            ++count;
+            // если колличество коллизий больше 10%, то значит такого элемента в таблице не существует
+            if (count > (table.length / 10)) {
+                return null;
             }
         }
+    }
 
-        return null;
+    public void remove(K key) {
+        int index = getHash(key);
+        if (table[index] == null)
+            return;
+        // если нашли элемент по ключу и он не удалён, то удаляем его
+        if (table[index].getKey().equals(key) && !table[index].isDeleted()) {
+            table[index].setDeleted(true);
+            return;
+        }
+
+        int n = getHashStep(key);
+        int count = 1;
+        for (int i = index + n; ; i += n) {
+            int indx = i % table.length;
+            if (table[indx] != null && table[indx].getKey().equals(key) && !table[indx].isDeleted()) {
+                table[indx].setDeleted(true);
+                break;
+            }
+            ++count;
+            // если колличество коллизий больше 10%, то значит такого элемента в таблице не существует
+            if (count > (table.length / 10)) {
+                return;
+            }
+        }
+    }
+
+    public void change(K key1, K key2) {
+        V value1 = get(key1);
+        V value2 = get(key2);
+        if (value1 != null && value2 != null) {
+            add(key1, value2);
+            add(key2, value1);
+        }
     }
 
     public int size() {
-        return table.length;
+        int result = 0;
+        for (int i = 0; i < table.length; i++) {
+            if (table[i] != null && !table[i].isDeleted())
+                ++result;
+        }
+        return result;
     }
 
     public Iterator<Node<K,V>> getIterator() {
@@ -101,6 +155,19 @@ public class DoubleHashTable<K extends HashValue,V> {
 
             @Override
             public boolean hasNext() {
+                /*
+                * проверка на current == null или current удалён выполняется всего 1 раз, когда indx = 0, чтобы сразу
+                * найти индекс следующего элемента != null и не удаленного
+                * также эта проверка нужна, чтобы метод next() вернул false в случае если в таблице все элементы = null
+                * или все элементы удалены
+                * */
+                if (current == null || current.isDeleted()) {
+                    boolean elementsExist = elementsExist();
+                    if (elementsExist)
+                        current = table[indx];
+                    else
+                        return false;
+                }
                 return indx < table.length;
             }
 
@@ -110,19 +177,49 @@ public class DoubleHashTable<K extends HashValue,V> {
                     throw new NullPointerException();
 
                 lastReturned = current;
-                ++indx;
-                current = table[indx];
+                /*
+                * смотрим на элемент вперёд и если он = null или удалён, то проверяем есть ли вообще элементы != null
+                * если элементы есть, то присваиваем переменной indx значение индекса первого встретившегося элемента
+                * если элементов != null нет, то выводим переменную indx за границы таблицы, чтобы метод hasNext()
+                * вернул false
+                * */
+                int indxNext = indx + 1;
+                if (indxNext < table.length) {
+                    if (table[indxNext] == null || table[indxNext].isDeleted) {
+                        if (elementsExist())
+                            current = table[indx];
+                        else
+                            indx = table.length;
+                    } else {
+                        ++indx;
+                        current = table[indx];
+                    }
+                } else
+                    ++indx;
+
                 return lastReturned;
+            }
+
+            // метод выясняет имеются ли дальше в таблице элементы != null
+            private boolean elementsExist() {
+                for (int i = indx + 1; i < table.length; i++) {
+                    /*
+                    * если елемент имеется и он не удален, то присваиваем переменной indx значение индекса этого
+                    * элемента
+                    *  */
+                    if (table[i] != null && !table[i].isDeleted()) {
+                        indx = i;
+                        return true;
+                    }
+                }
+                return false;
             }
         };
     }
 
-    public void printHashTable() {
-        System.out.println(Arrays.toString(table));
-    }
-
     // метод преобразует ключ в индекс массива
     private int getHash(K key) {
+//        System.out.println(key.getHash() % table.length);
         return key.getHash() % table.length;
     }
 
@@ -191,26 +288,80 @@ public class DoubleHashTable<K extends HashValue,V> {
     }
 
     // метод увеличивает массив в два раза, но с учётом того, что длина нового массива должна быть простым числом
-    private Node[] increaseArrayLenght() {
+    private void increaseArrayLenght() {
+        // получаем список из элементов таблицы table
+        List<Node<K,V>> listNode = putOnAList();
+        // получаем увеличенную длину таблицы, которая является простым числом
         int lenght = searchNearSimpleNum(table.length * 2);
-        Node[] newTable = Arrays.copyOf(table, lenght);
-//        System.arraycopy(table, 0, newTable, 0, table.length);
-        return newTable;
+        Node[] newTable = new Node[lenght];
+        table = newTable;
+        // записываем в новую таблицу элементы из списка listNode с новым hash (получаем новый индекс)
+        changeHash(listNode);
+    }
+
+    // метод записывает в список элементы таблицы table
+    private List<Node<K,V>> putOnAList() {
+        List<Node<K,V>> result = new ArrayList<>();
+        for (int i = 0; i < table.length; i++) {
+            if (table[i] != null)
+                result.add(table[i]);
+        }
+        return result;
+    }
+
+    // метод вычисляет новый hash для каждого элемента списка list и записывает эти элементы в новую таблицу
+    private void changeHash(List<Node<K,V>> list) {
+        list.forEach(x -> {
+            int index = getHash(x.getKey());
+            table[index] = x;
+        });
     }
 
     public static void main(String[] args) {
         DoubleHashTable<IntHashKey, Integer> doubleHashTable = new DoubleHashTable<>();
-        doubleHashTable.printHashTable();
 
-        for (int i = 377; i < 50000; i++) {
+        for (int i = 377; i < 500; i++) {
             doubleHashTable.add(new IntHashKey(i), i);
         }
 
-        doubleHashTable.add(new IntHashKey(1023), 12);
+        doubleHashTable.add(new IntHashKey(1222), 1222);
 
-        doubleHashTable.printHashTable();
+        doubleHashTable.change(new IntHashKey(377), new IntHashKey(1222));
+
         System.out.println(doubleHashTable.size());
 
-        System.out.println(doubleHashTable.get(new IntHashKey(478)));
+        System.out.println(doubleHashTable.get(new IntHashKey(794)));
+
+        System.out.println(doubleHashTable.get(new IntHashKey(1222)));
+        System.out.println(doubleHashTable.get(new IntHashKey(377)));
+
+        Iterator<Node<IntHashKey, Integer>> iterator = doubleHashTable.getIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+
+        DoubleHashTable<StringHashKey, Integer> hashTable = new DoubleHashTable<>();
+
+        hashTable.add(new StringHashKey("Hi"), 10);
+        hashTable.add(new StringHashKey("World"), 21);
+        hashTable.add(new StringHashKey("Maps"), 567);
+        hashTable.add(new StringHashKey("Cheese"), 1);
+        hashTable.add(new StringHashKey("Milk"), 23);
+        hashTable.add(new StringHashKey("Hello, world!"), 98);
+        hashTable.add(new StringHashKey("Ann"), 67);
+        hashTable.add(new StringHashKey("Lucky"), 111);
+        hashTable.add(new StringHashKey("New York"), 2236);
+        hashTable.add(new StringHashKey("Fantasy"), 568);
+        hashTable.add(new StringHashKey("Christmas"), 23365);
+        hashTable.add(new StringHashKey("Happy"), 235);
+        hashTable.add(new StringHashKey("Bold"), 83);
+
+        Iterator<Node<StringHashKey, Integer>> iterator1 = hashTable.getIterator();
+
+        while (iterator1.hasNext())
+            System.out.println(iterator1.next());
+
+        System.out.println(hashTable.get(new StringHashKey("Milk")));
     }
 }
