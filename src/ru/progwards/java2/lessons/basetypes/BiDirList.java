@@ -1,7 +1,5 @@
 package ru.progwards.java2.lessons.basetypes;
 
-import com.google.inject.internal.cglib.core.$DuplicatesPredicate;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.function.Consumer;
