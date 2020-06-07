@@ -24,20 +24,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 4, change 2">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/gc/Heap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/gc/HeapTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/gc/InvalidPointerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/gc/OutOfMemoryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/reflection/ClassInspector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L7/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L7/ReflectionExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L7/Test/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N6dot3/CallGC.java" afterDir="false" />
+    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 7, change 1">
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/reflection/GettersAndSetters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/reflection/TestMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorld.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +99,7 @@
       <recent name="C:\Users\Эльдорадо\IdeaProjects\HelloWorld\src\ru\progwards\pavliggs\java2\N2dot1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClassInspector">
+  <component name="RunManager" selected="Application.GettersAndSetters">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.progwards.pavliggs.java2.L7.App" />
       <module name="HelloWorld" />
@@ -149,6 +139,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GettersAndSetters" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.reflection.GettersAndSetters" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.java2.lessons.reflection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Heap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.gc.Heap" />
       <module name="HelloWorld" />
@@ -162,33 +165,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainDoubleHashTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.basetypes.MainDoubleHashTable" />
-      <module name="HelloWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.progwards.java2.lessons.basetypes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.MainDoubleHashTable" />
       <item itemvalue="Application.CallGC" />
       <item itemvalue="Application.Heap" />
       <item itemvalue="Application.App" />
       <item itemvalue="Application.ClassInspector" />
+      <item itemvalue="Application.GettersAndSetters" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GettersAndSetters" />
         <item itemvalue="Application.ClassInspector" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.Heap" />
         <item itemvalue="Application.CallGC" />
-        <item itemvalue="Application.MainDoubleHashTable" />
       </list>
     </recent_temporary>
   </component>
@@ -243,14 +233,7 @@
       <workItem from="1591272665646" duration="10121000" />
       <workItem from="1591386119433" duration="9324000" />
       <workItem from="1591434152226" duration="26176000" />
-      <workItem from="1591522756982" duration="18910000" />
-    </task>
-    <task id="LOCAL-00100" summary="homework 16, attempt 1">
-      <created>1583874274210</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1583874274211</updated>
+      <workItem from="1591522756982" duration="25446000" />
     </task>
     <task id="LOCAL-00101" summary="homework 16, attempt 2">
       <created>1583874882386</created>
@@ -588,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591052886091</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="java2 homework 7, change 1">
+      <created>1591559307556</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1591559307557</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,7 +613,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 17, attempt 17" />
     <MESSAGE value="homework 17, attempt 18" />
     <MESSAGE value="homework 17, attempt 19" />
     <MESSAGE value="homework 17, attempt 20" />
@@ -648,7 +637,8 @@
     <MESSAGE value="java2 homework 5, change 2" />
     <MESSAGE value="java2 homework 4, change 1" />
     <MESSAGE value="java2 homework 4, change 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 4, change 2" />
+    <MESSAGE value="java2 homework 7, change 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 7, change 1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1591476004239">
@@ -675,22 +665,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591387449994" />
-    <state width="1493" height="201" key="GridCell.Tab.0.bottom" timestamp="1591558946398">
+    <state width="1493" height="201" key="GridCell.Tab.0.bottom" timestamp="1591567599650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591558946398" />
-    <state width="1493" height="201" key="GridCell.Tab.0.center" timestamp="1591558946398">
+    <state width="1493" height="201" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591567599650" />
+    <state width="1493" height="201" key="GridCell.Tab.0.center" timestamp="1591567599650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591558946398" />
-    <state width="1493" height="201" key="GridCell.Tab.0.left" timestamp="1591558946398">
+    <state width="1493" height="201" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591567599650" />
+    <state width="1493" height="201" key="GridCell.Tab.0.left" timestamp="1591567599650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591558946398" />
-    <state width="1493" height="201" key="GridCell.Tab.0.right" timestamp="1591558946398">
+    <state width="1493" height="201" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591567599650" />
+    <state width="1493" height="201" key="GridCell.Tab.0.right" timestamp="1591567599650">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="201" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591558946398" />
+    <state width="1493" height="201" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591567599650" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1591487069132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -715,10 +705,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591476156852" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1591052893389">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1591559319992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591052893389" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591559319992" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590879486982">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -739,10 +729,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591486646907" />
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1591445307079">
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1591566445680">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591445307079" />
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591566445680" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
