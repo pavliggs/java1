@@ -88,6 +88,7 @@ public class Heap {
     public void free(int ptr) {
         for (int i = 0; i < busyBlocks.size(); i++) {
             Block busyBlock = busyBlocks.get(i);
+            // если блок с данным указателем найден, то добавляем его в список свободных блоков
             if (busyBlock.getStartIndex() == ptr) {
                 freeBlocks.add(busyBlock);
                 freeBlocks.sort(null);
@@ -108,10 +109,8 @@ public class Heap {
                 Block freeBlockCurrent = freeBlocks.get(i);
                 Block freeBlockNext = freeBlocks.get(i+1);
                 /*
-                * если конечный индекс массива freeBlock и начальный индекс массива freeBlockNext являются смежными,
-                * то создаём новым массив newFreeBlock из массивов freeBlock и freeBlockNext
-                * затем удаляем массивы freeBlock и freeBlockNext из списка freeBlocks и добавляем в список массив
-                * newFreeBlock и сортируем список
+                * если конечный индекс блока freeBlockCurrent и начальный индекс блока freeBlockNext являются смежными,
+                * то создаём новым блок newFreeBlock из блоков freeBlockCurrent и freeBlockNext и добавляем в список
                 * */
                 if (freeBlockCurrent.getStartIndex() + freeBlockCurrent.getSize() == freeBlockNext.getStartIndex()) {
                     Block newFreeBlock = new Block(freeBlockCurrent.getStartIndex(), freeBlockCurrent.getSize() +
@@ -126,16 +125,19 @@ public class Heap {
 
     public void compact() {
         int startIndex = 0;
+        // переносим занятые блоки в начало кучи
         for (int i = 0; i < busyBlocks.size(); i++) {
             Block busyBlock = busyBlocks.get(i);
             busyBlock.setStartIndex(startIndex);
             startIndex += busyBlock.getSize();
         }
+        // свободные блоки размещаем после занятых
         for (int i = 0; i < freeBlocks.size(); i++) {
             Block freeBlock = freeBlocks.get(i);
             freeBlock.setStartIndex(startIndex);
             startIndex += freeBlock.getSize();
         }
+        // проводим дефрагментацию
         defrag();
     }
 
