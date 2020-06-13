@@ -46,7 +46,6 @@ public class BiDirList<T> implements Iterable<T> {
         private T item;
         private ListItem<T> next;
         private ListItem<T> prev;
-        private int indx;
 
         ListItem(T item) {
             this.item = item;
@@ -60,10 +59,6 @@ public class BiDirList<T> implements Iterable<T> {
             next = item;
         }
 
-        void setIndx(int num) {
-            indx = num;
-        }
-
         T getItem() {
             return item;
         }
@@ -75,24 +70,12 @@ public class BiDirList<T> implements Iterable<T> {
         ListItem<T> getPrev() {
             return prev;
         }
-
-        int getIndx() {
-            return indx;
-        }
     }
 
     private ListItem<T> head;
     private ListItem<T> tail;
+    // длина списка
     private int size = 0;
-    private int count = 0;
-
-    ListItem<T> getHead() {
-        return head;
-    }
-
-    ListItem<T> getTail() {
-        return tail;
-    }
 
     public int size() {
         return size;
@@ -101,7 +84,6 @@ public class BiDirList<T> implements Iterable<T> {
     public void addLast(T item) {
         ListItem<T> t = tail;
         ListItem<T> newListItem = new ListItem<>(item);
-        newListItem.setIndx(count++);
         tail = newListItem;
         if (t == null) {
             head = newListItem;
@@ -115,31 +97,28 @@ public class BiDirList<T> implements Iterable<T> {
     public void addFirst(T item) {
         ListItem<T> h = head;
         ListItem<T> newListItem = new ListItem<>(item);
-        newListItem.setIndx(0);
         head = newListItem;
         if (h == null) {
             tail = newListItem;
         } else {
             head.setNext(h);
             h.setPrev(head);
-            increaseIndx(h, true);
         }
         ++size;
     }
 
     public T at(int i) {
+        int count = 0;
         ListItem<T> current = head;
-        T result = null;
 
         while (current != null) {
-            if (current.getIndx() == i) {
-                result = current.getItem();
-                break;
-            }
+            if (count == i)
+                return current.getItem();
+            ++count;
             current = current.getNext();
         }
 
-        return result;
+        return null;
     }
 
     public void remove(T item) {
@@ -155,8 +134,6 @@ public class BiDirList<T> implements Iterable<T> {
                     tail = current.getPrev();
                 else
                     current.getNext().setPrev(current.getPrev());
-                // уменьшаем индексы элементов на 1
-                increaseIndx(current.getNext(), false);
                 // уменьшаем размер списка
                 --size;
                 return;
@@ -190,7 +167,6 @@ public class BiDirList<T> implements Iterable<T> {
         for (int i = 0; i < array.length; i++) {
             ListItem<T> t = list.tail;
             ListItem<T> newListItem = new ListItem<>(array[i]);
-            newListItem.setIndx(list.count++);
             list.tail = newListItem;
             if (t == null) {
                 list.head = newListItem;
@@ -200,18 +176,5 @@ public class BiDirList<T> implements Iterable<T> {
             }
         }
         list.size = array.length;
-    }
-
-    // метод увеличивает или уменьшает на 1 индексы элементов, начиная с элемента current
-    private void increaseIndx(ListItem<T> current, boolean isIncrement) {
-        while (current != null) {
-            int currentIndx = current.getIndx();
-            // если true, то увеличиваем индексы
-            if (isIncrement)
-                current.setIndx(++currentIndx);
-            else
-                current.setIndx(--currentIndx);
-            current = current.getNext();
-        }
     }
 }

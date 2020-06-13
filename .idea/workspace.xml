@@ -24,9 +24,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 6, change 1">
+    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 6, change 2">
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/trees/AvlTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N8dot1/BinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N8dot1/TreeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/gc/Heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/gc/Heap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/BiDirList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/BiDirList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/DoubleHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/DoubleHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/MainBiDirList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/MainBiDirList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/MainDoubleHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/MainDoubleHashTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,33 +104,7 @@
       <recent name="C:\Users\Эльдорадо\IdeaProjects\HelloWorld\src\ru\progwards\pavliggs\java2\N2dot1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HeapTest">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.pavliggs.java2.L7.App" />
-      <module name="HelloWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.progwards.pavliggs.java2.L7.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClassInspector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.reflection.ClassInspector" />
-      <module name="HelloWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.progwards.java2.lessons.reflection.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.MainDoubleHashTable">
     <configuration name="GettersAndSetters" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.reflection.GettersAndSetters" />
       <module name="HelloWorld" />
@@ -164,20 +144,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainBiDirList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.basetypes.MainBiDirList" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.java2.lessons.basetypes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainDoubleHashTable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.basetypes.MainDoubleHashTable" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.java2.lessons.basetypes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Heap" />
-      <item itemvalue="Application.App" />
-      <item itemvalue="Application.ClassInspector" />
       <item itemvalue="Application.GettersAndSetters" />
       <item itemvalue="Application.HeapTest" />
+      <item itemvalue="Application.MainBiDirList" />
+      <item itemvalue="Application.MainDoubleHashTable" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainDoubleHashTable" />
+        <item itemvalue="Application.MainBiDirList" />
         <item itemvalue="Application.HeapTest" />
         <item itemvalue="Application.Heap" />
         <item itemvalue="Application.GettersAndSetters" />
-        <item itemvalue="Application.ClassInspector" />
-        <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
   </component>
@@ -234,14 +240,11 @@
       <workItem from="1591434152226" duration="26176000" />
       <workItem from="1591522756982" duration="26250000" />
       <workItem from="1591638323086" duration="10659000" />
-      <workItem from="1591690639201" duration="8364000" />
-    </task>
-    <task id="LOCAL-00103" summary="homework 16, attempt 4">
-      <created>1583879013198</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1583879013198</updated>
+      <workItem from="1591690639201" duration="18951000" />
+      <workItem from="1591816441972" duration="2322000" />
+      <workItem from="1591872912863" duration="6651000" />
+      <workItem from="1591963900193" duration="2634000" />
+      <workItem from="1592049374718" duration="14695000" />
     </task>
     <task id="LOCAL-00104" summary="homework 16, attempt 5">
       <created>1584453309281</created>
@@ -579,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591708354343</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="java2 homework 6, change 2">
+      <created>1591728249813</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1591728249813</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +624,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="homework 17, attempt 20" />
     <MESSAGE value="project PizzaBot, attempt 1" />
     <MESSAGE value="project PizzaBot, attempt 2" />
     <MESSAGE value="project PizzaBot, attempt 3" />
@@ -639,9 +648,14 @@
     <MESSAGE value="java2 homework 7, change 1" />
     <MESSAGE value="java2 homework 7, change 2" />
     <MESSAGE value="java2 homework 6, change 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 6, change 1" />
+    <MESSAGE value="java2 homework 6, change 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 6, change 2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="395" y="91" key="#Inspections" timestamp="1591739288617">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="395" y="91" key="#Inspections/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591739288617" />
     <state x="249" y="0" key="#Project_Structure" timestamp="1591476004239">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -666,22 +680,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591387449994" />
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom" timestamp="1591692939448">
+    <state width="1493" height="158" key="GridCell.Tab.0.bottom" timestamp="1592066674657">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591692939448" />
-    <state width="1493" height="158" key="GridCell.Tab.0.center" timestamp="1591692939447">
+    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592066674657" />
+    <state width="1493" height="158" key="GridCell.Tab.0.center" timestamp="1592066674657">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591692939447" />
-    <state width="1493" height="158" key="GridCell.Tab.0.left" timestamp="1591692939447">
+    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592066674657" />
+    <state width="1493" height="158" key="GridCell.Tab.0.left" timestamp="1592066674657">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591692939447" />
-    <state width="1493" height="158" key="GridCell.Tab.0.right" timestamp="1591692939448">
+    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592066674657" />
+    <state width="1493" height="158" key="GridCell.Tab.0.right" timestamp="1592066674657">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591692939448" />
+    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592066674657" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1591487069132">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -706,10 +720,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591476156852" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1591708369720">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1591728256245">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591567770638" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591728256245" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591708369720" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590879486982">
       <screen x="0" y="0" width="1536" height="824" />
@@ -727,10 +741,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="160" key="refactoring.ChangeSignatureDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591050547218" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1591486646907">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1591919768460">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591486646907" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591919768460" />
     <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1591659659824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

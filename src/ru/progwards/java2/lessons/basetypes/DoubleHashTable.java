@@ -51,10 +51,10 @@ public class DoubleHashTable<K extends HashValue,V> {
         int index = getHash(key);
         Node<K, V> node = new Node<>(key, value);
         /*
-        * если элемент с индексом index = null или ключ элемента соответствует переданному ключу и элемент не
-        * удалённый, то перезаписываем этот элемент
+        * если элемент с индексом index = null или ключ элемента соответствует переданному ключу, то перезаписываем
+        * этот элемент
         * */
-        if (table[index] == null || (table[index].getKey().equals(key) && !table[index].isDeleted())) {
+        if (table[index] == null || table[index].getKey().equals(key)) {
             table[index] = node;
             return;
         }
@@ -66,7 +66,7 @@ public class DoubleHashTable<K extends HashValue,V> {
         // проходимся по массиву делая полный круг и если не коллизии превысили 10%, то увеличиваем массив
         for (int i = index + n; ; i += n) {
             int indx = i % table.length;
-            if (table[indx] == null || (table[indx].getKey().equals(key) && !table[indx].isDeleted())) {
+            if (table[indx] == null || table[indx].getKey().equals(key)) {
                 table[indx] = node;
                 break;
             }
@@ -130,11 +130,14 @@ public class DoubleHashTable<K extends HashValue,V> {
     }
 
     public void change(K key1, K key2) {
-        V value1 = get(key1);
-        V value2 = get(key2);
-        if (value1 != null && value2 != null) {
-            add(key1, value2);
-            add(key2, value1);
+        V value = get(key1);
+        /*
+        * если элементы с ключами key1 и key2 существуют, то удаляем элемент с ключом key1 и перезаписываем значение
+        * элемента с ключом key2 на value
+        * */
+        if (value != null && get(key2) != null) {
+            remove(key1);
+            add(key2, value);
         }
     }
 
@@ -162,8 +165,7 @@ public class DoubleHashTable<K extends HashValue,V> {
                 * или все элементы удалены
                 * */
                 if (current == null || current.isDeleted()) {
-                    boolean elementsExist = elementsExist();
-                    if (elementsExist)
+                    if (findNextNotNull())
                         current = table[indx];
                     else
                         return false;
@@ -186,7 +188,7 @@ public class DoubleHashTable<K extends HashValue,V> {
                 int indxNext = indx + 1;
                 if (indxNext < table.length) {
                     if (table[indxNext] == null || table[indxNext].isDeleted) {
-                        if (elementsExist())
+                        if (findNextNotNull())
                             current = table[indx];
                         else
                             indx = table.length;
@@ -201,7 +203,7 @@ public class DoubleHashTable<K extends HashValue,V> {
             }
 
             // метод выясняет имеются ли дальше в таблице элементы != null
-            private boolean elementsExist() {
+            private boolean findNextNotNull() {
                 for (int i = indx + 1; i < table.length; i++) {
                     /*
                     * если елемент имеется и он не удален, то присваиваем переменной indx значение индекса этого
@@ -219,7 +221,6 @@ public class DoubleHashTable<K extends HashValue,V> {
 
     // метод преобразует ключ в индекс массива
     private int getHash(K key) {
-//        System.out.println(key.getHash() % table.length);
         return key.getHash() % table.length;
     }
 
