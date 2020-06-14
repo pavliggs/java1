@@ -46,17 +46,49 @@ public class AvlTree<K extends Comparable<K>,V> {
                 left = node;
             }
             node.parent = this;
+            // пересчитать высоты узлов
+            node.recountOfHeight();
+        }
 
-            Node<K,V> parent1 = this;
-            while (parent1 != null) {
-                
+        // метод пересчитывает высоты в узлах
+        void recountOfHeight() {
+            Node<K,V> current = this;
+            while (current.parent != null) {
+                Node<K,V> leftElem = current.parent.left;
+                Node<K,V> rightElem = current.parent.right;
+                if (leftElem == current) {
+                    if (rightElem != null)
+                        current.parent.height = searchMaxOfHeight(leftElem.height, rightElem.height) + 1;
+                    else
+                        current.parent.height = leftElem.height + 1;
+                }
+
+                if (rightElem == current) {
+                    if (leftElem != null)
+                        current.parent.height = searchMaxOfHeight(leftElem.height, rightElem.height) + 1;
+                    else
+                        current.parent.height = rightElem.height + 1;
+                }
+
+                current = current.parent;
             }
+        }
+
+        // метод возвращает максимальное значение из двух переданных значений
+        int searchMaxOfHeight(int height1, int height2) {
+            if (height1 > height2)
+                return height1;
+            if (height1 < height2)
+                return height2;
+            return height1;
         }
     }
 
     private Node<K,V> root;
 
     public void put(K key, V value) {
+        if (key == null || value == null)
+            return;
         Node<K,V> node = new Node<>(key, value);
         if (root == null)
             root = node;
