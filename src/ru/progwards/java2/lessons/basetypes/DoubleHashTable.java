@@ -95,6 +95,8 @@ public class DoubleHashTable<K extends HashValue,V> {
             if (table[indx] != null && table[indx].getKey().equals(key) && !table[indx].isDeleted()) {
                 return (V)table[indx].getValue();
             }
+            if (table[indx] == null)
+                return null;
             ++count;
             // если колличество коллизий больше 10%, то значит такого элемента в таблице не существует
             if (count > (table.length / 10)) {
@@ -102,6 +104,8 @@ public class DoubleHashTable<K extends HashValue,V> {
             }
         }
     }
+
+    // убрать дублирование кода
 
     public void remove(K key) {
         int index = getHash(key);
@@ -112,7 +116,6 @@ public class DoubleHashTable<K extends HashValue,V> {
             table[index].setDeleted(true);
             return;
         }
-
         int n = getHashStep(key);
         int count = 1;
         for (int i = index + n; ; i += n) {
@@ -121,6 +124,8 @@ public class DoubleHashTable<K extends HashValue,V> {
                 table[indx].setDeleted(true);
                 break;
             }
+            if (table[indx] == null)
+                return;
             ++count;
             // если колличество коллизий больше 10%, то значит такого элемента в таблице не существует
             if (count > (table.length / 10)) {
@@ -131,14 +136,11 @@ public class DoubleHashTable<K extends HashValue,V> {
 
     public void change(K key1, K key2) {
         V value = get(key1);
-        /*
-        * если элементы с ключами key1 и key2 существуют, то удаляем элемент с ключом key1 и перезаписываем значение
-        * элемента с ключом key2 на value
-        * */
-        if (value != null && get(key2) != null) {
-            remove(key1);
-            add(key2, value);
-        }
+        if (value == null)
+            return;
+        // если элемент с ключом key1 существуют, то удаляем его и добавляем элемент с ключом key2 и значением value
+        remove(key1);
+        add(key2, value);
     }
 
     public int size() {

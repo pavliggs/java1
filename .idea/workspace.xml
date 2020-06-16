@@ -24,10 +24,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 4, change 3">
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/calculator/Calculator.java" afterDir="false" />
+    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 A8(Calculator), change 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/trees/AvlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/trees/AvlTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/DoubleHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/basetypes/DoubleHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/recursion/AsNumbersSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/recursion/AsNumbersSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,13 +99,13 @@
       <recent name="C:\Users\Эльдорадо\IdeaProjects\HelloWorld\src\ru\progwards\pavliggs\java2\N2dot1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Calculator">
-    <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.calculator.Calculator" />
+  <component name="RunManager" selected="Application.AsNumbersSum">
+    <configuration name="AsNumbersSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.recursion.AsNumbersSum" />
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.progwards.java2.lessons.calculator.*" />
+          <option name="PATTERN" value="ru.progwards.java2.lessons.recursion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,12 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Heap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.gc.Heap" />
+    <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.calculator.Calculator" />
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.progwards.java2.lessons.gc.*" />
+          <option name="PATTERN" value="ru.progwards.java2.lessons.calculator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -166,19 +166,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Heap" />
       <item itemvalue="Application.HeapTest" />
       <item itemvalue="Application.MainBiDirList" />
       <item itemvalue="Application.MainDoubleHashTable" />
       <item itemvalue="Application.Calculator" />
+      <item itemvalue="Application.AsNumbersSum" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AsNumbersSum" />
         <item itemvalue="Application.Calculator" />
         <item itemvalue="Application.MainDoubleHashTable" />
         <item itemvalue="Application.MainBiDirList" />
         <item itemvalue="Application.HeapTest" />
-        <item itemvalue="Application.Heap" />
       </list>
     </recent_temporary>
   </component>
@@ -240,14 +240,9 @@
       <workItem from="1591872912863" duration="6651000" />
       <workItem from="1591963900193" duration="2634000" />
       <workItem from="1592049374718" duration="18858000" />
-      <workItem from="1592134472843" duration="16068000" />
-    </task>
-    <task id="LOCAL-00105" summary="homework 16, attempt 6">
-      <created>1584472790658</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1584472790658</updated>
+      <workItem from="1592134472843" duration="19896000" />
+      <workItem from="1592244977880" duration="3409000" />
+      <workItem from="1592333646320" duration="1031000" />
     </task>
     <task id="LOCAL-00106" summary="homework 16, attempt 7">
       <created>1584567091390</created>
@@ -585,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592086948484</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="java2 A8(Calculator), change 1">
+      <created>1592174019787</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1592174019788</updated>
+    </task>
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +622,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="project PizzaBot, attempt 2" />
     <MESSAGE value="project PizzaBot, attempt 3" />
     <MESSAGE value="project PizzaBot, attempt 4" />
     <MESSAGE value="project PizzaBot, attempt 5" />
@@ -645,7 +646,8 @@
     <MESSAGE value="java2 homework 6, change 1" />
     <MESSAGE value="java2 homework 6, change 2" />
     <MESSAGE value="java2 homework 4, change 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 4, change 3" />
+    <MESSAGE value="java2 A8(Calculator), change 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="java2 A8(Calculator), change 1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="395" y="91" key="#Inspections" timestamp="1591739288617">
@@ -676,38 +678,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591387449994" />
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom" timestamp="1592173620335">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1592179043479">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592173620335" />
-    <state width="1493" height="158" key="GridCell.Tab.0.center" timestamp="1592173620334">
+    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592176596952" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592179043479" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1592179043478">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592173620334" />
-    <state width="1493" height="158" key="GridCell.Tab.0.left" timestamp="1592173620334">
+    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592176596952" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592179043478" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1592179043478">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592173620334" />
-    <state width="1493" height="158" key="GridCell.Tab.0.right" timestamp="1592173620334">
+    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592176596952" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592179043478" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1592179043478">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592173620334" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1592172164353">
+    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592176596952" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592179043478" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1592179043480">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592172164353" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1592172164352">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592176381416" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592179043480" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1592179043479">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592172164352" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1592172164352">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592176381416" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592179043479" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1592179043479">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592172164352" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1592172164352">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592176381416" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592179043479" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1592179043479">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592172164352" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592176381416" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592179043479" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1588538335350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -716,10 +726,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591476156852" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1592086955134">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1592174028660">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592086955134" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592174028660" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591708369720" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590879486982">
       <screen x="0" y="0" width="1536" height="824" />
