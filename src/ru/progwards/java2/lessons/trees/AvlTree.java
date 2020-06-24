@@ -244,15 +244,14 @@ public class AvlTree<K extends Comparable<K>,V> {
                 root = b;
 
             parent = b;
-            if (c != null)
+            if (c != null) {
                 c.parent = this;
-            if (right != null)
+                c.recountOfHeight();
+            } else if (right != null)
                 right.recountOfHeight();
-            else if (left != null)
-                left.recountOfHeight();
             else {
                 this.height = 0;
-                parent.recountOfHeight();
+                recountOfHeight();
             }
         }
 
@@ -273,15 +272,14 @@ public class AvlTree<K extends Comparable<K>,V> {
                 root = b;
 
             parent = b;
-            if (c != null)
+            if (c != null) {
                 c.parent = this;
-            if (left != null)
+                c.recountOfHeight();
+            } else if (left != null)
                 left.recountOfHeight();
-            else if (right != null)
-                right.recountOfHeight();
             else {
                 this.height = 0;
-                parent.recountOfHeight();
+                recountOfHeight();
             }
         }
 
@@ -320,8 +318,10 @@ public class AvlTree<K extends Comparable<K>,V> {
                 m.recountOfHeight();
             } else if (b.left != null)
                 b.left.recountOfHeight();
-            else
+            else {
                 b.height = 0;
+                b.recountOfHeight();
+            }
         }
 
         // большое левое вращение
@@ -359,8 +359,10 @@ public class AvlTree<K extends Comparable<K>,V> {
                 m.recountOfHeight();
             } else if (b.right != null)
                 b.right.recountOfHeight();
-            else
+            else {
                 b.height = 0;
+                b.recountOfHeight();
+            }
         }
 
         // метод возвращает максимальное значение из двух переданных значений
