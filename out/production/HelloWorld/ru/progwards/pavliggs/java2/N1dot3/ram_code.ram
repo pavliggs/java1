@@ -1,0 +1,22 @@
+; входная лента (первая 7 - счетчик)
+<input> 7 7 6 5 4 3 2 1
+
+; загрузка счетчика
+read 1
+
+; инициализация
+load =0
+store 2
+
+;цикл
+loop:
+    read 0
+    add 2
+    store 2
+    load 1
+    sub =1
+    store 1
+    jgtz loop
+
+write 2
+halt

@@ -1,0 +1,37 @@
+<input> 10 25
+
+; множитель 1
+read 1
+; множитель 2
+read 2
+
+; инициализация сумматора
+load =0
+; результат
+store 3
+
+; определение наибольшего множителя
+load 1
+sub 2
+; если результат вычистения больше или равен нулю, то переходим в loop
+jgtz loop
+jz loop
+; если меньше нуля, то меняем множители местами
+load 1
+store 4
+load 2
+store 1
+load 4
+store 2
+
+loop:
+  load 3
+  add 1
+  store 3
+  load 2
+  sub =1
+  store 2
+  jgtz loop
+
+write 3
+halt

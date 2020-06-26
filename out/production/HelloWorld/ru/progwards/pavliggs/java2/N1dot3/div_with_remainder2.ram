@@ -1,0 +1,43 @@
+<input> 17 3
+
+; делимое
+read 1
+; делитель
+read 2
+
+load =0
+; результат 1 - частное
+store 3
+
+load 1
+; результат 2 - остаток
+store 4
+
+loop:
+  load 4
+  sub 2
+  jz equals
+  jgtz writeResult
+  jmp outResult
+
+; запись результатов итерации в регистры 3 и 4
+writeResult:
+  store 4
+  load 3
+  add =1
+  store 3
+  jmp loop
+
+; если делимое и делитель равны (либо при делении нет остатка)
+equals:
+  store 4
+  load 3
+  add =1
+  store 3
+  jmp outResult
+
+; вывод результатов
+outResult:
+  write 3
+  write 4
+  halt

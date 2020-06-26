@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.progwards.pavliggs.java2.N8dot1","l":"BinaryTree"},{"p":"ru.progwards.pavliggs.java2.N8dot1","l":"BinaryTree.TreeLeaf"}]

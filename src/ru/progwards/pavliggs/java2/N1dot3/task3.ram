@@ -1,0 +1,85 @@
+<input> 7 7 -1 5 4 5 -10 -10
+
+; запишем счетчик (ддя сохранения в регистры)
+read 1
+load 1
+; дубликат счетчика (для прохода по элементам)
+store 10
+
+; хранение элементов последовательности будет с регистра R11
+load =11
+store 2
+
+; сохранение входных элементов
+loop:
+  load 2
+  read *0
+  add =1
+  store 2
+  ; уменьшаем счетчик
+  load 1
+  sub =1
+  store 1
+  jgtz loop
+
+; счетчик итераций loop1
+load =0
+store 8
+
+loop1:
+  ; увеличиваем счетчик
+  load 8
+  add =1
+  store 8
+
+  ; уменьшаем количество элементов последовательности на значение счетчика 
+  load 10
+  sub 8
+  store 9
+  jz exit
+  
+  load =10
+  add 8
+  store 2
+  store 5
+  load *2
+  store 3
+  loop2:
+    load 2
+    add =1
+    store 2
+    load 3
+    sub *2
+    jgtz change
+    jmp checkCounter
+  
+halt
+
+; поменять местами элементы
+change:
+  load *2
+  store *5
+  load 3
+  store *2
+  load *5
+  store 3
+  jmp checkCounter
+
+; проверка счётчика
+checkCounter:
+  load 9
+  sub =1
+  store 9
+  jgtz loop2
+  jz dataRecording
+
+; запись данных в вызодную ленту
+dataRecording:
+  write *5
+  jmp loop1
+
+; выход
+exit:
+ write *2
+ halt
+  

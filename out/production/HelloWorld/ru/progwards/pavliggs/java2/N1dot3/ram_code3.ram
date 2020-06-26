@@ -1,0 +1,12 @@
+<input> 3
+
+  read 1
+  load 1
+  jgtz ok
+  load =1
+  store 2
+  jmp exit
+
+ok:
+  load 1
+  store 2

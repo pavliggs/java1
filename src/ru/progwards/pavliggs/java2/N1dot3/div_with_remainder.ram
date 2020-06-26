@@ -1,0 +1,42 @@
+<input> 17 3
+
+;делимое
+read 1
+;делитель
+read 2
+
+;если делимое и делитель равны, то выводим 1 и 0
+load 1
+sub 2
+store 4
+load =1
+store 3
+load =0
+jz loop
+
+load =0
+;результат - частное
+store 3
+
+load 1
+;результат - остаток
+store 4
+
+loop:
+  load 4
+  sub 2
+  jz equality
+  jgtz writeResult
+  write 3
+  write 4
+halt
+
+writeResult:
+  store 4
+  load 3
+  add =1
+  store 3
+  jmp loop
+  
+  
+  
