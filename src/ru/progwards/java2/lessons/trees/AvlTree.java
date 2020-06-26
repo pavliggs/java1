@@ -109,34 +109,6 @@ public class AvlTree<K extends Comparable<K>,V> {
             }
         }
 
-        void change(K key) {
-            if (left != null) {
-                if (right != null) {
-                    if (key.compareTo(left.key) > 0 && key.compareTo(right.key) < 0)
-                        this.key = key;
-                    else
-                        keyNotFit();
-                } else {
-                    if (key.compareTo(left.key) > 0)
-                        this.key = key;
-                    else
-                        keyNotFit();
-                }
-            } else {
-                if (right != null) {
-                    if (key.compareTo(right.key) < 0 && key.compareTo(parent.key) > 0)
-                        this.key = key;
-                    else
-                        keyNotFit();
-                } else {
-                    if (key.compareTo(parent.key) > 0)
-                        this.key = key;
-                    else
-                        keyNotFit();
-                }
-            }
-        }
-
         // метод находит максимальный элемент и удаляет его
         Node maxElem() {
             if (right == null) {
@@ -391,8 +363,6 @@ public class AvlTree<K extends Comparable<K>,V> {
     public Node root;
 
     public void put(K key, V value) {
-        if (key == null || value == null)
-            return;
         Node node = new Node(key, value);
         if (root == null)
             root = node;
@@ -401,18 +371,21 @@ public class AvlTree<K extends Comparable<K>,V> {
     }
 
     public void delete(K key) {
+        internalDelete(key);
+    }
+
+    private Node internalDelete(K key) {
         if (root == null)
             keyNotExist();
 
         Node found = root.find(key);
         int cmp = found.key.compareTo(key);
         if (cmp != 0) {
-            System.out.println(found);
-            System.out.println("Не найден элемент с ключом " + key);
             keyNotExist();
         }
 
         found.delete();
+        return found;
     }
 
     public V find(K key) {
@@ -428,39 +401,9 @@ public class AvlTree<K extends Comparable<K>,V> {
     }
 
     public void change(K oldKey, K newKey) {
-        if (root == null)
-            keyNotExist();
-
-        Node found = root.find(oldKey);
-        int cmp = found.key.compareTo(oldKey);
-        if (cmp != 0) {
-            keyNotExist();
-        }
-
-        if (found.parent == null) {
-            if (root.left != null) {
-                if (root.right != null) {
-                    if (newKey.compareTo(root.left.key) > 0 && newKey.compareTo(root.right.key) < 0)
-                        root.key = newKey;
-                    else
-                        keyNotFit();
-                } else {
-                    if (newKey.compareTo(root.left.key) > 0)
-                        root.key = newKey;
-                    else
-                        keyNotFit();
-                }
-            } else {
-                if (root.right != null) {
-                    if (newKey.compareTo(root.right.key) < 0)
-                        root.key = newKey;
-                    else
-                        keyNotFit();
-                } else
-                    root.key = newKey;
-            }
-        } else
-            found.change(newKey);
+        Node found = internalDelete(oldKey);
+        found.key = newKey;
+        root.find(newKey).add(found);
     }
 
     public void process(Consumer<Node> consumer) {

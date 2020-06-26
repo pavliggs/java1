@@ -1,8 +1,5 @@
 package ru.progwards.pavliggs.java2.N8dot1;
 
-import ru.progwards.java2.lessons.trees.AvlTree;
-
-import java.util.Iterator;
 import java.util.function.Consumer;
 
 public class BinaryTree<K extends Comparable<K>,V> {
@@ -145,35 +142,5 @@ public class BinaryTree<K extends Comparable<K>,V> {
 
     public void process(Consumer<TreeLeaf> consumer) {
         root.process(consumer);
-    }
-
-    public Iterator<TreeLeaf> getIterator() {
-        return new Iterator<TreeLeaf>() {
-            @Override
-            public boolean hasNext() {
-                return false;
-            }
-
-            @Override
-            public TreeLeaf next() {
-                return null;
-            }
-        };
-    }
-
-    public static void main(String[] args) {
-        BinaryTree<Integer, Integer> tree = new BinaryTree<>();
-        tree.add(15, 1);
-        tree.add(10, 1);
-        tree.add(20, 1);
-        tree.add(18, 1);
-        tree.add(27, 1);
-        tree.add(5, 1);
-        tree.add(12, 1);
-        tree.add(6, 1);
-        tree.add(2, 1);
-        tree.add(1, 1);
-
-        tree.process(System.out::println);
     }
 }
