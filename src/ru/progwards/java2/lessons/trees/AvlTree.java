@@ -393,11 +393,7 @@ public class AvlTree<K extends Comparable<K>,V> {
             keyNotExist();
 
         Node found = root.find(key);
-        int cmp = found.key.compareTo(key);
-        if (cmp != 0) {
-            keyNotExist();
-        }
-        return found.value;
+        return found.key.compareTo(key) == 0 ? found.value : null;
     }
 
     public void change(K oldKey, K newKey) {
