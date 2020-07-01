@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Premain-Class: ru.progwards.pavliggs.java2.N10dot4.Interceptor

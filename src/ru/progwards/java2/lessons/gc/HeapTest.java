@@ -35,7 +35,7 @@ public class HeapTest {
         return size > (maxSize-allocated)-1 ? (maxSize-allocated)/2+1 : size+1;
     }
 
-    public static void main(String[] args) throws InvalidPointerException, OutOfMemoryException {
+    public static void main(String[] args) throws InvalidPointerException, ru.progwards.java2.lessons.gc.InvalidPointerException, OutOfMemoryException {
         Heap heap = new Heap(maxSize);
         ArrayDeque<Block> blocks = new ArrayDeque<>();
         int count = 0;

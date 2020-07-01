@@ -1,144 +1,139 @@
 package ru.progwards.java2.lessons.gc;
 
+import com.google.common.collect.TreeMultimap;
 import java.util.*;
 
 public class Heap {
     private byte[] bytes;
 
-    private List<Block> freeBlocks;
-    private List<Block> busyBlocks;
+    // словарь со свободными блоками: ключ - длина блока, значение - коллекция указателей
+    private TreeMultimap<Integer, Integer> freeBlocks;
+    // словарь с занятыми блоками: ключ - указатель, значение - длина блока
+    private TreeMap<Integer, Integer> busyBlocks;
+
+    // кэш для хранения данных при проходе по словарю
+    private Map.Entry<Integer, Integer> current;
 
     private int quantityCompact;
 
     Heap(int maxHeapSize) {
-        freeBlocks = new ArrayList<>();
-        busyBlocks = new ArrayList<>();
+        freeBlocks = TreeMultimap.create();
+        busyBlocks = new TreeMap<>();
         bytes = new byte[maxHeapSize];
-        freeBlocks.add(new Block(0, bytes.length));
+        freeBlocks.put(bytes.length, 0);
         quantityCompact = 0;
-    }
-
-    public static class Block implements Comparable<Block> {
-        private int startIndex;
-        private int size;
-
-        Block(int startIndex, int size) {
-            this.startIndex = startIndex;
-            this.size = size;
-        }
-
-        public int getStartIndex() {
-            return startIndex;
-        }
-
-        public int getSize() {
-            return size;
-        }
-
-        public void setStartIndex(int startIndex) {
-            this.startIndex = startIndex;
-        }
-
-        @Override
-        public String toString() {
-            return "Block{" +
-                    "startIndex=" + startIndex +
-                    ", size=" + size +
-                    '}';
-        }
-
-        @Override
-        public int compareTo(Block o) {
-            return Integer.compare(startIndex, o.startIndex);
-        }
     }
 
     public int malloc(int size) {
         int startIndex = 0;
-        for (int i = 0; i < freeBlocks.size(); i++) {
-            Block freeBlock = freeBlocks.get(i);
-            // если подходящий по размеру блок существует, то помечаем его ячейки как занятые
-            if (size <= freeBlock.getSize()) {
-                startIndex = freeBlock.getStartIndex();
-                // добавляем блок в список занятых блоков
-                busyBlocks.add(new Block(startIndex, size));
-                // сортируем по значению свойства startIndex (объекты Block реализуют интерфейс Comparable)
-                busyBlocks.sort(null);
-                // создаём новый свободный блок с учётом уже занятых ячеек памяти
-                Block newFreeBlock = new Block(freeBlock.getStartIndex() + size, freeBlock.getSize() - size);
-                freeBlocks.set(i, newFreeBlock);
-                break;
-            }
+
+        // находим, если есть, элемент freeBlocks с ключом больше либо равным size
+        Map.Entry<Integer, Collection<Integer>> entry = freeBlocks.asMap().ceilingEntry(size);
+
+        if (entry != null) {
+            // коллекция из указателей
+            SortedSet<Integer> set = (SortedSet<Integer>) entry.getValue();
+            // startIndex - первый элемент коллекции
+            startIndex = set.first();
+            // добавили занятый блок в словарь busyBlocks
+            busyBlocks.put(startIndex, size);
+            // удаляем элемент из свободных блоков
+            freeBlocks.remove(entry.getKey(), startIndex);
+            int newSize = entry.getKey() - size;
+            if (newSize != 0)
+                // добавляем новый свободный блок с новыми значениями длины и указателя
+                freeBlocks.put(newSize, startIndex + size);
+        } else {
             /*
-            * если свободных блоков нужного размера не нашлось, то вызываем метод compact() и снова и ищем подходящий
-            * свободный блок. Если во второй раз не нашлось свободных блоков, то значит свободной памяти не хватает
-            * и бросаем OutOfMemoryException
-            * */
-            if (i == freeBlocks.size() - 1) {
-                if (quantityCompact == 1)
-                    throw new OutOfMemoryException();
-                compact();
-                ++quantityCompact;
-                i = -1;
-            }
+            * если quantityCompact равно 1, то значит мы уже вызывали метод compact()
+            * и после этого опять ничего не нашли, значит выдаём исключение
+            *  */
+            if (quantityCompact == 1)
+                throw new OutOfMemoryException(size);
+            compact();
+            ++quantityCompact;
+            malloc(size);
         }
         return startIndex;
     }
 
     public void free(int ptr) {
-        for (int i = 0; i < busyBlocks.size(); i++) {
-            Block busyBlock = busyBlocks.get(i);
-            // если блок с данным указателем найден, то добавляем его в список свободных блоков
-            if (busyBlock.getStartIndex() == ptr) {
-                freeBlocks.add(busyBlock);
-                freeBlocks.sort(null);
-                busyBlocks.remove(i);
-                break;
-            }
-            // если занятый блок с начальным индексом = ptr не найден, то выдаём исключение
-            if (i == busyBlocks.size() - 1)
-                throw new InvalidPointerException();
-        }
+        // если в занятых блоках найден блок с указателем ptr
+        if (busyBlocks.containsKey(ptr)) {
+            // добавляем этот блок в свободные блоки
+            freeBlocks.put(busyBlocks.get(ptr), ptr);
+            // удаляем блок из структуры занятых блоков
+            busyBlocks.remove(ptr);
+        } else
+            // бросаем исключение, если не нашлось занятого блока с указателем ptr
+            throw new InvalidPointerException(ptr);
     }
 
     public void defrag() {
-        int i = 0;
-        int size = freeBlocks.size();
-        for (int count = 0; count < size; count++) {
-            if (i < freeBlocks.size() - 1) {
-                Block freeBlockCurrent = freeBlocks.get(i);
-                Block freeBlockNext = freeBlocks.get(i+1);
+        // преобразуем TreeMultimap в TreeMap
+        TreeMap<Integer, Integer> freeBlocksMap = getMap(freeBlocks);
+        freeBlocks.clear();
+
+        for (var block : freeBlocksMap.entrySet()) {
+            if (current != null) {
                 /*
-                * если конечный индекс блока freeBlockCurrent и начальный индекс блока freeBlockNext являются смежными,
-                * то создаём новым блок newFreeBlock из блоков freeBlockCurrent и freeBlockNext и добавляем в список
-                * */
-                if (freeBlockCurrent.getStartIndex() + freeBlockCurrent.getSize() == freeBlockNext.getStartIndex()) {
-                    Block newFreeBlock = new Block(freeBlockCurrent.getStartIndex(), freeBlockCurrent.getSize() +
-                                            freeBlockNext.getSize());
-                    freeBlocks.set(i, newFreeBlock);
-                    freeBlocks.remove(freeBlockNext);
-                } else
-                    ++i;
+                * если сумма ключа(указателя) + значения(дины) равна указателю следующего элемента,
+                * то значит блоки смежные и их можно объединить
+                *  */
+                if (current.getKey() + current.getValue() == block.getKey()) {
+                    // указатель объединеноого блока
+                    int bigPtr = current.getKey();
+                    // длина объединеноого блока
+                    int bigSize = current.getValue() + block.getValue();
+                    // удаляем из TreeMultimap блоки current и block
+//                    freeBlocks.remove(current.getValue(), current.getKey());
+//                    freeBlocks.remove(block.getValue(), block.getKey());
+                    // добавляем объединенный блок
+                    freeBlocks.put(bigSize, bigPtr);
+                    // меняем значение у current
+                    current.setValue(bigSize);
+                    continue;
+                }
             }
+            current = block;
         }
     }
 
     public void compact() {
         int startIndex = 0;
-        // переносим занятые блоки в начало кучи
-        for (int i = 0; i < busyBlocks.size(); i++) {
-            Block busyBlock = busyBlocks.get(i);
-            busyBlock.setStartIndex(startIndex);
-            startIndex += busyBlock.getSize();
+        TreeMap<Integer, Integer> newBusyBlocks = new TreeMap<>(busyBlocks);
+        busyBlocks.clear();
+        //  смещаем занятые блоки в начало
+        for (var block : newBusyBlocks.entrySet()) {
+            busyBlocks.put(startIndex, block.getValue());
+            startIndex += block.getValue();
         }
-        // свободные блоки размещаем после занятых
-        for (int i = 0; i < freeBlocks.size(); i++) {
-            Block freeBlock = freeBlocks.get(i);
-            freeBlock.setStartIndex(startIndex);
-            startIndex += freeBlock.getSize();
+
+        // если в свободных блоках что-то есть, то создаём TreeMap и очищаем freeBlocks
+        if (!freeBlocks.isEmpty()) {
+            TreeMap<Integer, Integer> newFreeBlocks = getMap(freeBlocks);
+            freeBlocks.clear();
+
+            for (var block : newFreeBlocks.entrySet()) {
+                // добавляем свободные блоки после занятых блоков
+                freeBlocks.put(block.getValue(), startIndex);
+                startIndex += block.getValue();
+            }
+
+            // проводим дефрагментацию
+            defrag();
         }
-        // проводим дефрагментацию
-        defrag();
+    }
+
+    // метод создает из TreeMultimap обычный TreeMap
+    private TreeMap<Integer, Integer> getMap(TreeMultimap<Integer, Integer> map) {
+        TreeMap<Integer, Integer> resultMap = new TreeMap<>();
+
+        for (var elem : map.entries()) {
+            resultMap.put(elem.getValue(), elem.getKey());
+        }
+
+        return (resultMap.isEmpty()) ? null : resultMap;
     }
 
     public static void main(String[] args) {
@@ -152,15 +147,15 @@ public class Heap {
         System.out.println(heap.freeBlocks);
         System.out.println(heap.busyBlocks);
 
-        heap.free(14);
+        heap.free(0);
 
         System.out.println(heap.freeBlocks);
         System.out.println(heap.busyBlocks);
 
-//        heap.defrag();
-//
-//        System.out.println(heap.freeBlocks);
-//        System.out.println(heap.busyBlocks);
+        heap.defrag();
+
+        System.out.println(heap.freeBlocks);
+        System.out.println(heap.busyBlocks);
 
         heap.malloc(5);
 
@@ -177,21 +172,14 @@ public class Heap {
         System.out.println(heap.freeBlocks);
         System.out.println(heap.busyBlocks);
 
-        heap.malloc(21);
-
-        System.out.println(heap.freeBlocks);
-        System.out.println(heap.busyBlocks);
-//
-        heap.malloc(16);
+        heap.malloc(20);
 
         System.out.println(heap.freeBlocks);
         System.out.println(heap.busyBlocks);
 
-//        heap.compact();
-//
-//        System.out.println(heap.freeBlocks);
-//        System.out.println(heap.busyBlocks);
+        heap.malloc(14);
 
-
+        System.out.println(heap.freeBlocks);
+        System.out.println(heap.busyBlocks);
     }
 }
