@@ -15,20 +15,31 @@ public class JTest {
    void run(String name) {
       try {
          Class<?> clazz = Class.forName(name);
-         Method[] methods = clazz.getDeclaredMethods();
+         Constructor<?>[] constructors = clazz.getDeclaredConstructors();
          // constructor - конструктор по умолчанию
-         Constructor<?> constructor = clazz.getDeclaredConstructor();
+         Constructor<?> constructor = getConstructor(constructors);
+         Method[] methods = clazz.getDeclaredMethods();
          // создаем экземпляр класса при помощи конструктора по умолчанию
-         Object objClass = constructor.newInstance();
-         searchBefore(methods, objClass);
-         searchTestAndRunMethods(methods, objClass);
-         searchAfter(methods, objClass);
+         if (constructor != null) {
+            Object objClass = constructor.newInstance();
+            searchBefore(methods, objClass);
+            searchTestAndRunMethods(methods, objClass);
+            searchAfter(methods, objClass);
+         }
 
-      } catch (ClassNotFoundException | NoSuchMethodException |
-              InstantiationException | IllegalAccessException |
-              InvocationTargetException ex) {
+      } catch (ClassNotFoundException | InstantiationException |
+              IllegalAccessException | InvocationTargetException ex) {
          ex.printStackTrace();
       }
+   }
+
+   // метод получает конструктор без параметров
+   private Constructor<?> getConstructor(Constructor<?>[] constructors) {
+      for (Constructor<?> c : constructors) {
+         if (c.getParameterCount() == 0)
+            return c;
+      }
+      return null;
    }
 
    // метод ищет метод с аннотацией Before и запускает этот метод
