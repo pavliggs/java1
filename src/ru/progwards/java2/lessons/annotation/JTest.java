@@ -19,7 +19,7 @@ public class JTest {
          // constructor - конструктор по умолчанию
          Constructor<?> constructor = getConstructor(constructors);
          Method[] methods = clazz.getDeclaredMethods();
-         // создаем экземпляр класса при помощи конструктора по умолчанию
+         // если конструктор по умолчанию есть, то создаем экземпляр класса при помощи эого конструктора
          if (constructor != null) {
             Object objClass = constructor.newInstance();
             searchBefore(methods, objClass);
