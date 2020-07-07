@@ -441,7 +441,7 @@ public class PizzaBot extends TelegramBot {
 
         bot.addTags(bot.inDirectory);
 
-//        bot.start();
-        bot.test();
+        bot.start();
+//        bot.test();
     }
 }

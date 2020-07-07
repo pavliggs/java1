@@ -1,5 +1,7 @@
 package ru.progwards.java2.lessons.threads;
 
+import com.google.inject.internal.asm.$TypeReference;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +19,6 @@ public class Summator {
 
         // в списке содержатся результаты выполнения потоками метода sumBlock
         List<BigInteger> list = new ArrayList<>();
-        // список из потоков
-        List<Thread> threadList = new ArrayList<>();
 
         // sizeBlock - значение размера блока, который получается при делении number на count
         BigInteger sizeBlock = number.divide(new BigInteger(Integer.toString(count)));
@@ -28,20 +28,28 @@ public class Summator {
         for (int i = 0; i < count; i++) {
             if (i == count - 1) {
                 Thread thread = new Thread(new RunnableSummator(start, number, list));
-                threadList.add(thread);
+                thread.start();
+                threadJoin(thread);
             } else {
                 Thread thread = new Thread(new RunnableSummator(start, finish, list));
-                threadList.add(thread);
+                thread.start();
+                threadJoin(thread);
             }
             // меняем значения для следующего потока
             start = finish.add(BigInteger.ONE);
             finish = finish.add(sizeBlock);
         }
 
-        // запускаем потоки
-        startThread(threadList);
-
         return resultSum(list);
+    }
+
+    // метод позволяет потоку main дождаться выполнения потока thread
+    private void threadJoin(Thread thread) {
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     // метод суммирует числа от start до finish
@@ -53,20 +61,6 @@ public class Summator {
             }
 
         return sum;
-    }
-
-    // метод запускает потоки
-    private void startThread(List<Thread> list) {
-        for (int i = 0; i < list.size(); i++) {
-            Thread thread = list.get(i);
-            thread.start();
-            try {
-                // поток main будет ждать пока не выполнится поток thread
-                thread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     // метод складывает значения элементов списка
@@ -98,7 +92,7 @@ public class Summator {
     }
 
     public static void main(String[] args) {
-        Summator s = new Summator(7);
+        Summator s = new Summator(50);
         System.out.println(s.sum(new BigInteger("1000")));
     }
 }
