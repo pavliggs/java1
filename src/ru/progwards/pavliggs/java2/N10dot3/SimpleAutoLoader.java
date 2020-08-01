@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class SimpleAutoLoader extends ClassLoader {
-    final static String PATH_OF_TASKS = "C:\\Users\\Эльдорадо\\IdeaProjects\\HelloWorld\\out\\production\\HelloWorld\\ru\\progwards\\pavliggs\\java2\\N10dot3\\tasks";
+    final static String PATH_OF_TASKS = "C:\\Users\\Эльдорадо\\data\\";
     final static String DOT_CLASS = ".class";
     private static SimpleAutoLoader loader = new SimpleAutoLoader(PATH_OF_TASKS);
 
@@ -29,7 +29,9 @@ public class SimpleAutoLoader extends ClassLoader {
     public Class<?> findClass(String className) throws ClassNotFoundException {
         try {
             String classPath = className.replace(".", "\\");
-            Path classPathName = Paths.get(PATH_OF_TASKS + classPath + DOT_CLASS);
+            Path classPathName = Paths.get(basePath + classPath + DOT_CLASS);
+            System.out.println(1);
+            System.out.println(classPathName.toString());
             if (Files.exists(classPathName)) {
                 byte[] b = Files.readAllBytes(classPathName);
                 return defineClass(className, b, 0, b.length);
@@ -55,12 +57,15 @@ public class SimpleAutoLoader extends ClassLoader {
                 if (path.toString().endsWith(DOT_CLASS)) {
                     String className = makeClassName(path);
                     Task task = tasks.get(className);
-                    if (task == null) {
+                    if (task == null || task.getModifiedTime() != attrs.lastModifiedTime().toMillis()) {
                         try {
-                            Class taskClass = loader.loadClass(className, true);
+                            if (task != null)
+                                loader = new SimpleAutoLoader(PATH_OF_TASKS);
+                            Class<?> taskClass = loader.loadClass(className, true);
                             Task newTask = (Task)taskClass.getDeclaredConstructor().newInstance();
+                            newTask.setModifiedTime(attrs.lastModifiedTime().toMillis());
                             tasks.put(className, newTask);
-                            System.out.println("Добавлен класс " + className);
+                            System.out.println((task == null ? "Добавлен" : "Обновлен") + " класс " + className);
                         } catch (ClassNotFoundException | NoSuchMethodException |
                                 InstantiationException | IllegalAccessException |
                                 InvocationTargetException ex) {
@@ -79,9 +84,9 @@ public class SimpleAutoLoader extends ClassLoader {
     }
 
     private static String makeClassName(Path path) throws IOException {
-        path = path.toAbsolutePath().toRealPath();
+        path = path.toAbsolutePath();
         Path relPath = Paths.get(PATH_OF_TASKS).relativize(path);
-        String className = relPath.toString().replaceAll("[\\/\\\\]", ".");
+        String className = relPath.toString().replace("\\", ".");
         if (className.toLowerCase().endsWith(DOT_CLASS))
             className = className.substring(0, className.length() - DOT_CLASS.length());
         return className;
@@ -103,7 +108,7 @@ public class SimpleAutoLoader extends ClassLoader {
             for (var task : tasks.entrySet())
                 System.out.println("    " + task.getValue().process(data));
 
-            Thread.sleep(5_000);
+            Thread.sleep(10_000);
         }
     }
 }

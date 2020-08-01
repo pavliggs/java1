@@ -3,6 +3,18 @@ package ru.progwards.pavliggs.java2.N10dot3.tasks;
 import ru.progwards.pavliggs.java2.N10dot3.Task;
 
 public class Dispersion implements Task {
+    private long modifiedTime;
+
+    @Override
+    public long getModifiedTime() {
+        return modifiedTime;
+    }
+
+    @Override
+    public void setModifiedTime(long time) {
+        modifiedTime = time;
+    }
+
     @Override
     public String process(byte[] data) {
         if (data.length == 0)

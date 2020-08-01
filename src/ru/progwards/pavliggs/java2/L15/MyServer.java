@@ -35,18 +35,19 @@ class RequestHandler implements Runnable {
     public void run() {
         try (InputStream is = server.getInputStream(); OutputStream os = server.getOutputStream()) {
             Scanner scanner = new Scanner(is);
-            boolean done = false;
-
-            while (!done && scanner.hasNextLine()) {
+//            boolean done = false;
+//
+//            while (!done && scanner.hasNextLine()) {
                 String str = scanner.nextLine();
 
                 PrintWriter pw = new PrintWriter(os);
                 pw.println("Echo:" + str);
+
                 pw.flush();
 
-                if (str.equals("EXIT"))
-                    done = true;
-            }
+//                if (str.toLowerCase().equals("exit"))
+//                    done = true;
+//            }
         } catch (IOException ex) {
             ex.printStackTrace();
         }

@@ -27,15 +27,43 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 11, change 1">
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L11/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L15/MyServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L15/VKClient.java" afterDir="false" />
+    <list default="true" id="b12166ce-532f-47d1-a0bd-fcc3e1bc2f30" name="Default Changelist" comment="java2 homework 11, change 2">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javassist.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/classloader/PathLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/classloader/SystemProfiler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/classloader/TestLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/graph/Dijkstra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/graph/FindUnused.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/graph/Vertex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/graph/VertexOutOfBoundsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/http/ATMClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/http/ServerATM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/http/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/http/model/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/http/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/http/service/StoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/http/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/http/service/impl/StoreServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/synchro/Fork.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/synchro/Heap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/synchro/HeapTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/synchro/Philosopher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/synchro/Simposion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/synchro/Waiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot1/ClassLoadOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot1/StaticInitBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/W13/AtomicClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/W13/ReadWrite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/project_telegram_bot/PizzaBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/project_telegram_bot/PizzaBot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/PizzaBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/outFolder/519921837.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java1/project_telegram_bot/outFolder/519921837.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/threads/Summator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/java2/lessons/threads/Summator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorld.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/project_telegram_bot/outFolder/519921837.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HelloWorld/ru/progwards/java1/project_telegram_bot/outFolder/519921837.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L11/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L11/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L15/MyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/L15/MyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/SimpleAutoLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/SimpleAutoLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/tasks/CheckSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/tasks/CheckSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/tasks/Dispersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/tasks/Dispersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/tasks/MathExpectation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/progwards/pavliggs/java2/N10dot3/tasks/MathExpectation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,12 +102,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589580550181" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/src.zip!/" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -96,7 +124,33 @@
       <recent name="ru.progwards.java2.lessons.tests.test.calc" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Summator">
+  <component name="RunManager" selected="Application.ATMClient">
+    <configuration name="ATMClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.http.ATMClient" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.java2.lessons.http.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HeapTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.synchro.HeapTest" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.progwards.java2.lessons.synchro.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.progwards.pavliggs.java2.L15.MyServer" />
       <module name="HelloWorld" />
@@ -110,38 +164,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PizzaBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java1.project_telegram_bot.PizzaBot" />
+    <configuration name="ServerATM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.http.ServerATM" />
       <module name="HelloWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.progwards.java1.project_telegram_bot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Summator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.java2.lessons.threads.Summator" />
-      <module name="HelloWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.progwards.java2.lessons.threads.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.progwards.pavliggs.java2.L11.Test" />
-      <module name="HelloWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.progwards.pavliggs.java2.L11.*" />
+          <option name="PATTERN" value="ru.progwards.java2.lessons.http.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -163,19 +191,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Summator" />
-      <item itemvalue="Application.Test" />
-      <item itemvalue="Application.VKClient" />
+      <item itemvalue="Application.HeapTest (1)" />
       <item itemvalue="Application.MyServer" />
-      <item itemvalue="Application.PizzaBot" />
+      <item itemvalue="Application.VKClient" />
+      <item itemvalue="Application.ServerATM" />
+      <item itemvalue="Application.ATMClient" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Summator" />
-        <item itemvalue="Application.PizzaBot" />
-        <item itemvalue="Application.MyServer" />
+        <item itemvalue="Application.ATMClient" />
+        <item itemvalue="Application.ServerATM" />
         <item itemvalue="Application.VKClient" />
-        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.MyServer" />
+        <item itemvalue="Application.HeapTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -265,14 +293,50 @@
       <workItem from="1594026417574" duration="592000" />
       <workItem from="1594062047816" duration="8583000" />
       <workItem from="1594113012015" duration="2241000" />
-      <workItem from="1594137548988" duration="1177000" />
-    </task>
-    <task id="LOCAL-00120" summary="homework 17, attempt 13">
-      <created>1585488221506</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1585488221506</updated>
+      <workItem from="1594137548988" duration="5867000" />
+      <workItem from="1594199069022" duration="6000" />
+      <workItem from="1594199172816" duration="10383000" />
+      <workItem from="1594326721044" duration="1188000" />
+      <workItem from="1594372926285" duration="589000" />
+      <workItem from="1594394266434" duration="1193000" />
+      <workItem from="1594452751360" duration="13396000" />
+      <workItem from="1594541269687" duration="20543000" />
+      <workItem from="1594632187421" duration="1837000" />
+      <workItem from="1594661871220" duration="7466000" />
+      <workItem from="1594717874711" duration="1215000" />
+      <workItem from="1594736864677" duration="8638000" />
+      <workItem from="1594756180308" duration="5265000" />
+      <workItem from="1594804135670" duration="7000" />
+      <workItem from="1594804245312" duration="2999000" />
+      <workItem from="1594838320035" duration="6787000" />
+      <workItem from="1594890790554" duration="4227000" />
+      <workItem from="1594926805831" duration="9549000" />
+      <workItem from="1594965085561" duration="189000" />
+      <workItem from="1594970830700" duration="2469000" />
+      <workItem from="1595011476912" duration="3798000" />
+      <workItem from="1595068281239" duration="20374000" />
+      <workItem from="1595144753324" duration="10632000" />
+      <workItem from="1595265421154" duration="7117000" />
+      <workItem from="1595321792753" duration="9284000" />
+      <workItem from="1595395715013" duration="26528000" />
+      <workItem from="1595571230116" duration="1642000" />
+      <workItem from="1595659002779" duration="603000" />
+      <workItem from="1595677349552" duration="1461000" />
+      <workItem from="1595701680852" duration="52000" />
+      <workItem from="1595701861408" duration="210000" />
+      <workItem from="1595702197038" duration="65000" />
+      <workItem from="1595702290726" duration="4000" />
+      <workItem from="1595703195534" duration="4064000" />
+      <workItem from="1595760449298" duration="5626000" />
+      <workItem from="1595840179934" duration="24000" />
+      <workItem from="1595840244792" duration="13933000" />
+      <workItem from="1595966699230" duration="6423000" />
+      <workItem from="1596011208082" duration="149000" />
+      <workItem from="1596011426009" duration="13763000" />
+      <workItem from="1596049127209" duration="7414000" />
+      <workItem from="1596127380838" duration="7462000" />
+      <workItem from="1596218716932" duration="9459000" />
+      <workItem from="1596276067857" duration="8539000" />
     </task>
     <task id="LOCAL-00121" summary="homework 17, attempt 14">
       <created>1585489957745</created>
@@ -610,7 +674,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593900906460</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="java2 homework 11, change 2">
+      <created>1594138817163</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1594138817164</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +716,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="java2 homework 2, change 1" />
     <MESSAGE value="java2 homework 2, change 2" />
     <MESSAGE value="java2 homework 2, change 3" />
     <MESSAGE value="java2 homework 3, change 1" />
@@ -670,30 +740,32 @@
     <MESSAGE value="java2 homework 9, change 3" />
     <MESSAGE value="java2 homework 9, change 4" />
     <MESSAGE value="java2 homework 11, change 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 11, change 1" />
+    <MESSAGE value="java2 homework 11, change 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="java2 homework 11, change 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="395" y="91" key="#Inspections" timestamp="1593205666799">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="395" y="91" key="#Inspections/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593205666799" />
-    <state x="249" y="0" key="#Project_Structure" timestamp="1591476004239">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1595970471789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="#Project_Structure/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1591476004239" />
-    <state x="15" y="50" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593525531705">
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1595970471789" />
+    <state x="15" y="50" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596140986608">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="15" y="50" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593525531705" />
+    <state x="15" y="50" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1596140986608" />
     <state x="686" y="121" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1593380674145">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="686" y="121" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593380674145" />
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1594070144185">
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1596278660653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1594070144185" />
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593769579918" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1595282279603" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1596278660653" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1596025513726" />
     <state x="330" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593637284715">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -710,62 +782,71 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="132" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593208721851" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1593634313760">
+    <state x="620" y="308" key="DetectedRootsChooserDialog" timestamp="1595761792066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593634313760" />
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom" timestamp="1594137927524">
+    <state x="620" y="308" key="DetectedRootsChooserDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1595761792066" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1595761789986">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1594137927524" />
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594116440384" />
-    <state width="1493" height="158" key="GridCell.Tab.0.center" timestamp="1594137927524">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1595761789986" />
+    <state width="1493" height="184" key="GridCell.Tab.0.bottom" timestamp="1596313334191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1594137927524" />
-    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594116440384" />
-    <state width="1493" height="158" key="GridCell.Tab.0.left" timestamp="1594137927524">
+    <state width="1493" height="184" key="GridCell.Tab.0.bottom/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1595265390419" />
+    <state width="1493" height="184" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1596313334191" />
+    <state width="1493" height="184" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596031783124" />
+    <state width="1493" height="184" key="GridCell.Tab.0.center" timestamp="1596313334191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1594137927524" />
-    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594116440384" />
-    <state width="1493" height="158" key="GridCell.Tab.0.right" timestamp="1594137927524">
+    <state width="1493" height="184" key="GridCell.Tab.0.center/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1595265390419" />
+    <state width="1493" height="184" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1596313334191" />
+    <state width="1493" height="184" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596031783123" />
+    <state width="1493" height="184" key="GridCell.Tab.0.left" timestamp="1596313334191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1594137927524" />
-    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594116440384" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1593814992709">
+    <state width="1493" height="184" key="GridCell.Tab.0.left/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1595265390418" />
+    <state width="1493" height="184" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1596313334191" />
+    <state width="1493" height="184" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596031783123" />
+    <state width="1493" height="184" key="GridCell.Tab.0.right" timestamp="1596313334191">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593814992709" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592179043480" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1593814992709">
+    <state width="1493" height="184" key="GridCell.Tab.0.right/-1920.0.1920.1030/0.0.1536.824@0.0.1536.824" timestamp="1595265390419" />
+    <state width="1493" height="184" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1596313334191" />
+    <state width="1493" height="184" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596031783123" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1595541702494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593814992709" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592179043479" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1593814992709">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1595541702494" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595493213852" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1595541702494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593814992709" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592179043479" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1593814992709">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1595541702494" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1595493213852" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1595541702494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593814992709" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592179043479" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1595541702494" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1595493213852" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1595541702494">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1595541702494" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1595493213852" />
     <state x="349" y="155" key="IDE.errors.dialog" timestamp="1588538335350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1588538335350" />
-    <state x="305" y="0" key="SettingsEditor" timestamp="1593525365265">
+    <state x="305" y="0" key="SettingsEditor" timestamp="1596224359616">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="305" y="0" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593525365265" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1593900918761">
+    <state x="305" y="0" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1596224359616" />
+    <state x="305" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594984276958" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1594138849505">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593900918761" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1594138849505" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591708369720" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1590879486982">
       <screen x="0" y="0" width="1536" height="824" />
@@ -791,26 +872,28 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="510" y="201" key="git4idea.merge.GitPullDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593207915374" />
-    <state x="209" y="33" key="new project wizard" timestamp="1593197896218">
+    <state x="209" y="33" key="new project wizard" timestamp="1594750932639">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="209" y="33" key="new project wizard/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593197896218" />
+    <state x="209" y="33" key="new project wizard/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1594750932639" />
     <state x="562" y="160" key="refactoring.ChangeSignatureDialog" timestamp="1592950181848">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="160" key="refactoring.ChangeSignatureDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592950181848" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1593295262077">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1596016103991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593295262077" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1596016103991" />
     <state x="561" y="271" key="scopes" timestamp="1593034338678">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="561" y="271" key="scopes/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1593034338678" />
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1592335286975">
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1596277811295">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1592335286975" />
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1596277811295" />
+    <state x="431" y="145" width="672" height="160" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595336315246" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

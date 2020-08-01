@@ -3,6 +3,18 @@ package ru.progwards.pavliggs.java2.N10dot3.tasks;
 import ru.progwards.pavliggs.java2.N10dot3.Task;
 
 public class MathExpectation implements Task {
+    private long modifiedTime;
+
+    @Override
+    public long getModifiedTime() {
+        return modifiedTime;
+    }
+
+    @Override
+    public void setModifiedTime(long time) {
+        modifiedTime = time;
+    }
+
     @Override
     public String process(byte[] data) {
         if (data.length == 0)
@@ -14,6 +26,6 @@ public class MathExpectation implements Task {
         }
         double mathExpectation = (double)sum / data.length;
 
-        return "Математическое ожидание: " + mathExpectation;
+        return "Мат join: " + mathExpectation;
     }
 }

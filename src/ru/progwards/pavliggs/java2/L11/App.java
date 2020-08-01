@@ -108,7 +108,6 @@ class Counter {
 //    public synchronized int getCount() {
 //        return count;
 //    }
-
     Lock lock = new ReentrantLock();
 
     public void increase() {
